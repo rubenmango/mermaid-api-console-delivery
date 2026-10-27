@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mermaid API — Log in</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root { --canvas:#1c1b21; --chrome:#242329; --line:#3a3944; --ink:#f2f3f7; --muted:#8585a4; --pink:#e0095f; --pink-hover:#f84594; }
+* { box-sizing:border-box; }
+html,body { margin:0; height:100%; }
+body { font-family:Inter,system-ui,sans-serif; background:var(--canvas); color:var(--ink); }
+.stage { min-height:100vh; position:relative; overflow:hidden; }
+.bg { position:absolute; inset:0; }
+.bg img { position:absolute; left:50%; bottom:0; width:max(100vw,100vh); height:max(100vw,100vh); transform:translateX(-50%); object-fit:cover; object-position:center bottom; }
+.logo { position:absolute; left:38px; top:36px; z-index:2; display:inline-flex; align-items:center; gap:8px; text-decoration:none; color:inherit; }
+.logo img { width:28px; height:28px; }
+.logo span { font-size:20px; font-weight:700; }
+.hero { position:relative; z-index:2; padding:180px 24px 80px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:24px; }
+h1 { margin:0; font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-size:clamp(40px,5vw,72px); line-height:1.15; }
+.lede { margin:0; font-size:18px; font-weight:300; max-width:640px; }
+.card { width:min(440px,100%); background:var(--chrome); border:1px solid var(--line); border-radius:12px; padding:32px 24px; display:flex; flex-direction:column; gap:16px; }
+.card p { margin:0; color:var(--muted); font-size:14px; }
+.cta { display:inline-flex; align-items:center; justify-content:center; height:36px; border-radius:8px; background:var(--pink); color:#fff; font-weight:500; text-decoration:none; }
+.cta:hover { background:var(--pink-hover); }
+.cap { margin:0; font-size:12px; color:#5f5d7a; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="bg" aria-hidden="true"><img src="../mermaid-api/assets/signup-hero.jpg" alt="" /></div>
+  <a class="logo" href="../mermaid-api/website.html"><img src="assets/mermaid-logo.svg" alt="" /><span>API</span></a>
+  <div class="hero">
+    <h1>Build on the Mermaid platform</h1>
+    <p class="lede">Create API keys and manage your usage and credits.</p>
+    <section class="card">
+      <p>Log in with your Mermaid Chart account to create and manage your API keys.</p>
+      <a class="cta" href="get-started.html">Log in with Mermaid Chart</a>
+      <p class="cap">Uses your Mermaid Chart plan. No separate sign-up.</p>
+    </section>
+  </div>
+</div>
+</body>
+</html>

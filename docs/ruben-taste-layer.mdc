@@ -1,0 +1,156 @@
+---
+description: Ruben's design taste layer — the rules, visual defaults and review lens to apply when generating, restyling or critiquing any UI, prototype or visual artifact. Use whenever the output is something a person will look at.
+globs: ["**/*.tsx", "**/*.jsx", "**/*.html", "**/*.css", "**/*.scss", "**/*.svg", "**/*.vue"]
+alwaysApply: false
+---
+
+# Taste layer — Ruben Mangorrinha
+
+Apply this when producing or reviewing anything visual. It is a **taste** layer, not a
+component library: it constrains judgement, not implementation. Where a project has its
+own design system, the system wins — see "The system wins" below.
+
+---
+
+## The nine rules
+
+Cite the rule by name when you apply it, so the reasoning is reviewable.
+
+1. **Reduce surface area.** The first move is always subtraction. Merge competing
+   concepts into one umbrella rather than adding an option. If a new surface is being
+   added, justify why an existing one can't carry it.
+2. **The eye decides, not the token.** Judge by predicting where attention will actually
+   go. The test for any element: *is it competing for attention it hasn't earned?*
+   Prefer outline over filled when something should call attention without competing.
+   Say "it will pop a bit too much" — not "that violates the emphasis scale."
+3. **Inherit the convention for meaning; modernise only the execution.** Decision =
+   rhombus, task = rectangle, warning = amber. Semantics ride on what the user already
+   parses in a glance. Novelty belongs in execution, never in meaning.
+4. **Slot logic is rule-governed, never ad hoc.** Vertical position encodes agency:
+   **existing state renders below, proactive suggestions render above.** Persistent,
+   always-relevant content goes in the sidebar (3–5 views max); supporting and
+   minimisable content goes in a panel — so never put always-visible content in a panel.
+5. **Behaviour over appearance.** If a thing *acts*, it gets its own component and its own
+   name. Naming is strategy: a name encodes how something should be used. If "primary"
+   appears three times on a screen, the name is wrong — it means "default," not "the
+   singular brand moment."
+6. **Value before the ask.** The user gets value before being asked for money. Identity
+   (login) can be asked earlier — it's cheap and reversible. Payment cannot precede
+   demonstrated value. Show, don't gate: reveal a feature as a contextual follow-up
+   rather than a button behind a wall.
+7. **Cheapest cue that carries the signal.** Before building the rich version, ask what
+   a smaller cue would communicate. A surface with a short remaining life doesn't earn
+   net-new design — but it can inherit something already built.
+8. **Never blame the user.** Error and empty states say what's missing, not what they did
+   wrong. On a failed connection, offer the manual path (upload the file yourself) rather
+   than a clean dead end. Unblock on a non-optimal path beats blocking elegantly.
+9. **Annotate the roads not taken.** When several directions were explored, leave the
+   rejected ones visible with a one-line reason each. The selection logic is the
+   deliverable, not just the winner.
+
+---
+
+## The system wins
+
+When a design system, token scale or existing convention answers back, it wins — without
+argument. Do not invent a spacing value that isn't on the scale (no `20px` if the scale is
+`16 / 24`). Do not create a new colour if one exists. Do not create a redundant variant
+because a source-of-truth tool made creation easier than reuse. Reuse a validated pattern
+across surfaces rather than reinventing it per surface — the user shouldn't have to learn
+two interfaces.
+
+If no system exists in the repo, fall back to the visual defaults below.
+
+---
+
+## Visual defaults
+
+Only when the project has no tokens of its own. Two modes; pick by artifact type.
+
+### Dark — prototypes, walkthroughs, product mocks
+
+```css
+--deck:#14111f;        /* background, deep purple-black */
+--deck-bar:#1e1a2e;    /* bars, elevated surfaces */
+--deck-border:#2e2942;
+--pink:#e0095f;        /* primary CTA, active state, "new"  */
+--pink-600:#b5074c;
+--purple:#5c54d4;      /* mode tabs, team/changed, secondary accent */
+--deep:#1e1a2e;        /* primary ink / dark buttons */
+--g50:#f2f3f7; --g100:#e4e4eb; --g200:#cecedb; --g300:#bdbccc;
+--g400:#8585a4; --g500:#5f5d7a; --g600:#57546c;
+--green:#07b88c; --green700:#007e64;   /* success / resolved */
+--blue:#1741e2;        /* selection outline + handles */
+```
+
+Type: **Recursive** 400–700 for UI, **JetBrains Mono** 400/500 for numbers, step
+indices and anything that should read as instrumentation.
+
+### Light — docs, reports, hub and landing pages
+
+Do not improvise this one. The documentation family has its own spec, including the exact
+palette, type stack, column widths and page structures: see `@notion-plain-docs.mdc`.
+Anything that will be published as a doc, report or hub page follows that rule, and this
+one only supplies the judgement layer on top.
+
+Structural habits that hold in both modes:
+
+- Cards: 1px border, 6px radius, **no heavy shadows**. Hover changes the border, not the
+  position — no lift, no translate.
+- Pills/tags: `padding:2px 9px; border-radius:4px;` soft background + matching text.
+  Colour carries meaning consistently: ok → green, at-risk → amber, blocked → red,
+  neutral → grey, feature/link → purple, accent → pink.
+- Tables: tinted header row, hairline cell borders, outer border + radius + `overflow:hidden`.
+- Motion: sparingly. Spend the interaction budget on attention hierarchy, not animation.
+- One primary action per screen. If there are two, one of them isn't primary.
+
+---
+
+## Reference vocabulary
+
+Not "make it look like Linear." Each reference is borrowed for one specific quality:
+
+- **Lovable** — feedback communication; loading states repurposed to educate or carry
+  brand language rather than sit as dead time.
+- **Gamma** — credits-as-first-value: enough free capability to finish one real thing.
+- **Lucid** — density in expert mode; how shapes and templates get inserted mid-workflow.
+- **Miro** — surfacing what users make *to other users*; community as a product surface.
+- **Perplexity** — trial framing ("try the pro product for a week").
+- **Google Stitch** — onboarding and layout reference.
+- **gitdiagram.com / n8n** — speed-to-value; how fast a first result appears.
+
+When reaching for a precedent, name the single quality being taken. Never "copy this tool."
+
+---
+
+## Review checklist
+
+Run in this order when critiquing. Two or three surgical points, each with a predicted
+consequence attached — not a list of everything wrong.
+
+1. What can be collapsed or removed?
+2. Does meaning ride on a convention the user already parses?
+3. Is placement rule-governed, or ad hoc?
+4. Does anything that *acts* have its own component and name?
+5. Does value land before the ask?
+6. Is there a cheaper cue that carries the same signal?
+7. Is it instrumented — will anyone be able to observe whether it worked?
+8. Where will the eye actually go first, and did that element earn it?
+9. Are the rejected directions annotated?
+
+Open with what works, then the fixes. Justify each fix by the visual consequence it
+prevents, not by citing a token name.
+
+---
+
+## Anti-patterns
+
+- Surface polish standing in for substance. Catchy naming that turns out to be fluff.
+- Info → card → value sequences. Heavy multi-step flows before the product speaks.
+- Adding an option where two concepts could have been merged.
+- A modal or popup where a rotating banner or inline cue would do.
+- A per-action confirmation dialog for an agent. Batch it into a review queue instead:
+  "this is ready, this is final, what do you think?"
+- Inventing a value off the scale.
+- Shipping a screen with no metric attached to it. If there's no problem-space label and
+  no metric it moves, it isn't ready to share.

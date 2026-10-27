@@ -1,0 +1,86 @@
+---
+description: Notion-plain documentation style — light, calm, editorial single-file HTML pages for docs, reports, write-ups, changelog hubs and repo landing pages published on GitHub Pages. Use when creating any documentation or report page, or restyling a dark/gradient page into this family.
+globs: ["**/*.html", "docs/**/*", "documentation/**/*"]
+alwaysApply: false
+---
+
+# Notion-plain docs
+
+Produce a self-contained single-file HTML page (inline `<style>`, no build step) that reads
+like a clean Notion document and is ready to publish on GitHub Pages. Every page in a set
+must look like it came from the same family.
+
+Visual judgement comes from `@ruben-taste-layer.mdc`. This rule is the execution spec.
+
+## When to use
+
+- "Create documentation / a report / a write-up / a hub page" for a repo or project.
+- Any page that will live on GitHub Pages and should look light, calm and editorial.
+- Restyling an existing dark or gradient page to match this family.
+
+## The palette (always use these exact CSS variables)
+
+```css
+:root{
+  --ink:#37352F; --muted:#787774; --faint:#9B9A97;
+  --line:#E9E9E7; --line-soft:#EDEDEC; --bg:#FFFFFF; --card:#FFFFFF; --tint:#F7F6F3;
+  --pink:#AD1A72; --purple:#5B4FC4;
+  --green:#448361; --green-bg:#EDF3EC;
+  --amber:#9F6B17; --amber-bg:#FBF3DB;
+  --red:#C4554D;   --red-bg:#FBE4E2;
+  --gray-bg:#F1F1EF;
+  --radius:6px;
+}
+```
+
+## Style rules (non-negotiable)
+
+- **White background.** No gradients, no dark sections. Even a sticky side-nav or TOC is a
+  LIGHT rail (`--tint`/`--card` bg, `--muted` text) — never a dark spine.
+- **System font stack:** `-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif`.
+  Body 16px, line-height 1.7, `-webkit-font-smoothing: antialiased`.
+- **Centered content column,** `max-width: 740px` (hub/landing pages may go to ~820px for
+  card grids).
+- **Headings:** h1 32–36px / 700 / letter-spacing -0.01em; h2 ~23px / 700. Sections open
+  with a small grey kicker or section number and a 1px `--line-soft` bottom-border divider.
+- **Cards:** white, 1px `--line` border, 6px radius, no heavy shadows. Hover darkens the
+  border to `--faint` (optionally fills `--tint`). No translate or lift animations.
+- **Callouts:** `--tint` background, 1px `--line-soft` border, optional 3px left rule.
+- **Tables:** header row `--tint` bg with `--muted` 12.5px text; cells 1px `--line-soft`
+  borders; outer 1px `--line` + 6px radius + `overflow:hidden`.
+- **Status / category pills:** `padding:2px 9px; border-radius:4px;` with a `*-bg`
+  background and matching coloured text. Optional 7px round coloured dot via `::before`.
+  Colour carries meaning: hold/ok → green, tweak/at-risk → amber, blind-spot/blocked → red,
+  neutral → gray, feature/link → purple, accent → pink.
+- **Links:** `--ink` with a faint underline, or `--purple` for action links.
+
+## Page structures
+
+**Report / write-up (max-width 740px)**
+
+1. Topbar kicker (e.g. `MERMAID CHART · GROWTH · …`) with a small ink square logo.
+2. Hero: pill row (status + method tags), H1, one-sentence `.sub`, a `.meta` row
+   (method / metric / surface / author) bordered top and bottom.
+3. Optional KPI strip: 4 plain stat blocks in a bordered, rounded, divided row.
+4. A headline `callout`.
+5. Numbered sections (`00`, `01`, …), each with a divider head, optional `.sec-sub`, then
+   content: feature blocks, tables, persona grids, ranked recommendation rows.
+6. Footer: caveats + sources (links).
+
+**Hub / landing (max-width ~820px)**
+
+- Topbar + H1 + lede.
+- Sections: **Launch** (card grid), **Documentation** (feature card: 220px thumb + body),
+  **Research** (same feature-card pattern, purple accent), **Latest changes** (a `LATEST`
+  array of `{date,cat,title,what}` rendered by a tiny inline script; `cat` ∈
+  feature/polish/infra/decision/note maps to a coloured pill).
+- Footer with repo link.
+
+## Output & workflow
+
+1. Write a single `.html` file with everything inline.
+2. For GitHub Pages: hub at `/index.html`, full doc at `/documentation/index.html`,
+   reports as top-level `*.html`. Add or keep a README link to the published page.
+3. Keep all sibling pages on this same palette so the set stays unified.
+
+Starter template: `@notion-plain-template.html`

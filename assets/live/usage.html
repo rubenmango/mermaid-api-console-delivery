@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mermaid API — Usage</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="console.css" />
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><img src="assets/mermaid-logo.svg" alt="" /><span>API console</span></div>
+  <div class="nav-group">
+    <a class="nav" href="overview.html"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M4 15.2V8.3l6-4.5 6 4.5v6.9H12V12H8v4.8H4Z"/></svg>Dashboard</a>
+  </div>
+  <p class="nav-label">Access</p>
+  <div class="nav-group">
+    <a class="nav" href="keys.html"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M7.2 13.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4Zm3-3.9h6.1V7.8h1.5v2.8h-1.5v1.3h-1.5V10.6H10.2V9.3Z"/></svg>Keys<span class="chev"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M7.6 5.4 12.2 10l-4.6 4.6-1.1-1.1L10 10 6.5 6.5l1.1-1.1Z"/></svg></span></a>
+  </div>
+  <p class="nav-label">Spend</p>
+  <div class="nav-group">
+    <a class="nav active" href="usage.html" aria-current="page"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M4 4.5h12c.6 0 1 .4 1 1v2.2c-1 .4-1.7 1.3-1.7 2.3S15 12 16 12.4V15c0 .6-.4 1-1 1H4c-.6 0-1-.4-1-1V5.5c0-.6.4-1 1-1Z"/></svg>Usage<span class="chev"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M7.6 5.4 12.2 10l-4.6 4.6-1.1-1.1L10 10 6.5 6.5l1.1-1.1Z"/></svg></span></a>
+    <a class="nav" href="billing.html"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M3.5 5.2h13c.6 0 1 .4 1 1v7.6c0 .6-.4 1-1 1h-13c-.6 0-1-.4-1-1V6.2c0-.6.4-1 1-1Zm.4 2.2v1.4h12.2V7.4H3.9Z"/></svg>Billing<span class="chev"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M7.6 5.4 12.2 10l-4.6 4.6-1.1-1.1L10 10 6.5 6.5l1.1-1.1Z"/></svg></span></a>
+  </div>
+  <p class="nav-label">Resources</p>
+  <div class="nav-group">
+    <a class="nav" href="../mermaid-api/website.html"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M5 3.5h6.2L16 8.3V16.5H5V3.5Zm5.5 1.2V8H15L10.5 4.7Z"/></svg>Docs<span class="ext"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M5.2 6.2h5.1v1.4H7.6l6.2 6.2-1 1-6.2-6.2v2.7H5.2V6.2Zm7.2 0H15v6.2h-1.4V8.6l-1.2-1.2V6.2Z"/></svg></span></a>
+  </div>
+  <div class="spacer"></div>
+  <div class="sidebar-divider"></div>
+  <div style="position:relative">
+    <div class="account-menu" id="account-menu">
+      <div class="hdr">
+        <img class="avatar" src="assets/avatar.png" alt="" />
+        <div class="meta"><strong>Ruben</strong><em>ruben@mermaidchart.com</em></div>
+      </div>
+      <a href="settings.html">Settings</a>
+      <a href="http://127.0.0.1:5173/dashboard">Back to Mermaid Chart</a>
+      <hr />
+      <button type="button" class="danger">Log out</button>
+    </div>
+    <button class="account-row" type="button" id="account" aria-expanded="false">
+      <img class="avatar" src="assets/avatar.png" alt="" />
+      <span class="meta"><strong>Ruben</strong><em>ruben@mermaidchart.com</em></span>
+      <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M5.4 7.6 10 12.2l4.6-4.6 1.1 1.1L10 14.4 4.3 8.7l1.1-1.1Z"/></svg>
+    </button>
+  </div>
+</aside>
+<div class="main">
+<header class="topbar">
+  <div class="breadcrumb">Usage</div>
+  <div class="search-wrap"><label class="search"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M8.5 15a6.5 6.5 0 1 1 4.1-1.5l3.6 3.6-1.2 1.2-3.6-3.6A6.5 6.5 0 0 1 8.5 15Zm0-2a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Z"/></svg><input type="search" placeholder="Search console…" aria-label="Search console" /></label></div>
+  <div class="top-actions">
+    <span class="credits-pill">7 credits</span>
+    <a class="btn secondary" href="../mermaid-api/website.html">Documentation <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M5.2 6.2h5.1v1.4H7.6l6.2 6.2-1 1-6.2-6.2v2.7H5.2V6.2Zm7.2 0H15v6.2h-1.4V8.6l-1.2-1.2V6.2Z"/></svg></a>
+  </div>
+</header>
+<div class="content">
+
+
+  <div class="title-row">
+    <div class="grow"><h1>Usage</h1><p class="sub">Credits your keys spent this month, by key and endpoint.</p></div>
+    <button class="btn secondary" type="button">October 2026 ▾</button>
+  </div>
+  <section class="card">
+    <div class="card-head"><h2>Free plan</h2><p class="sub-right">A few API credits to try the API.</p></div>
+    <div class="card-body">
+      <div class="details" style="grid-template-columns:repeat(4,1fr)">
+        <div><span class="k">Monthly allowance</span><span class="v">25 a month</span></div>
+        <div><span class="k">Spent</span><span class="v">18 of 25</span></div>
+        <div><span class="k">Allowance left</span><span class="v">7 · resets Nov 1, 00:00 UTC</span></div>
+        <div><span class="k">Purchased credits</span><span class="v">—</span></div>
+      </div>
+      <div class="meter"><span class="plan" style="width:72%"></span></div>
+      <p style="margin:0;font-size:13px;color:var(--storm-400)">When the free credits run out, calls are refused until the refresh. Refused calls cost nothing.</p>
+    </div>
+  </section>
+  <section class="card">
+    <div class="card-head"><h2>API credits by plan</h2><p class="sub-inline">Every plan includes monthly API credits that refresh on the 1st (UTC). Paid plans can top up.</p></div>
+    <table>
+      <thead><tr><th>Plan</th><th class="num">Monthly API credits</th><th>Credit packs</th><th></th></tr></thead>
+      <tbody>
+        <tr><td>Free <span class="pill muted">Your plan</span></td><td class="num">25</td><td>—</td><td></td></tr>
+        <tr><td>Basic</td><td class="num">250</td><td>5,000 · 10,000 · 15,000</td><td><button class="btn secondary" type="button">Upgrade</button></td></tr>
+        <tr><td>Plus</td><td class="num">1,000</td><td>5,000 · 10,000 · 15,000</td><td><button class="btn secondary" type="button">Upgrade</button></td></tr>
+        <tr><td>Premium</td><td class="num">5,000</td><td>5,000 · 10,000 · 15,000</td><td><button class="btn secondary" type="button">Upgrade</button></td></tr>
+        <tr><td>Enterprise</td><td class="num">Custom</td><td>Custom</td><td><button class="btn secondary" type="button">Upgrade</button></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</div></div></div>
+
+<script src="console.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mermaid API — Overview</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="console.css" />
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><img src="assets/mermaid-logo.svg" alt="" /><span>API console</span></div>
+  <div class="nav-group">
+    <a class="nav active" href="overview.html" aria-current="page"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M4 15.2V8.3l6-4.5 6 4.5v6.9H12V12H8v4.8H4Z"/></svg>Dashboard</a>
+  </div>
+  <p class="nav-label">Access</p>
+  <div class="nav-group">
+    <a class="nav" href="keys.html"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M7.2 13.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4Zm3-3.9h6.1V7.8h1.5v2.8h-1.5v1.3h-1.5V10.6H10.2V9.3Z"/></svg>Keys<span class="chev"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M7.6 5.4 12.2 10l-4.6 4.6-1.1-1.1L10 10 6.5 6.5l1.1-1.1Z"/></svg></span></a>
+  </div>
+  <p class="nav-label">Spend</p>
+  <div class="nav-group">
+    <a class="nav" href="usage.html"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M4 4.5h12c.6 0 1 .4 1 1v2.2c-1 .4-1.7 1.3-1.7 2.3S15 12 16 12.4V15c0 .6-.4 1-1 1H4c-.6 0-1-.4-1-1V5.5c0-.6.4-1 1-1Z"/></svg>Usage<span class="chev"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M7.6 5.4 12.2 10l-4.6 4.6-1.1-1.1L10 10 6.5 6.5l1.1-1.1Z"/></svg></span></a>
+    <a class="nav" href="billing.html"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M3.5 5.2h13c.6 0 1 .4 1 1v7.6c0 .6-.4 1-1 1h-13c-.6 0-1-.4-1-1V6.2c0-.6.4-1 1-1Zm.4 2.2v1.4h12.2V7.4H3.9Z"/></svg>Billing<span class="chev"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M7.6 5.4 12.2 10l-4.6 4.6-1.1-1.1L10 10 6.5 6.5l1.1-1.1Z"/></svg></span></a>
+  </div>
+  <p class="nav-label">Resources</p>
+  <div class="nav-group">
+    <a class="nav" href="../mermaid-api/website.html"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M5 3.5h6.2L16 8.3V16.5H5V3.5Zm5.5 1.2V8H15L10.5 4.7Z"/></svg>Docs<span class="ext"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M5.2 6.2h5.1v1.4H7.6l6.2 6.2-1 1-6.2-6.2v2.7H5.2V6.2Zm7.2 0H15v6.2h-1.4V8.6l-1.2-1.2V6.2Z"/></svg></span></a>
+  </div>
+  <div class="spacer"></div>
+  <div class="sidebar-divider"></div>
+  <div style="position:relative">
+    <div class="account-menu" id="account-menu">
+      <div class="hdr">
+        <img class="avatar" src="assets/avatar.png" alt="" />
+        <div class="meta"><strong>Ruben</strong><em>ruben@mermaidchart.com</em></div>
+      </div>
+      <a href="settings.html">Settings</a>
+      <a href="http://127.0.0.1:5173/dashboard">Back to Mermaid Chart</a>
+      <hr />
+      <button type="button" class="danger">Log out</button>
+    </div>
+    <button class="account-row" type="button" id="account" aria-expanded="false">
+      <img class="avatar" src="assets/avatar.png" alt="" />
+      <span class="meta"><strong>Ruben</strong><em>ruben@mermaidchart.com</em></span>
+      <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M5.4 7.6 10 12.2l4.6-4.6 1.1 1.1L10 14.4 4.3 8.7l1.1-1.1Z"/></svg>
+    </button>
+  </div>
+</aside>
+<div class="main">
+<header class="topbar">
+  <div class="breadcrumb">Dashboard / Overview</div>
+  <div class="search-wrap"><label class="search"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M8.5 15a6.5 6.5 0 1 1 4.1-1.5l3.6 3.6-1.2 1.2-3.6-3.6A6.5 6.5 0 0 1 8.5 15Zm0-2a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Z"/></svg><input type="search" placeholder="Search console…" aria-label="Search console" /></label></div>
+  <div class="top-actions">
+    <span class="credits-pill">1,304 credits</span>
+    <a class="btn secondary" href="../mermaid-api/website.html">Documentation <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M5.2 6.2h5.1v1.4H7.6l6.2 6.2-1 1-6.2-6.2v2.7H5.2V6.2Zm7.2 0H15v6.2h-1.4V8.6l-1.2-1.2V6.2Z"/></svg></a>
+  </div>
+</header>
+<div class="content">
+
+
+  <div class="title-row">
+    <div class="grow">
+      <h1>Overview</h1>
+      <p class="sub">Your keys, credits and calls this month.</p>
+    </div>
+    <a class="btn secondary raised lg" href="keys.html?new=1">Create key</a>
+  </div>
+  <div class="alert warn"><div><strong>Your 1,240 purchased credits expire Nov 14, 2026.</strong> Buy credits before then to keep calls running once the allowance is spent.</div></div>
+  <section class="card">
+    <div class="card-head">
+      <h2>API</h2>
+      <p class="sub-inline">Mermaid API · Plus plan</p>
+      <div class="right">
+        <a class="btn secondary" href="usage.html">View usage</a>
+        <button class="btn icon bare" type="button" aria-label="Copy"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M7 3.5h7.2c.6 0 1 .4 1 1V14h-1.4V5.2H7V3.5ZM4.8 6.2h8c.6 0 1 .4 1 1v9.3c0 .6-.4 1-1 1h-8c-.6 0-1-.4-1-1V7.2c0-.6.4-1 1-1Zm.4 1.4v8.5h7.2V7.6H5.2Z"/></svg></button>
+        <button class="btn icon bare" type="button" aria-label="More"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M5 10.8a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm5 0a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm5 0a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Z"/></svg></button>
+      </div>
+    </div>
+    <div class="overview-grid">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+          <span style="font-size:12px;color:var(--storm-400)">Credits per day</span>
+          <span class="chips"><button class="chip" type="button" aria-pressed="true">7d</button><button class="chip" type="button" aria-pressed="false">30d</button></span>
+        </div>
+        <div class="mini-bars"><i style="height:20%"></i><i style="height:25%"></i><i style="height:18%"></i><i style="height:32%"></i><i style="height:28%"></i><i style="height:40%"></i><i style="height:35%"></i><i style="height:50%"></i><i style="height:42%"></i><i style="height:55%"></i><i style="height:48%"></i><i style="height:60%"></i><i style="height:52%"></i><i style="height:65%"></i><i style="height:58%"></i><i style="height:70%"></i><i style="height:62%"></i><i style="height:75%"></i><i style="height:68%"></i><i style="height:80%"></i><i style="height:72%"></i><i style="height:78%"></i><i style="height:85%"></i><i style="height:80%"></i><i style="height:88%"></i><i style="height:82%"></i><i style="height:90%"></i><i style="height:86%"></i><i style="height:92%"></i><i style="height:95%"></i></div>
+      </div>
+      <div class="details">
+        <div><span class="k">Status</span><span class="v"><span class="pill ok">● Live</span></span></div>
+        <div><span class="k">Endpoint</span><span class="v mono">api.mermaid.ai</span></div>
+        <div><span class="k">Plan</span><span class="v">Plus</span></div>
+        <div><span class="k">Allowance left</span><span class="v">64 of 1,000</span></div>
+        <div><span class="k">Resets</span><span class="v">Nov 1, 00:00 UTC</span></div>
+        <div><span class="k">Purchased credits</span><span class="v">1,240</span></div>
+        <div><span class="k">Calls this month</span><span class="v">1,012 <span class="up">↑ 18%</span></span></div>
+        <div><span class="k">Charged</span><span class="v">936</span></div>
+        <div><span class="k">Active keys</span><span class="v">2</span></div>
+      </div>
+    </div>
+  </section>
+  <div class="overview-dash">
+    <div class="stack">
+      <section class="card">
+        <div class="card-head"><h2>Credits</h2><div class="right"><a class="btn secondary" href="billing.html">Buy credits</a></div></div>
+        <div class="card-body">
+          <p class="balance-big">1,304 <span style="font-size:14px;font-weight:500;color:var(--storm-400)">credits available</span></p>
+          <div class="meter"><span class="plan" style="width:5%"></span><span class="purchased" style="width:95%"></span></div>
+          <div class="legend">
+            <span><i class="dot plan"></i>Plan · 64 of 1,000 · resets Nov 1</span>
+            <span><i class="dot purchased"></i>Purchased · 1,240 · expires Nov 14, 2026</span>
+          </div>
+        </div>
+      </section>
+      <section class="card">
+        <div class="card-head"><h2>Top keys</h2><div class="right"><a class="btn secondary" href="keys.html">View all keys</a></div></div>
+        <table>
+          <thead><tr><th>Key</th><th>Last 8 days</th><th class="num">Credits</th></tr></thead>
+          <tbody>
+            <tr><td><a class="name-link" href="key-detail.html">CI render bot</a></td><td><span class="spark"><i style="height:6px"></i><i style="height:10px"></i><i style="height:8px"></i><i style="height:14px"></i><i style="height:9px"></i><i style="height:16px"></i><i style="height:12px"></i><i style="height:15px"></i></span></td><td class="num">712</td></tr>
+            <tr><td><a class="name-link" href="key-detail.html">Docs preview</a></td><td><span class="spark"><i style="height:4px"></i><i style="height:7px"></i><i style="height:5px"></i><i style="height:9px"></i><i style="height:6px"></i><i style="height:11px"></i><i style="height:8px"></i><i style="height:10px"></i></span></td><td class="num">224</td></tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="card">
+        <div class="card-head"><h2>Endpoints</h2></div>
+        <table>
+          <thead><tr><th>Endpoint</th><th class="num">Credits</th><th class="num">Calls</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">GET /v1/balance</td><td class="num">0</td><td class="num">40</td></tr>
+            <tr><td class="mono">POST /v1/validate</td><td class="num">1</td><td class="num">330</td></tr>
+            <tr><td class="mono">POST /v1/render</td><td class="num">1</td><td class="num">642</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+    <section class="card recent">
+      <div class="card-head">
+        <h2>Recent calls</h2>
+        <p class="sub-inline">Today, UTC · refused and failed calls cost 0</p>
+        <div class="right"><a class="btn secondary" href="usage.html">View usage</a></div>
+      </div>
+      <div style="padding:12px 16px;display:flex;gap:8px;flex-wrap:wrap;border-bottom:1px solid var(--storm-800)">
+        <select class="select" aria-label="Status"><option>Status: All</option><option>OK</option><option>Refused</option><option>Failed</option></select>
+        <select class="select" aria-label="Endpoint"><option>Endpoint: All</option></select>
+        <select class="select" aria-label="Key"><option>Key: All</option></select>
+      </div>
+      <table>
+        <thead><tr><th>Time</th><th>Key</th><th>Endpoint</th><th class="num">Credits</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>14:32</td><td>CI render bot</td><td class="mono">POST /v1/render</td><td class="num">1</td><td><span class="pill ok">OK 200</span></td></tr>
+          <tr><td>14:31</td><td>Docs preview</td><td class="mono">POST /v1/validate</td><td class="num">0</td><td><span class="pill danger">Refused 400</span></td></tr>
+          <tr><td>14:29</td><td>CI render bot</td><td class="mono">POST /v1/render</td><td class="num">0</td><td><span class="pill warn">Rate limited 429</span></td></tr>
+          <tr><td>14:27</td><td>Docs preview</td><td class="mono">POST /v1/validate</td><td class="num">0</td><td><span class="pill danger">Failed 500</span></td></tr>
+          <tr><td>14:26</td><td>CI render bot</td><td class="mono">GET /v1/balance</td><td class="num">0</td><td><span class="pill ok">OK 200</span></td></tr>
+          <tr><td>14:25</td><td>Docs preview</td><td class="mono">POST /v1/render</td><td class="num">1</td><td><span class="pill ok">OK 200</span></td></tr>
+          <tr><td>14:24</td><td>CI render bot</td><td class="mono">POST /v1/validate</td><td class="num">1</td><td><span class="pill ok">OK 200</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+</div></div></div>
+
+<script src="console.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mermaid API console · v3</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:#111014;color:#f2f3f7}
+.wrap{max-width:960px;margin:0 auto;padding:40px 24px 80px}
+h1{font-size:28px;margin:0 0 8px}
+.lede{color:#8585a4;max-width:640px;line-height:1.5}
+.section{margin:28px 0 10px;font-size:11px;font-weight:650;letter-spacing:.08em;text-transform:uppercase;color:#8585a4}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.tile{display:block;padding:16px;border-radius:12px;background:#1c1b21;border:1px solid #3a3944;text-decoration:none;color:inherit}
+.tile:hover{border-color:#aeaec2}
+.tile.api{border-color:#e0095f}
+.tile strong{display:block;margin-bottom:6px;font-size:14px}
+.tile span{font-size:12px;color:#8585a4;line-height:1.4}
+.note{margin-top:28px;font-size:13px;color:#8585a4}
+.note a{color:#f2f3f7}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>API console · v3</h1>
+  <p class="lede">From handoff + Figma <code>141:3891</code> (Non-admin · v3). v2 stays at <a href="../mermaid-api-v2/">mermaid-api-v2/</a>. Spec: <a href="../mermaid-api-console-handoff.md">mermaid-api-console-handoff.md</a>.</p>
+  <div class="section">Entry</div>
+  <div class="tiles">
+    <a class="tile api" href="http://127.0.0.1:5173/dashboard"><strong>Chart dashboard</strong><span>API keys entry in MasterBar / Developer mode.</span></a>
+    <a class="tile" href="login.html"><strong>Login</strong><span>Log in with Mermaid Chart.</span></a>
+  </div>
+  <div class="section">Customer</div>
+  <div class="tiles">
+    <a class="tile api" href="get-started.html"><strong>Get started</strong><span>Agent card + manual setup (no key shown).</span></a>
+    <a class="tile" href="keys.html"><strong>Keys</strong><span>Masked keys + row menu.</span></a>
+    <a class="tile" href="keys.html?new=1"><strong>Your new key</strong><span>Shown-once modal.</span></a>
+    <a class="tile" href="key-detail.html"><strong>Key detail</strong><span>Usage chart + recent calls.</span></a>
+    <a class="tile" href="overview.html"><strong>Overview · returning</strong><span>Expiry alert + credits + calls.</span></a>
+    <a class="tile" href="usage.html"><strong>Usage · free</strong><span>Allowance + plans table.</span></a>
+    <a class="tile" href="usage-org.html"><strong>Usage · org</strong><span>Share of org pool.</span></a>
+    <a class="tile" href="billing.html"><strong>Billing</strong><span>Balance, packs, auto top-up, limits.</span></a>
+    <a class="tile" href="billing-success.html"><strong>Payment complete</strong><span>Success alert.</span></a>
+    <a class="tile" href="billing-purchases.html"><strong>Purchases</strong><span>Invoices table.</span></a>
+    <a class="tile" href="settings.html"><strong>Settings</strong><span>Email notification toggles.</span></a>
+  </div>
+  <p class="note">Admin · v3 is phase 2 in the handoff — still available in <a href="../mermaid-api-v2/">v2</a> until rebuilt.</p>
+</div>
+</body>
+</html>
