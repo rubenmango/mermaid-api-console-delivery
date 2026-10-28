@@ -4,8 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mermaid API — Signing in</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <style>
 :root { --ink:#f2f3f7; --muted:#8585a4; --pink:#e0095f; --pink-hover:#f0217a; --ease:cubic-bezier(.22,1,.36,1); }
 @view-transition { navigation: auto; }
@@ -13,14 +12,14 @@
 html,body { margin:0; height:100%; }
 body { font-family:Inter,system-ui,sans-serif; background:#0f1a22; color:var(--ink); }
 .stage { min-height:100vh; position:relative; overflow:hidden; }
-.bg { position:absolute; inset:0; }
-.bg img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center bottom; animation: bg-in 1.4s var(--ease) both, bg-zoom 16s ease-out both; }
+.bg { position:absolute; inset:0; overflow:hidden; transform:scaleX(-1); --side:max(102.6vw, 144.3vh); }
+.bg img { position:absolute; left:50%; top:calc(50% - var(--side) * .3739); width:var(--side); height:var(--side); max-width:none; translate:-50% 0; opacity:.99; animation: bg-in 1.4s var(--ease) both, bg-zoom 16s ease-out both; }
 @keyframes bg-in { from { opacity:0; transform:scale(1.03); } }
 @keyframes bg-zoom { from { scale:1; } to { scale:1.05; } }
 .logo { position:absolute; left:36px; top:32px; z-index:2; display:inline-flex; align-items:center; gap:8px; color:inherit; text-decoration:none; }
 .logo img { width:28px; height:28px; }
 .logo span { font-size:20px; font-weight:700; }
-.hero { position:relative; z-index:2; padding:22vh 24px 80px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:20px; }
+.hero { position:relative; z-index:2; padding:30vh 24px 80px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:20px; }
 h1 { margin:0; font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-size:clamp(44px,5vw,64px); line-height:1.1; animation: up .6s var(--ease) both; }
 .lede { margin:0; font-size:18px; font-weight:300; animation: up .6s var(--ease) 60ms both; }
 .card { width:min(440px,100%); background:rgba(36,35,41,.92); backdrop-filter:blur(8px); border:1px solid #3a3944; border-radius:12px; padding:32px 24px; display:flex; flex-direction:column; gap:16px; margin-top:12px; animation: up .6s var(--ease) 120ms both; view-transition-name: login-card; }
@@ -38,28 +37,70 @@ h1 { margin:0; font-family:"Instrument Serif",Georgia,serif; font-weight:400; fo
 .bullets { margin:4px 0 0; padding:0 0 0 18px; text-align:left; width:100%; color:var(--ink); font-size:13px; line-height:1.55; }
 .bullets li { animation: up .4s var(--ease) both; }
 .bullets li:nth-child(1) { animation-delay:.35s; } .bullets li:nth-child(2) { animation-delay:.5s; } .bullets li:nth-child(3) { animation-delay:.65s; }
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration:1ms !important; animation-delay:0ms !important; } }
+.stage::after { content:""; position:absolute; inset:0; z-index:1; background:#0a0d10; opacity:0; pointer-events:none; transition:opacity .9s cubic-bezier(.45,0,.55,1); }
+.leaving .stage::after { opacity:.6; }
+.card { transition: background .9s cubic-bezier(.45,0,.55,1), border-color .9s cubic-bezier(.45,0,.55,1); }
+.leaving .card { background:#242329; border-color:#474454; }
+.leaving h1, .leaving .lede, .leaving .cap, .leaving .card > * { animation: out .55s cubic-bezier(.45,0,.55,1) forwards; }
+@keyframes out { to { opacity:0; transform:translateY(-6px); filter:blur(2px); } }
+::view-transition-group(root), ::view-transition-old(root), ::view-transition-new(root) { animation-duration:.7s; animation-timing-function:cubic-bezier(.45,0,.55,1); }
+::view-transition-group(login-card) { animation-duration:.7s; animation-timing-function:cubic-bezier(.65,0,.35,1); }
+::view-transition-old(login-card), ::view-transition-new(login-card) { animation-duration:.7s; height:100%; object-fit:none; object-position:50% 50%; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration:1ms !important; animation-delay:0ms !important; transition-duration:1ms !important; } }
+
+.stage.signin { background:rgba(10,10,10,.9); display:grid; place-items:center; }
+.signin .bg img { animation: bg-zoom 16s ease-out both; }
+.stage.signin::after { opacity:.6; animation: undim 1.6s cubic-bezier(.45,0,.55,1) .2s forwards; }
+@keyframes undim { to { opacity:0; } }
+.school { position:absolute; left:50%; top:50%; width:0; height:0; z-index:1; pointer-events:none; }
+.jelly { position:absolute; display:flex; align-items:center; justify-content:center; will-change:translate,opacity; animation: jelly-in 2.4s cubic-bezier(.45,0,.55,1) .3s both, drift var(--drift,18s) cubic-bezier(.33,.5,.6,1) forwards; }
+.jelly .rot { flex:none; }
+.jelly .body { position:relative; transform-origin:50% 12%; will-change:transform; animation: pulse var(--pulse,3.2s) cubic-bezier(.37,0,.63,1) var(--d,0s) infinite; }
+.jelly img { position:absolute; inset:0; width:100%; height:100%; display:block; max-width:none; }
+.jelly.tiny .body { overflow:clip; }
+.jelly.tiny img { width:auto; height:auto; }
+.jelly.flip .body { transform:scaleY(-1); animation:none; }
+@keyframes jelly-in { from { opacity:0; } }
+@keyframes pulse {
+  0%, 100% { transform:translateY(0) scale(1,1); }
+  35%      { transform:translateY(1px) scale(1.045,.955); }
+  70%      { transform:translateY(-3px) scale(.985,1.025); }
+}
+@keyframes drift {
+  from { translate:0 0; }
+  to   { translate:var(--dx,2px) var(--dy,-14px); }
+}
+.bubble { position:absolute; width:2.24px; height:2.24px; animation: rise 7s ease-in infinite; }
+.bubble img { position:absolute; inset:-389.51%; width:880%; height:880%; display:block; max-width:none; }
+@keyframes rise { 0% { opacity:0; translate:0 0; } 15% { opacity:1; } 100% { opacity:0; translate:3px -90px; } }
+.signin .v { position:relative; z-index:2; width:min(440px,calc(100% - 32px)); }
+.signin .card { background:#242329; backdrop-filter:none; border-color:#474454; align-items:center; margin:0; text-align:center; }
+.signin .card h2 { font-size:20px; font-weight:600; color:var(--ink); }
+.signin .card p { color:var(--muted); }
+.signin .facts { margin:0; padding:12px 0 0 21px; width:100%; text-align:left; display:flex; flex-direction:column; gap:6px; font-size:14px; line-height:normal; color:var(--ink); }
+.signin .facts li { animation: up .4s var(--ease) both; }
+.signin .facts li:nth-child(1) { animation-delay:.35s; } .signin .facts li:nth-child(2) { animation-delay:.5s; } .signin .facts li:nth-child(3) { animation-delay:.65s; }
+@media (prefers-reduced-motion: reduce) { .jelly, .jelly .body, .bubble { animation:none !important; } }
 </style>
 </head>
 <body>
-<div class="stage">
-  <div class="bg" aria-hidden="true"><img src="assets/signup-hero.jpg" alt="" /></div>
+<div class="stage signin">
+  <div class="bg" aria-hidden="true"><img src="assets/signin/dc768.png" alt="" /></div>
+  <script>(function () { var t = +sessionStorage.getItem("mc-bg-t"); if (t) document.querySelector(".bg img").style.animationDelay = -t + "ms"; sessionStorage.removeItem("mc-bg-t"); })();</script>
   <a class="logo" href="index.html"><img src="assets/mermaid-logo.svg" alt="" /><span>API</span></a>
-  <div class="hero">
-    <h1>Mermaid API console</h1>
-    <p class="lede">Create API keys and manage your usage and credits.</p>
-    <section class="card center" aria-live="polite" aria-busy="true">
-      <div class="spin" aria-hidden="true"></div>
+  <div class="school" aria-hidden="true"><div class="jelly" style="left:calc(19.87px);top:calc(-362.00px);width:36.31px;height:53.111px;--drift:30s;--pulse:5.4s;--d:-1.2s;--dx:-14px;--dy:-260px"><div class="rot" style="rotate:-21.63deg"><div class="body" style="width:19.466px;height:49.415px"><img src="assets/signin/f071f.svg" alt="" /></div></div></div><div class="jelly" style="left:calc(-57.91px);top:calc(-274.06px);width:27.111px;height:68.821px;--drift:34s;--pulse:6.0s;--d:-2.4s;--dx:8px;--dy:-230px"><div class="rot" style="rotate:0deg"><div class="body" style="width:27.111px;height:68.821px"><img src="assets/signin/fde28.svg" alt="" /></div></div></div><div class="jelly" style="left:calc(29.76px);top:calc(-224.47px);width:52.159px;height:91.573px;--drift:28s;--pulse:5.0s;--d:-0.4s;--dx:16px;--dy:-290px"><div class="rot" style="rotate:12.76deg"><div class="body" style="width:33.958px;height:86.202px"><img src="assets/signin/f924d.svg" alt="" /></div></div></div><div class="jelly" style="left:calc(-101.02px);top:calc(-288.36px);width:18.949px;height:48.101px;--drift:36s;--pulse:6.4s;--d:-3.0s;--dx:-8px;--dy:-210px"><div class="rot" style="rotate:0deg"><div class="body" style="width:18.949px;height:48.101px"><img src="assets/signin/97ebd.svg" alt="" /></div></div></div><div class="jelly tiny" style="left:calc(-182.00px);top:calc(-200.35px);width:13.329px;height:19.304px;opacity:0.3;--drift:40s;--pulse:6.8s;--d:-1.8s;--dx:4px;--dy:-140px"><div class="body" style="width:13.329px;height:19.304px"><img src="assets/signin/ce5ea.svg" alt="" style="inset:30.6% 32.92% 13.78% 26.2%" /><img src="assets/signin/8e25d.svg" alt="" style="inset:30.85% -0.01% -0.02% 0.01%" /><img src="assets/signin/cb412.svg" alt="" style="inset:26.74% 5.04% 1.28% 2.39%" /><img src="assets/signin/e4638.svg" alt="" style="inset:27.39% 22.63% 61.84% 15.32%" /><img src="assets/signin/f950f.svg" alt="" style="inset:0 27.66% 69.38% 19.36%" /><img src="assets/signin/8f4d9.svg" alt="" style="inset:1.72% 38.56% 85.62% 26.47%" /></div></div><div class="jelly tiny flip" style="left:calc(-377.00px);top:calc(258.00px);width:21px;height:19px;opacity:0.3;--drift:44s;--pulse:7.2s;--d:-3.6s;--dx:6px;--dy:-120px"><div class="body" style="width:21px;height:19px"><img src="assets/signin/74e4b.svg" alt="" style="inset:30.6% 32.92% 13.78% 26.2%" /><img src="assets/signin/4910f.svg" alt="" style="inset:30.85% -0.01% -0.02% 0.01%" /><img src="assets/signin/d0510.svg" alt="" style="inset:26.74% 5.04% 1.28% 2.39%" /><img src="assets/signin/f02a9.svg" alt="" style="inset:27.39% 22.63% 61.84% 15.32%" /><img src="assets/signin/577c9.svg" alt="" style="inset:0 27.66% 69.38% 19.36%" /><img src="assets/signin/627da.svg" alt="" style="inset:1.72% 38.56% 85.62% 26.47%" /></div></div><div class="jelly tiny" style="left:calc(106.00px);top:calc(-187.30px);width:13.329px;height:19.304px;opacity:0.3;--drift:38s;--pulse:6.6s;--d:-0.9s;--dx:-6px;--dy:-150px"><div class="body" style="width:13.329px;height:19.304px"><img src="assets/signin/ce5ea.svg" alt="" style="inset:30.6% 32.92% 13.78% 26.2%" /><img src="assets/signin/8e25d.svg" alt="" style="inset:30.85% -0.01% -0.02% 0.01%" /><img src="assets/signin/cb412.svg" alt="" style="inset:26.74% 5.04% 1.28% 2.39%" /><img src="assets/signin/e4638.svg" alt="" style="inset:27.39% 22.63% 61.84% 15.32%" /><img src="assets/signin/f950f.svg" alt="" style="inset:0 27.66% 69.38% 19.36%" /><img src="assets/signin/8f4d9.svg" alt="" style="inset:1.72% 38.56% 85.62% 26.47%" /></div></div><div class="jelly tiny" style="left:calc(-93.04px);top:calc(-173.63px);width:29.624px;height:42.904px;opacity:0.1;--drift:42s;--pulse:7.0s;--d:-2.2s;--dx:4px;--dy:-130px"><div class="body" style="width:29.624px;height:42.904px"><img src="assets/signin/72280.svg" alt="" style="inset:30.6% 32.92% 13.78% 26.2%" /><img src="assets/signin/75a7a.svg" alt="" style="inset:30.85% -0.01% -0.02% 0.01%" /><img src="assets/signin/de615.svg" alt="" style="inset:26.74% 5.04% 1.28% 2.39%" /><img src="assets/signin/f35a6.svg" alt="" style="inset:27.39% 22.63% 61.84% 15.32%" /><img src="assets/signin/2ee1e.svg" alt="" style="inset:0 27.66% 69.38% 19.36%" /><img src="assets/signin/cfe3a.svg" alt="" style="inset:1.72% 38.56% 85.62% 26.47%" /></div></div><div class="bubble" style="left:calc(57.43px);top:calc(-141.50px)"><img src="assets/signin/55dfb.svg" alt="" /></div></div>
+  <div class="v">
+    <section class="card" aria-live="polite" aria-busy="true">
       <h2>Signing you in…</h2>
-      <p class="dim">Redirecting to Mermaid Chart…</p>
-      <ul class="bullets">
+      <p>Redirecting to Mermaid Chart…</p>
+      <ul class="facts">
         <li>Create a key for each app, script or agent</li>
         <li>See credits used per key and endpoint</li>
         <li>Plan allowance is used first, then purchased credits</li>
       </ul>
     </section>
-    <script>setTimeout(function () { location.href = "get-started.html"; }, 3600);</script>
   </div>
 </div>
+<script>if (!/[?&]stay=1/.test(location.search)) setTimeout(function () { location.href = "get-started.html"; }, 3600);</script>
 </body>
 </html>

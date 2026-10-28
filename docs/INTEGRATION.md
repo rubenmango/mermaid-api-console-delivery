@@ -30,7 +30,7 @@ Static HTML prototype of the API console, customer and org admin (Coral / Storm 
 
 | Screen | Live file | Figma node |
 |---|---|---|
-| Login · loading | `login.html` · `login-loading.html` | `141:3927` |
+| Login · signing in | `login.html` · `login-loading.html` | `141:3927` · signing in `233:96981` |
 | Get started · row menu | `get-started.html` · `get-started-menu.html` | `141:3955` |
 | Keys + new key dialog | `keys.html` / `?new=1` | `141:4102` / `141:4076` |
 | Key detail · filtered · empty · revoked | `key-detail*.html` | `141:4165` |
