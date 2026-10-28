@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mermaid API — Account menu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="console.css?v=7" />
+</head>
+<body data-mode="customer">
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><img src="assets/mermaid-logo.svg" alt="" /><span>API console</span></div>
+  <div class="nav-group"><a class="nav" href="overview.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4 16V8.5l6-4.5 6 4.5V16h-4v-4H8v4H4Z"/></svg>Dashboard</a></div>
+  <p class="nav-label">Access</p>
+  <div class="nav-group"><a class="nav" href="keys.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M7 13a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm3-3h7.5M15 10v2.5M17.5 10v2"/></svg>Keys<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a></div>
+  <p class="nav-label">Spend</p>
+  <div class="nav-group">
+    <a class="nav" href="usage.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4.5 5.5c0-1.1 2.5-2 5.5-2s5.5.9 5.5 2-2.5 2-5.5 2-5.5-.9-5.5-2Zm0 0v9c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2v-9M4.5 10c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2"/></svg>Usage<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+    <a class="nav" href="billing.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M3.5 5.5h13v9h-13v-9Zm0 3h13"/></svg>Billing<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+  </div>
+  <p class="nav-label">Resources</p>
+  <div class="nav-group"><a class="nav" href="docs.html" target="_blank" rel="noopener"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M10 5.5C8.5 4.5 6 4 3.5 4.5v10c2.5-.5 5 0 6.5 1m0-10c1.5-1 4-1.5 6.5-1v10c-2.5-.5-5 0-6.5 1m0-10v10"/></svg>Docs<span class="ext"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M11.5 4.5h4v4m0-4-6 6M14 11.5v4H4.5V6h4"/></svg></span></a></div>
+  <div class="spacer"></div>
+  <div class="sidebar-divider"></div>
+  <div class="account-wrap">
+    <div class="popover account-menu open" id="account-menu" role="menu">
+      <div class="hdr"><img src="assets/avatar.png" alt="" /><div><strong>Ruben</strong><em>ruben@mermaidchart.com</em></div></div>
+      <hr />
+      <a href="settings.html">Settings</a>
+      <a href="index.html">Back to Mermaid Chart</a>
+      <hr />
+      <a href="login.html">Log out</a>
+    </div>
+    <button class="account-row" type="button" id="account" aria-haspopup="menu" aria-expanded="true">
+      <img class="avatar" src="assets/avatar.png" alt="" />
+      <span class="meta"><strong>Ruben</strong><em>ruben@mermaidchart.com</em></span>
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M5.5 8 10 12.5 14.5 8"/></svg>
+    </button>
+  </div>
+</aside>
+<div class="main">
+<header class="topbar">
+  <div class="breadcrumb">Settings / Email notifications</div>
+  <div class="search-wrap"><label class="search"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M9 14.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Zm4-1.5 3.5 3.5"/></svg><input type="search" placeholder="Search console…" aria-label="Search console" autocomplete="off" /></label></div>
+  <div class="top-actions">
+    <nav class="mode-toggle" aria-label="View as">
+      <a href="overview.html" aria-current="page" class="on">User</a><a href="admin-overview.html">Admin</a>
+    </nav>
+    <span class="credits-pill">250 credits</span>
+    <a class="btn secondary" href="docs.html" target="_blank" rel="noopener">Documentation <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M11.5 4.5h4v4m0-4-6 6M14 11.5v4H4.5V6h4"/></svg></a>
+  </div>
+</header>
+<main class="content">
+
+  <div class="title-row">
+    <div class="grow"><h1>Settings</h1><p class="sub">Notifications for your Mermaid API account.</p></div>
+    
+  </div>
+  <section class="card">
+    <div class="card-head"><h2>Email notifications</h2><p class="sub-right">Sent to ruben@mermaidchart.com.</p></div>
+    <div style="padding:4px 0">
+      <div class="toggle-head"><div class="copy stacked"><h3>Low balance</h3><p>When your balance falls under 25 credits.</p></div><button class="switch" type="button" aria-pressed="true" aria-label="Low balance" data-toggle-toast="Low balance emails on|Low balance emails off"></button></div><div class="toggle-head"><div class="copy stacked"><h3>Key created</h3><p>When a new key is created on your account.</p></div><button class="switch" type="button" aria-pressed="true" aria-label="Key created" data-toggle-toast="Key created emails on|Key created emails off"></button></div><div class="toggle-head"><div class="copy stacked"><h3>Credits expiring</h3><p>30 and 7 days before your purchased credits expire.</p></div><button class="switch" type="button" aria-pressed="true" aria-label="Credits expiring" data-toggle-toast="Credits expiring emails on|Credits expiring emails off"></button></div><div class="toggle-head"><div class="copy stacked"><h3>Allowance spent</h3><p>When this month’s plan allowance runs out.</p></div><button class="switch" type="button" aria-pressed="false" aria-label="Allowance spent" data-toggle-toast="Allowance spent emails on|Allowance spent emails off"></button></div><div class="toggle-head"><div class="copy stacked"><h3>Top-up succeeded</h3><p>A receipt after each top-up.</p></div><button class="switch" type="button" aria-pressed="true" aria-label="Top-up succeeded" data-toggle-toast="Top-up succeeded emails on|Top-up succeeded emails off"></button></div><div class="toggle-head"><div class="copy stacked"><h3>Top-up failed</h3><p>When a top-up payment doesn’t go through.</p></div><button class="switch" type="button" aria-pressed="true" aria-label="Top-up failed" data-toggle-toast="Top-up failed emails on|Top-up failed emails off"></button></div>
+    </div>
+  </section>
+
+</main></div></div>
+
+<script src="console.js?v=7"></script>
+</body>
+</html>

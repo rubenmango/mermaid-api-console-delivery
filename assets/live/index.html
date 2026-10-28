@@ -6,45 +6,24 @@
 <title>Mermaid API console · v3</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
-body{margin:0;font-family:Inter,system-ui,sans-serif;background:#111014;color:#f2f3f7}
-.wrap{max-width:960px;margin:0 auto;padding:40px 24px 80px}
-h1{font-size:28px;margin:0 0 8px}
-.lede{color:#8585a4;max-width:640px;line-height:1.5}
-.section{margin:28px 0 10px;font-size:11px;font-weight:650;letter-spacing:.08em;text-transform:uppercase;color:#8585a4}
-.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
-.tile{display:block;padding:16px;border-radius:12px;background:#1c1b21;border:1px solid #3a3944;text-decoration:none;color:inherit}
-.tile:hover{border-color:#aeaec2}
-.tile.api{border-color:#e0095f}
-.tile strong{display:block;margin-bottom:6px;font-size:14px}
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:#18171c;color:#f2f3f7}
+.wrap{max-width:1040px;margin:0 auto;padding:40px 24px 80px}
+h1{font-size:28px;margin:0 0 8px;font-weight:600}
+.lede{color:#8585a4;max-width:680px;line-height:1.5;font-size:14px}
+.lede a{color:#f2f3f7}
+.section{margin:32px 0 10px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#8585a4}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.tile{display:block;padding:14px 16px;border-radius:10px;background:#242329;border:1px solid #3a3944;text-decoration:none;color:inherit;transition:border-color .15s ease,transform .15s ease}
+.tile:hover{border-color:#8585a4;transform:translateY(-1px)}
+.tile strong{display:block;margin-bottom:4px;font-size:14px;font-weight:500}
 .tile span{font-size:12px;color:#8585a4;line-height:1.4}
-.note{margin-top:28px;font-size:13px;color:#8585a4}
-.note a{color:#f2f3f7}
 </style>
 </head>
 <body>
 <div class="wrap">
   <h1>API console · v3</h1>
-  <p class="lede">From handoff + Figma <code>141:3891</code> (Non-admin · v3). v2 stays at <a href="../mermaid-api-v2/">mermaid-api-v2/</a>. Spec: <a href="../mermaid-api-console-handoff.md">mermaid-api-console-handoff.md</a>.</p>
-  <div class="section">Entry</div>
-  <div class="tiles">
-    <a class="tile api" href="http://127.0.0.1:5173/dashboard"><strong>Chart dashboard</strong><span>API keys entry in MasterBar / Developer mode.</span></a>
-    <a class="tile" href="login.html"><strong>Login</strong><span>Log in with Mermaid Chart.</span></a>
-  </div>
-  <div class="section">Customer</div>
-  <div class="tiles">
-    <a class="tile api" href="get-started.html"><strong>Get started</strong><span>Agent card + manual setup (no key shown).</span></a>
-    <a class="tile" href="keys.html"><strong>Keys</strong><span>Masked keys + row menu.</span></a>
-    <a class="tile" href="keys.html?new=1"><strong>Your new key</strong><span>Shown-once modal.</span></a>
-    <a class="tile" href="key-detail.html"><strong>Key detail</strong><span>Usage chart + recent calls.</span></a>
-    <a class="tile" href="overview.html"><strong>Overview · returning</strong><span>Expiry alert + credits + calls.</span></a>
-    <a class="tile" href="usage.html"><strong>Usage · free</strong><span>Allowance + plans table.</span></a>
-    <a class="tile" href="usage-org.html"><strong>Usage · org</strong><span>Share of org pool.</span></a>
-    <a class="tile" href="billing.html"><strong>Billing</strong><span>Balance, packs, auto top-up, limits.</span></a>
-    <a class="tile" href="billing-success.html"><strong>Payment complete</strong><span>Success alert.</span></a>
-    <a class="tile" href="billing-purchases.html"><strong>Purchases</strong><span>Invoices table.</span></a>
-    <a class="tile" href="settings.html"><strong>Settings</strong><span>Email notification toggles.</span></a>
-  </div>
-  <p class="note">Admin · v3 is phase 2 in the handoff — still available in <a href="../mermaid-api-v2/">v2</a> until rebuilt.</p>
+  <p class="lede">One page per exported frame (Downloads/API + Entry), customer Figma <code>141:3891</code> and Admin <code>206:12847</code>. Switch personal ↔ Acme admin ↔ Acme member from the account menu on any Acme page. Spec: <a href="https://github.com/Mermaid-Chart/app-team/tree/main/handoffs/mermaid-api-console">handoff</a>.</p>
+  <div class="section">Entry · Mermaid Chart</div><div class="tiles"><a class="tile" href="index.html"><strong>Chart dashboard</strong><span>A · header button, B · account menu, global search.</span></a><a class="tile" href="login.html"><strong>Login</strong><span>Log in with Mermaid Chart.</span></a><a class="tile" href="login-loading.html"><strong>Login · loading</strong><span>Signing you in… → Get started.</span></a></div><div class="section">Get started & keys</div><div class="tiles"><a class="tile" href="get-started.html"><strong>Get started</strong><span>Agent prompt + manual setup. Copy → Copied.</span></a><a class="tile" href="get-started-keys.html"><strong>Get started · keys</strong><span>Keys table once keys exist.</span></a><a class="tile" href="get-started-menu.html"><strong>Get started · key row menu</strong><span>Rename / Copy key ID / Revoke.</span></a><a class="tile" href="keys.html?new=1"><strong>Keys · new key</strong><span>Shown-once modal → row appears.</span></a><a class="tile" href="key-detail.html"><strong>Key detail</strong><span>Chart, endpoints, recent calls (filterable).</span></a><a class="tile" href="key-detail-filtered.html"><strong>Key detail · filtered</strong><span>Status: Refused.</span></a><a class="tile" href="key-detail-empty.html"><strong>Key detail · filtered · no matches</strong><span>No refused calls in the last 30 days.</span></a><a class="tile" href="key-detail-revoked.html"><strong>Key detail · revoked</strong><span>Alert + Restore.</span></a></div><div class="section">Dashboard & usage</div><div class="tiles"><a class="tile" href="overview-a.html"><strong>Returning dashboard · A</strong><span>No alert.</span></a><a class="tile" href="overview.html"><strong>Returning dashboard · B (pick)</strong><span>Expiry alert.</span></a><a class="tile" href="usage.html"><strong>Usage · free plan</strong><span>Allowance + plans table.</span></a><a class="tile" href="usage-org.html"><strong>Usage · org member</strong><span>Acme pool share. Account menu = switcher.</span></a></div><div class="section">Billing</div><div class="tiles"><a class="tile" href="billing.html"><strong>Just started</strong><span>250 of 250.</span></a><a class="tile" href="billing-half.html"><strong>Half used</strong><span>125 of 250.</span></a><a class="tile" href="billing-half-purchased.html"><strong>Half used + purchased</strong><span>5,125.</span></a><a class="tile" href="billing-allowance-spent.html"><strong>Allowance spent</strong><span>3,200 purchased.</span></a><a class="tile" href="billing-low.html"><strong>Low balance</strong><span>Under 25 credits.</span></a><a class="tile" href="billing-empty.html"><strong>Empty</strong><span>Calls refused.</span></a><a class="tile" href="billing-custom.html"><strong>Custom amount</strong><span>12,500 → multiple of 1,000.</span></a><a class="tile" href="billing-checkout.html"><strong>Stripe Checkout</strong><span>Confirm modal.</span></a><a class="tile" href="billing-upgrade.html"><strong>Upgrade plan</strong><span>Upgrade modal.</span></a><a class="tile" href="billing-success.html"><strong>Payment complete</strong><span>Success alert.</span></a><a class="tile" href="billing-autotopup-on.html"><strong>Auto top-up on</strong><span>Pack + threshold form.</span></a><a class="tile" href="billing-autotopup-active.html"><strong>Auto top-up active</strong><span>Summary + Edit.</span></a><a class="tile" href="billing-settings.html"><strong>Settings on/off</strong><span>Spend limit on, low-balance off.</span></a><a class="tile" href="billing-purchases.html"><strong>Purchases</strong><span>Invoices.</span></a><a class="tile" href="billing-purchases-empty.html"><strong>Purchases · empty</strong><span>Buy credits.</span></a></div><div class="section">Settings</div><div class="tiles"><a class="tile" href="settings.html"><strong>Settings · email notifications</strong><span>Six toggles.</span></a><a class="tile" href="settings-menu.html"><strong>Account menu open</strong><span>Settings / Back / Log out.</span></a></div><div class="section">Admin · v3</div><div class="tiles"><a class="tile" href="admin-overview.html"><strong>Returning dashboard · admin</strong><span>Org pool, spend, limits, refused.</span></a><a class="tile" href="admin-switcher.html"><strong>Switcher · admin / member</strong><span>Workspace switcher open.</span></a><a class="tile" href="admin-keys.html"><strong>All keys</strong><span>Export CSV.</span></a><a class="tile" href="admin-overrides.html"><strong>Overrides</strong><span>Save overrides.</span></a><a class="tile" href="admin-revoke.html"><strong>Revoke member keys</strong><span>Confirm dialog.</span></a><a class="tile" href="admin-consumption.html"><strong>Consumption</strong><span>/viewconsumption.</span></a><a class="tile" href="admin-pool.html"><strong>Credit pool split by member</strong><span>Live allocated / unallocated.</span></a><a class="tile" href="admin-burst.html"><strong>Burst limits</strong><span>Org default + overrides.</span></a><a class="tile" href="admin-billing.html"><strong>Billing (admin)</strong><span>No Figma frame — composed.</span></a></div>
 </div>
 </body>
 </html>

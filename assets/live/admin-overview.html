@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mermaid API — Admin overview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="console.css?v=7" />
+</head>
+<body data-mode="admin">
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><img src="assets/mermaid-logo.svg" alt="" /><span>API console</span></div>
+  <div class="nav-group"><a class="nav active" href="admin-overview.html" aria-current="page"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4 16V8.5l6-4.5 6 4.5V16h-4v-4H8v4H4Z"/></svg>Dashboard</a></div>
+  <p class="nav-label">Access</p>
+  <div class="nav-group">
+    <a class="nav" href="admin-keys.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M7 13a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm3-3h7.5M15 10v2.5M17.5 10v2"/></svg>All Keys<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+    <a class="nav" href="admin-overrides.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M10 3.2 15.5 5v4.6c0 3.4-2.3 6-5.5 7.2-3.2-1.2-5.5-3.8-5.5-7.2V5L10 3.2Z"/></svg>Overrides<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+  </div>
+  <p class="nav-label">Spend</p>
+  <div class="nav-group">
+    <a class="nav" href="admin-consumption.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4.5 5.5c0-1.1 2.5-2 5.5-2s5.5.9 5.5 2-2.5 2-5.5 2-5.5-.9-5.5-2Zm0 0v9c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2v-9M4.5 10c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2"/></svg>Consumption<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+    <a class="nav" href="admin-billing.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M3.5 5.5h13v9h-13v-9Zm0 3h13"/></svg>Billing<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+    <a class="nav" href="admin-pool.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M7.5 9.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Zm-4 6c0-2.2 1.8-3.5 4-3.5s4 1.3 4 3.5m2-6.2a2 2 0 1 0 0-4m1.5 10.2c0-1.6-.8-2.7-2-3.2"/></svg>Credit pool<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+    <a class="nav" href="admin-burst.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M10 16.5a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13ZM10 6.5V10l2.5 1.5"/></svg>Burst limits<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+  </div>
+  <p class="nav-label">Resources</p>
+  <div class="nav-group"><a class="nav" href="docs.html" target="_blank" rel="noopener"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M10 5.5C8.5 4.5 6 4 3.5 4.5v10c2.5-.5 5 0 6.5 1m0-10c1.5-1 4-1.5 6.5-1v10c-2.5-.5-5 0-6.5 1m0-10v10"/></svg>Docs<span class="ext"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M11.5 4.5h4v4m0-4-6 6M14 11.5v4H4.5V6h4"/></svg></span></a></div>
+  <div class="spacer"></div>
+  <div class="sidebar-divider"></div>
+  <div class="account-wrap">
+    <div class="popover account-menu switcher" id="account-menu" role="menu">
+      <a href="overview.html"><span class="ws"><strong>Personal</strong><em>ruben@mermaidchart.com</em></span></a>
+      <a href="admin-overview.html" class="active" aria-current="true"><span class="ws"><strong>Acme Inc · Admin view</strong><em>All keys, consumption, overrides</em></span></a>
+      <a href="usage-org.html"><span class="ws"><strong>Acme Inc · Member view</strong><em>Only your keys and share</em></span></a>
+    </div>
+    <button class="account-row" type="button" id="account" aria-haspopup="menu" aria-expanded="false">
+      <img class="avatar" src="assets/avatar.png" alt="" />
+      <span class="meta"><strong>Ruben</strong><em>Acme Inc · Admin</em></span>
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M5.5 8 10 12.5 14.5 8"/></svg>
+    </button>
+  </div>
+</aside>
+<div class="main">
+<header class="topbar">
+  <div class="breadcrumb">Dashboard / Overview</div>
+  <div class="search-wrap"><label class="search"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M9 14.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Zm4-1.5 3.5 3.5"/></svg><input type="search" placeholder="Search console…" aria-label="Search console" autocomplete="off" /></label></div>
+  <div class="top-actions">
+    <nav class="mode-toggle" aria-label="View as">
+      <a href="overview.html">User</a><a href="admin-overview.html" aria-current="page" class="on">Admin</a>
+    </nav>
+    <span class="credits-pill">250 credits</span>
+    <a class="btn secondary" href="docs.html" target="_blank" rel="noopener">Documentation <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M11.5 4.5h4v4m0-4-6 6M14 11.5v4H4.5V6h4"/></svg></a>
+  </div>
+</header>
+<main class="content">
+
+  <div class="title-row">
+    <div class="grow"><h1>Overview</h1><p class="sub">Acme Inc · admin view of the API this month.</p></div>
+    <button class="btn primary" type="button" data-open="invite-modal">Invite members</button>
+  </div>
+  <section class="card">
+    <div class="card-head"><h2>Org pool</h2><p class="sub-inline">Acme Inc · shared by 5 members</p><div class="right"><a class="btn raised" href="admin-pool.html">Credit pool</a></div></div>
+    <div class="card-body">
+      <div class="split-2" style="gap:24px">
+        <div class="pool-col">
+          <span class="k">Pool allowance left</span>
+          <p class="pool-num" data-count="640">640 <span>of 2,000 · Premium plan</span></p>
+          <div class="meter" role="img"><span class="seg plan" style="flex:1"><i style="width:32%"></i></span></div>
+          <p class="fine">Split between 5 members. Resets Nov 1, 00:00 UTC.</p>
+        </div>
+        <div class="pool-col">
+          <span class="k">Purchased (shared)</span>
+          <p class="pool-num" data-count="10000">10,000 <span>credits, used after member shares</span></p>
+          <div class="packs-list"><span class="expiring">4,000</span><span class="expiring">expire Dec 2, 2026</span><span>6,000</span><span class="muted">expire Jun 18, 2027</span></div>
+          <p class="fine">Packs last 12 months; the oldest pack is used first.</p>
+        </div>
+      </div>
+      <div class="alert warn" role="status"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M10 3.5 17.5 16.5h-15L10 3.5Zm0 5V12m0 2.2h.01"/></svg><div class="grow">4,000 shared credits expire Dec 2, 2026 Member shares are used first, so most of this pack may lapse at October’s pace (1,360 a month).</div></div>
+    </div>
+  </section>
+  <div class="split-2">
+    <section class="card">
+      <div class="card-head"><h2>Spend by member</h2><p class="sub-inline">Credits charged, October vs September</p><div class="right"><a class="btn raised" href="admin-consumption.html">View consumption</a></div></div>
+      <div class="card-body"><div class="pairs"><div class="pair-row"><span class="who">Ruben M.</span><span class="pair"><i class="now" style="width:42%"></i><i class="prev" style="width:36%"></i></span><span class="num">212</span></div><div class="pair-row"><span class="who">Ana S.</span><span class="pair"><i class="now" style="width:94%"></i><i class="prev" style="width:98%"></i></span><span class="num">468</span></div><div class="pair-row"><span class="who">Ben O.</span><span class="pair"><i class="now" style="width:60%"></i><i class="prev" style="width:45%"></i></span><span class="num">300</span></div><div class="pair-row"><span class="who">Chloé M.</span><span class="pair"><i class="now" style="width:46%"></i><i class="prev" style="width:50%"></i></span><span class="num">230</span></div><div class="pair-row"><span class="who">Dev P.</span><span class="pair"><i class="now" style="width:30%"></i><i class="prev" style="width:24%"></i></span><span class="num">150</span></div></div>
+        <div class="legend"><span><i class="dot plan"></i>October (this month)</span><span><i class="dot purchased"></i>September</span></div></div>
+    </section>
+    <section class="card">
+      <div class="card-head"><div class="stack-title"><h2>Members near their limits</h2><p>Over 75% of an override, share or burst limit</p></div><div class="right"><a class="btn raised" href="admin-overrides.html">Overrides</a></div></div>
+      <table><thead><tr><th>Member</th><th>Limit</th><th>Used</th><th></th><th></th></tr></thead><tbody><tr><td><span class="two"><strong>Ben Ortiz</strong><em>member override</em></span></td><td>300 a month</td><td>300</td><td style="width:26%"><span class="share"><i style="width:100%"></i></span></td><td><span class="pill warn"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 2.5 18.5 17h-17L10 2.5Zm-.8 5.5v4.5h1.6V8H9.2Zm0 6v1.6h1.6V14H9.2Z"/></svg>Exhausted</span></td></tr><tr><td><span class="two"><strong>Ana Silva</strong><em>Release notes bot</em></span></td><td>200 a month</td><td>186</td><td style="width:26%"><span class="share"><i style="width:93%"></i></span></td><td><span class="pill warn"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 2.5 18.5 17h-17L10 2.5Zm-.8 5.5v4.5h1.6V8H9.2Zm0 6v1.6h1.6V14H9.2Z"/></svg>Low</span></td></tr><tr><td><span class="two"><strong>Dev Patel</strong><em>burst override</em></span></td><td>120 / min</td><td>114</td><td style="width:26%"><span class="share"><i style="width:95%"></i></span></td><td><span class="pill warn"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 2.5 18.5 17h-17L10 2.5Zm-.8 5.5v4.5h1.6V8H9.2Zm0 6v1.6h1.6V14H9.2Z"/></svg>Low</span></td></tr><tr><td><span class="two"><strong>Chloé Martin</strong><em>pool share</em></span></td><td>300 a month</td><td>230</td><td style="width:26%"><span class="share"><i style="width:77%"></i></span></td><td><span class="pill ok"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14Zm-3-7 2 2 4-4"/></svg>Live</span></td></tr></tbody></table>
+    </section>
+  </div>
+  <section class="card">
+    <div class="card-head"><h2>Top keys across org</h2><p class="sub-inline">October 2026 · all members</p><div class="right"><a class="btn raised" href="admin-keys.html">All keys</a></div></div>
+    <table><thead><tr><th>Key</th><th>Member</th><th>Last 8 days</th><th>Credits</th><th></th></tr></thead><tbody><tr><td>Release notes bot</td><td class="muted">Ana Silva</td><td><span class="spark"><i style="height:4px;animation-delay:0ms"></i><i style="height:6px;animation-delay:30ms"></i><i style="height:7px;animation-delay:60ms"></i><i style="height:8px;animation-delay:90ms"></i><i style="height:9px;animation-delay:120ms"></i><i style="height:10px;animation-delay:150ms"></i><i style="height:12px;animation-delay:180ms"></i><i style="height:13px;animation-delay:210ms"></i></span></td><td>412</td><td class="rel" data-no-row-nav style="width:48px">
+            <button class="btn icon bare" type="button" data-kebab="tk0" aria-label="More" aria-haspopup="menu" aria-expanded="false"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 5.8a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm0 5.4a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm0 5.4a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Z"/></svg></button>
+            <div class="popover kebab-menu" id="tk0" role="menu"><button type="button" data-toast="success|Key ID copied">Copy key ID</button><button type="button" onclick="location.href='admin-overrides.html'">Set override</button><hr /><button type="button" class="danger" data-row-revoke>Revoke key</button></div>
+          </td></tr><tr><td>Diagram export job</td><td class="muted">Ben Ortiz</td><td><span class="spark"><i style="height:10px;animation-delay:0ms"></i><i style="height:12px;animation-delay:30ms"></i><i style="height:12px;animation-delay:60ms"></i><i style="height:13px;animation-delay:90ms"></i><i style="height:13px;animation-delay:120ms"></i><i style="height:12px;animation-delay:150ms"></i><i style="height:13px;animation-delay:180ms"></i><i style="height:2px;animation-delay:210ms"></i></span></td><td>300</td><td class="rel" data-no-row-nav style="width:48px">
+            <button class="btn icon bare" type="button" data-kebab="tk1" aria-label="More" aria-haspopup="menu" aria-expanded="false"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 5.8a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm0 5.4a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm0 5.4a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Z"/></svg></button>
+            <div class="popover kebab-menu" id="tk1" role="menu"><button type="button" data-toast="success|Key ID copied">Copy key ID</button><button type="button" onclick="location.href='admin-overrides.html'">Set override</button><hr /><button type="button" class="danger" data-row-revoke>Revoke key</button></div>
+          </td></tr><tr><td>CI render bot</td><td class="muted">Ruben Mangorrinha</td><td><span class="spark"><i style="height:6px;animation-delay:0ms"></i><i style="height:8px;animation-delay:30ms"></i><i style="height:7px;animation-delay:60ms"></i><i style="height:9px;animation-delay:90ms"></i><i style="height:8px;animation-delay:120ms"></i><i style="height:10px;animation-delay:150ms"></i><i style="height:11px;animation-delay:180ms"></i><i style="height:12px;animation-delay:210ms"></i></span></td><td>149</td><td class="rel" data-no-row-nav style="width:48px">
+            <button class="btn icon bare" type="button" data-kebab="tk2" aria-label="More" aria-haspopup="menu" aria-expanded="false"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 5.8a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm0 5.4a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm0 5.4a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Z"/></svg></button>
+            <div class="popover kebab-menu" id="tk2" role="menu"><button type="button" data-toast="success|Key ID copied">Copy key ID</button><button type="button" onclick="location.href='admin-overrides.html'">Set override</button><hr /><button type="button" class="danger" data-row-revoke>Revoke key</button></div>
+          </td></tr><tr><td>Docs preview</td><td class="muted">Ruben Mangorrinha</td><td><span class="spark"><i style="height:2px;animation-delay:0ms"></i><i style="height:4px;animation-delay:30ms"></i><i style="height:3px;animation-delay:60ms"></i><i style="height:5px;animation-delay:90ms"></i><i style="height:4px;animation-delay:120ms"></i><i style="height:6px;animation-delay:150ms"></i><i style="height:5px;animation-delay:180ms"></i><i style="height:7px;animation-delay:210ms"></i></span></td><td>63</td><td class="rel" data-no-row-nav style="width:48px">
+            <button class="btn icon bare" type="button" data-kebab="tk3" aria-label="More" aria-haspopup="menu" aria-expanded="false"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 5.8a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm0 5.4a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm0 5.4a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Z"/></svg></button>
+            <div class="popover kebab-menu" id="tk3" role="menu"><button type="button" data-toast="success|Key ID copied">Copy key ID</button><button type="button" onclick="location.href='admin-overrides.html'">Set override</button><hr /><button type="button" class="danger" data-row-revoke>Revoke key</button></div>
+          </td></tr><tr><td>Local dev</td><td class="muted">Ana Silva</td><td><span class="spark"><i style="height:2px;animation-delay:0ms"></i><i style="height:3px;animation-delay:30ms"></i><i style="height:2px;animation-delay:60ms"></i><i style="height:4px;animation-delay:90ms"></i><i style="height:3px;animation-delay:120ms"></i><i style="height:2px;animation-delay:150ms"></i><i style="height:4px;animation-delay:180ms"></i><i style="height:3px;animation-delay:210ms"></i></span></td><td>56</td><td class="rel" data-no-row-nav style="width:48px">
+            <button class="btn icon bare" type="button" data-kebab="tk4" aria-label="More" aria-haspopup="menu" aria-expanded="false"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 5.8a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm0 5.4a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm0 5.4a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Z"/></svg></button>
+            <div class="popover kebab-menu" id="tk4" role="menu"><button type="button" data-toast="success|Key ID copied">Copy key ID</button><button type="button" onclick="location.href='admin-overrides.html'">Set override</button><hr /><button type="button" class="danger" data-row-revoke>Revoke key</button></div>
+          </td></tr></tbody></table>
+  </section>
+  <section class="card">
+    <div class="card-head"><h2>Recent refused calls</h2><p class="sub-inline">14 refused this month · refused calls cost 0</p><div class="right"><a class="btn raised" href="admin-consumption.html">View consumption</a></div></div>
+    <table><thead><tr><th>Time</th><th>Member</th><th>Key</th><th>Endpoint</th><th>Reason</th><th>Credits</th></tr></thead><tbody><tr><td class="muted">14:31</td><td>Ben Ortiz</td><td class="muted">Diagram export job</td><td class="mono">POST /v1/render</td><td><span class="pill warn"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 2.5 18.5 17h-17L10 2.5Zm-.8 5.5v4.5h1.6V8H9.2Zm0 6v1.6h1.6V14H9.2Z"/></svg>No credits 402</span></td><td>0</td></tr><tr><td class="muted">14:12</td><td>Dev Patel</td><td class="muted">Docs bot</td><td class="mono">POST /v1/validate</td><td><span class="pill warn"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 2.5 18.5 17h-17L10 2.5Zm-.8 5.5v4.5h1.6V8H9.2Zm0 6v1.6h1.6V14H9.2Z"/></svg>Rate limit 429</span></td><td>0</td></tr><tr><td class="muted">13:58</td><td>Ben Ortiz</td><td class="muted">Diagram export job</td><td class="mono">POST /v1/render</td><td><span class="pill warn"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 2.5 18.5 17h-17L10 2.5Zm-.8 5.5v4.5h1.6V8H9.2Zm0 6v1.6h1.6V14H9.2Z"/></svg>No credits 402</span></td><td>0</td></tr><tr><td class="muted">11:20</td><td>Ana Silva</td><td class="muted">Release notes bot</td><td class="mono">POST /v1/render</td><td><span class="pill warn"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 2.5 18.5 17h-17L10 2.5Zm-.8 5.5v4.5h1.6V8H9.2Zm0 6v1.6h1.6V14H9.2Z"/></svg>Key limit 402</span></td><td>0</td></tr><tr><td class="muted">09:47</td><td>Dev Patel</td><td class="muted">Docs bot</td><td class="mono">POST /v1/render</td><td><span class="pill warn"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 2.5 18.5 17h-17L10 2.5Zm-.8 5.5v4.5h1.6V8H9.2Zm0 6v1.6h1.6V14H9.2Z"/></svg>Rate limit 429</span></td><td>0</td></tr></tbody></table>
+  </section>
+
+</main></div></div>
+
+<div class="overlay" id="invite-modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="invite-modal-t">
+    <div class="modal-head"><h2 id="invite-modal-t">Invite members</h2><button class="btn icon" type="button" data-close aria-label="Close"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m5.5 5.5 9 9m0-9-9 9"/></svg></button></div>
+    <p class="lede">They join Acme Inc’s Mermaid API and get an equal part of the unallocated credits.</p>
+    <div class="field strong"><label for="inv-email">Emails</label><input id="inv-email" placeholder="name@acme.com, …" /></div>
+    <div class="modal-actions"><button class="btn ghost" type="button" data-close>Cancel</button><button class="btn primary" type="button" data-toast="success|Invites sent">Send invites</button></div>
+  </div>
+</div>
+<script src="console.js?v=7"></script>
+</body>
+</html>

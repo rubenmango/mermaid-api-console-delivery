@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mermaid API console — Decisions & rules</title>
+<!-- Docs chrome: Notion-plain (docs/notion-plain-docs.mdc) · judgement: docs/ruben-taste-layer.mdc · product UI: Figma Platform (system wins) -->
+<script>
+(function(){try{if(localStorage.getItem('mc-delivery-gate-v1')==='ok')return;}catch(e){}document.documentElement.classList.add('dg-locked');})();
+</script>
+<style>html.dg-locked body > *:not(#delivery-gate){visibility:hidden}</style>
+<link rel="stylesheet" href="./assets/delivery.css" />
+</head>
+<body>
+<script>
+window.DELIVERY_GATE = {
+  hash: "756027fb4eb79a876aa00ee052d2876f8c10eb834930cf93e6810af1cb8d3432",
+  storageKey: "mc-delivery-gate-v1",
+  title: "MERMAID · API CONSOLE · DELIVERY"
+};
+</script>
+<script src="./assets/gate.js"></script>
+<div class="wrap">
+  <header class="topbar">
+    <div class="topbar-left"><span class="logo" aria-hidden="true"></span> MERMAID · PLATFORM · DELIVERY</div>
+    <div class="topbar-links">
+      <a href="./index.html">Slide</a>
+      <a href="./styles.html">Styles</a>
+      <a href="./decisions.html" aria-current="page" class="on">Decisions &amp; rules</a>
+      <a href="./docs/INTEGRATION.md">Integration</a>
+      <a class="btn-primary" href="https://www.figma.com/design/SkEVtrAYLajpQjBeXLD5QU/Platform?node-id=141-3891" target="_blank" rel="noopener">Open Figma</a>
+    </div>
+  </header>
+  <div class="pill-row"><span class="tag feature">Decisions</span><span class="tag holds">Rules</span><span class="tag blocked">8 open questions</span></div>
+  <h1>Decisions &amp; rules</h1>
+  <p class="sub">What was decided, by whom, and the rules the screens follow. Meeting decisions are quoted from the Oct 27 review; prototype decisions are this delivery's calls and are marked when they need sign-off.</p>
+  <nav class="toc" aria-label="On this page">
+    <a href="#meeting">Meeting</a><a href="#reviews">Design reviews</a><a href="#prototype">Prototype calls</a>
+    <a href="#product-rules">Product rules</a><a href="#design-rules">Design rules</a><a href="#roads">Roads not taken</a><a href="#open">Open questions</a>
+  </nav>
+
+  <section id="meeting">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Meeting decisions</h2></div>
+    <p class="sec-sub">Oct 27, 2026 with Knut and Ashish. Click a frame to see it in the slide.</p>
+    
+    <div class="dec-grid"><div class="dec-card"><a href="./index.html#shot-01"><img src="./assets/screenshots/00a-chart-header-button.png" alt="" loading="lazy" /></a><div class="dec-body"><span class="n">M1</span><h3>Entry is “API keys”</h3><p>In the Chart header and global search, not only the account menu.</p></div></div><div class="dec-card"><a href="./index.html#shot-07"><img src="./assets/screenshots/04-new-key.png" alt="" loading="lazy" /></a><div class="dec-body"><span class="n">M2</span><h3>Keys shown once</h3><p>At creation only. No eye icon, no reveal later.</p></div></div><div class="dec-card"><a href="./index.html#shot-06"><img src="./assets/screenshots/03-get-started.png" alt="" loading="lazy" /></a><div class="dec-body"><span class="n">M3</span><h3>Agent prompt uses the env var</h3><p><code>MERMAID_API_KEY</code>, never the raw key.</p></div></div><div class="dec-card"><a href="./index.html#shot-14"><img src="./assets/screenshots/11-billing.png" alt="" loading="lazy" /></a><div class="dec-body"><span class="n">M4</span><h3>Flow removed from the header</h3><p>Top bar: breadcrumb, search, credits, Documentation.</p></div></div><div class="dec-card"><a href="./index.html#shot-16"><img src="./assets/screenshots/13-billing-checkout.png" alt="" loading="lazy" /></a><div class="dec-body"><span class="n">M5</span><h3>Reuse the Chart upgrade popup</h3><p>And the existing Stripe redirect.</p></div></div><div class="dec-card"><a href="./index.html#shot-17"><img src="./assets/screenshots/14-billing-success.png" alt="" loading="lazy" /></a><div class="dec-body"><span class="n">M6</span><h3>One purchased-credit pool</h3><p>Each purchase resets the pool expiry to 12 months (see open question 1).</p></div></div></div>
+  </section>
+  <section id="reviews">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Design review decisions</h2></div>
+    <p class="sec-sub">Ruben, same day.</p>
+    <div class="rule-grid three"><div class="rule-card"><h3>Low balance + auto top-up live on Billing only</h3><ul><li>The dashboard Credits card shows the combined balance and Buy credits.</li></ul></div><div class="rule-card"><h3>Get started never shows a key</h3><ul><li>One-line agent card with Copy prompt; prompt text isn't displayed.</li></ul></div><div class="rule-card"><h3>Settings through the account menu</h3><ul><li>Opened from the avatar row at the bottom of the sidebar.</li></ul></div><div class="rule-card"><h3>Breadcrumbs once, in the top bar</h3><ul><li>No second breadcrumb in the page.</li></ul></div><div class="rule-card"><h3>Data colours</h3><ul><li>Plan series deep-300, purchased deep-200, track storm-800.</li></ul></div><div class="rule-card"><h3>Account row full-bleed and square</h3><ul><li>No side insets, radius 0, flush with the bottom.</li></ul></div></div>
+  </section>
+  <section id="prototype">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Prototype calls</h2></div>
+    <p class="sec-sub">Made while building this delivery. D3 contradicts the handoff and needs an answer.</p>
+    
+    <div class="stage-rail three"><div class="stage-card"><span class="n">D1</span><h3>Admin · v3 built</h3><p class="where">All admin frames are clickable: overview, all keys, overrides, revoke, consumption, credit pool, burst limits, plus a composed Billing.</p><span class="tag holds">Shipped</span></div><div class="stage-card"><span class="n">D2</span><h3>User / Admin toggle in the top bar</h3><p class="where">Every page can switch role. The Acme account menu also switches workspace (Personal, Admin view, Member view).</p><span class="tag tweak">Confirm with design</span></div><div class="stage-card"><span class="n">D3</span><h3>Toasts for action feedback</h3><p class="where">Copy, save, rename and revoke answer with a toast. Balance, expiry and payment states stay as inline alerts. The handoff says “Never Toasts”, so this needs a yes or no.</p><span class="tag blocked">Needs decision</span></div><div class="stage-card"><span class="n">D4</span><h3>Motion system</h3><p class="where">View transitions between pages, staggered content, growing data, spring menus, reduced-motion safe.</p><span class="tag holds">Shipped</span></div><div class="stage-card"><span class="n">D5</span><h3>Header button uses a key icon</h3><p class="where">Instead of the plus in the export.</p><span class="tag holds">Shipped</span></div><div class="stage-card"><span class="n">D6</span><h3>Sign-in loading explains the console</h3><p class="where">Three “what you can do here” bullets, about 3.6 s before Get started; slow background zoom on both login screens.</p><span class="tag holds">Shipped</span></div></div>
+  </section>
+  <section id="product-rules">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Product rules</h2></div>
+    <p class="sec-sub">How the console behaves. Strings are literal; copy deck lives in the handoff.</p>
+    <div class="rule-grid three"><div class="rule-card"><h3>Keys</h3><ul><li>Full key once, right after creation; then masked <code>mmd_0889••••••b574</code>.</li><li>Key emails never include the secret.</li><li>Row menu: Rename, Copy key ID, Revoke key. Revoked keys show Restore.</li><li>Revoked: calls are refused and cost 0 credits.</li></ul></div><div class="rule-card"><h3>Agent prompt</h3><ul><li>Card: “Set up with your coding agent” · “Reads your key from MERMAID_API_KEY.”</li><li>Button Copy prompt → Copied.</li><li>Manual setup: export the key, then one <code>curl</code> to <code>/v1/render</code>.</li></ul></div><div class="rule-card"><h3>Credits</h3><ul><li>Every plan has a monthly allowance; resets the 1st, 00:00 UTC; no rollover.</li><li>Allowance first, then purchased credits.</li><li>Allowances shown: Free 25 · Basic 250 · Plus 1,000 · Premium 5,000 · Enterprise custom (to confirm).</li></ul></div><div class="rule-card"><h3>Packs</h3><ul><li>5,000 / $5 · 10,000 / $10 · 15,000 / $15 · custom in multiples of 1,000.</li><li>CTA follows the pack: “Buy 5,000 credits for $5.00”.</li><li>Stripe Checkout: confirm → Stripe → back to Billing → Payment complete alert.</li></ul></div><div class="rule-card"><h3>Auto top-up</h3><ul><li>Off by default. On: buy when the balance falls under 500.</li><li>Active: summary line + Edit.</li><li>No saved card: Stripe saves one first.</li></ul></div><div class="rule-card"><h3>Limits</h3><ul><li>Spend limit caps purchased credits per month.</li><li>Low-balance email default 25 credits (a tenth of the allowance).</li><li>Off collapses the card to its header.</li></ul></div><div class="rule-card"><h3>Members vs admins</h3><ul><li>Members: own keys, their share, org usage; no admin actions.</li><li>Admins: all keys, overrides, revoke, consumption, pool split, burst.</li><li>Admins see names and last 4 characters, never the secret.</li></ul></div><div class="rule-card"><h3>Recent calls</h3><ul><li>Filters: Status, Endpoint, Key (dashboard only).</li><li>Empty filter: “No refused calls in the last 30 days.”</li><li>Refused or failed calls cost 0 credits.</li></ul></div><div class="rule-card"><h3>Purchases</h3><ul><li>Only API credit purchases. Columns: Date, Credits, Amount, Taken back, Buyer, Invoice.</li><li>Empty: “No API credit purchases yet.”</li></ul></div></div>
+  </section>
+  <section id="design-rules">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Design rules</h2></div>
+    <p class="sec-sub">How the screens are built. Values on the Styles page.</p>
+    <div class="rule-grid two"><div class="rule-card"><h3>Foundation</h3><ul><li>Coral Foundations + Iconography; tokens over raw values.</li><li>Dark mode only.</li><li>One pink primary per screen; everything else Secondary, Ghost or Link.</li><li>No explanatory notes inside screens. Short copy, one-line subtitles.</li></ul></div><div class="rule-card"><h3>Surfaces</h3><ul><li>App, sidebar, top bar storm-975. Cards storm-950 + 1px storm-800, radius 8.</li><li>Hover storm-800 · selected pill storm-700.</li></ul></div><div class="rule-card"><h3>Card header</h3><ul><li>Inline by default, ~48 tall. With actions: subtitle 16 px after the title.</li><li>Alone: subtitle pinned right.</li><li>Stacked only when the subtitle can't fit at 1024 wide.</li><li>Bottom divider only when the card has a body.</li></ul></div><div class="rule-card"><h3>Shell</h3><ul><li>Sidebar 240: Dashboard · Access · Spend · Resources.</li><li>Top bar 60: breadcrumb · search 360 × 32 · mode toggle · credits · Documentation.</li><li>No avatar in the top bar; account row lives in the sidebar.</li></ul></div><div class="rule-card"><h3>Tables</h3><ul><li>Fixed column widths that match headers; numbers right-aligned.</li><li>Equal row heights, 1px dividers.</li><li>Actions and badges in fixed right columns.</li></ul></div><div class="rule-card"><h3>Controls</h3><ul><li>Buttons 36 and 32. Labels short; the main CTA keeps its amount.</li><li>Billing tabs: outlined segmented pill, not underline.</li><li>Switch centred on the header row, 16 px from the right edge.</li></ul></div><div class="rule-card"><h3>Motion</h3><ul><li>Only for a user action or a page change. Nothing loops except the sign-in spinner.</li><li>120 / 200 / 320 ms; ease-out to settle, spring for menus.</li><li>Respect prefers-reduced-motion everywhere.</li></ul></div><div class="rule-card"><h3>Feedback</h3><ul><li>Every action answers within 520 ms: spinner, then result.</li><li>Destructive actions confirm in a dialog; the row then changes state and flashes.</li><li>Disabled buttons say why (“Choose a multiple of 1,000 credits”).</li></ul></div></div><p class="more"><a href="./styles.html">Tokens and specimens → Styles</a></p>
+  </section>
+  <section id="roads">
+    <div class="sec-head"><span class="sec-num">06</span><h2>Roads not taken</h2></div>
+    <p class="sec-sub">And why.</p>
+    
+    <div class="road-grid"><div class="road"><h3>Dual-column Get started with visible prompt</h3><p>Meeting pick: single agent row + Copy prompt.</p></div><div class="road"><h3>Eye / reveal on key rows</h3><p>Secrets are one-shot only.</p></div><div class="road"><h3>Separate API product home</h3><p>Entry must feel in-product from the Chart dashboard.</p></div><div class="road"><h3>Toast for payment success</h3><p>Spec keeps a persistent alert on Billing.</p></div><div class="road"><h3>Admin switch only in the account menu</h3><p>Hard to find on personal pages; added the top-bar toggle (D2).</p></div><div class="road"><h3>Plus icon on the header button</h3><p>Key icon reads as “API keys” at a glance (D5).</p></div></div>
+  </section>
+  <section id="open">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Open questions</h2></div>
+    <p class="sec-sub">Blocking final copy or engineering. Owner in each card.</p>
+    
+    <div class="q-grid"><div class="q"><span class="n">Q1</span><h3>Expiry model</h3><p>Single pool reset to 12 months vs per-pack expiry in some copy and emails. Knut.</p></div><div class="q"><span class="n">Q2</span><h3>Tier allowances</h3><p>Confirm Free 25 → Enterprise custom with Ashish and Knut.</p></div><div class="q"><span class="n">Q3</span><h3>Real upgrade popup</h3><p>Reuse the Chart popup + Stripe redirect; confirm the return to Billing.</p></div><div class="q"><span class="n">Q4</span><h3>Emails</h3><p>Nine templates to coordinate with Dom: sender, footer, which ship first.</p></div><div class="q"><span class="n">Q5</span><h3>Admin values</h3><p>/v1/generate and /v1/repair cost, burst values, split rule for new members, Billing admin-only?</p></div><div class="q"><span class="n">Q6</span><h3>Coin icon</h3><p>Coral has none; pack cards borrow the database icon.</p></div><div class="q"><span class="n">Q7</span><h3>Auto top-up pack</h3><p>Can the user pick which pack auto top-up buys?</p></div><div class="q"><span class="n">Q8</span><h3>Toasts (D3)</h3><p>Keep toasts for action feedback, or alerts only?</p></div></div>
+  </section>
+  <footer class="foot">
+    Sources: Figma Platform customer <code>141:3891</code> and admin <code>206:12847</code> · handoff v3 · meeting Oct 27, 2026 (Knut, Ashish) · Ruben's design reviews. 
+  </footer>
+</div>
+</body>
+</html>

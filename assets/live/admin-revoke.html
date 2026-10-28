@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mermaid API — Overrides</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="console.css?v=7" />
+</head>
+<body data-mode="admin">
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><img src="assets/mermaid-logo.svg" alt="" /><span>API console</span></div>
+  <div class="nav-group"><a class="nav" href="admin-overview.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4 16V8.5l6-4.5 6 4.5V16h-4v-4H8v4H4Z"/></svg>Dashboard</a></div>
+  <p class="nav-label">Access</p>
+  <div class="nav-group">
+    <a class="nav" href="admin-keys.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M7 13a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm3-3h7.5M15 10v2.5M17.5 10v2"/></svg>All Keys<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+    <a class="nav active" href="admin-overrides.html" aria-current="page"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M10 3.2 15.5 5v4.6c0 3.4-2.3 6-5.5 7.2-3.2-1.2-5.5-3.8-5.5-7.2V5L10 3.2Z"/></svg>Overrides<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+  </div>
+  <p class="nav-label">Spend</p>
+  <div class="nav-group">
+    <a class="nav" href="admin-consumption.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4.5 5.5c0-1.1 2.5-2 5.5-2s5.5.9 5.5 2-2.5 2-5.5 2-5.5-.9-5.5-2Zm0 0v9c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2v-9M4.5 10c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2"/></svg>Consumption<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+    <a class="nav" href="admin-billing.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M3.5 5.5h13v9h-13v-9Zm0 3h13"/></svg>Billing<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+    <a class="nav" href="admin-pool.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M7.5 9.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Zm-4 6c0-2.2 1.8-3.5 4-3.5s4 1.3 4 3.5m2-6.2a2 2 0 1 0 0-4m1.5 10.2c0-1.6-.8-2.7-2-3.2"/></svg>Credit pool<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+    <a class="nav" href="admin-burst.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M10 16.5a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13ZM10 6.5V10l2.5 1.5"/></svg>Burst limits<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+  </div>
+  <p class="nav-label">Resources</p>
+  <div class="nav-group"><a class="nav" href="docs.html" target="_blank" rel="noopener"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M10 5.5C8.5 4.5 6 4 3.5 4.5v10c2.5-.5 5 0 6.5 1m0-10c1.5-1 4-1.5 6.5-1v10c-2.5-.5-5 0-6.5 1m0-10v10"/></svg>Docs<span class="ext"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M11.5 4.5h4v4m0-4-6 6M14 11.5v4H4.5V6h4"/></svg></span></a></div>
+  <div class="spacer"></div>
+  <div class="sidebar-divider"></div>
+  <div class="account-wrap">
+    <div class="popover account-menu switcher" id="account-menu" role="menu">
+      <a href="overview.html"><span class="ws"><strong>Personal</strong><em>ruben@mermaidchart.com</em></span></a>
+      <a href="admin-overview.html" class="active" aria-current="true"><span class="ws"><strong>Acme Inc · Admin view</strong><em>All keys, consumption, overrides</em></span></a>
+      <a href="usage-org.html"><span class="ws"><strong>Acme Inc · Member view</strong><em>Only your keys and share</em></span></a>
+    </div>
+    <button class="account-row" type="button" id="account" aria-haspopup="menu" aria-expanded="false">
+      <img class="avatar" src="assets/avatar.png" alt="" />
+      <span class="meta"><strong>Ruben</strong><em>Acme Inc · Admin</em></span>
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M5.5 8 10 12.5 14.5 8"/></svg>
+    </button>
+  </div>
+</aside>
+<div class="main">
+<header class="topbar">
+  <div class="breadcrumb">Keys / Revoke member keys</div>
+  <div class="search-wrap"><label class="search"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M9 14.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Zm4-1.5 3.5 3.5"/></svg><input type="search" placeholder="Search console…" aria-label="Search console" autocomplete="off" /></label></div>
+  <div class="top-actions">
+    <nav class="mode-toggle" aria-label="View as">
+      <a href="overview.html">User</a><a href="admin-overview.html" aria-current="page" class="on">Admin</a>
+    </nav>
+    <span class="credits-pill">250 credits</span>
+    <a class="btn secondary" href="docs.html" target="_blank" rel="noopener">Documentation <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M11.5 4.5h4v4m0-4-6 6M14 11.5v4H4.5V6h4"/></svg></a>
+  </div>
+</header>
+<main class="content">
+
+  <div class="title-row">
+    <div class="grow"><h1>Overrides</h1><p class="sub">Revoke access or change limits for one key or a whole member.</p></div>
+    <button class="btn primary" type="button" data-toast="success|Overrides saved">Save overrides</button>
+  </div>
+  <section class="card">
+    <div class="card-head"><h2>By member</h2></div>
+    <table><thead><tr><th>Member</th><th>Active keys</th><th>Monthly limit override</th><th>State</th><th></th></tr></thead><tbody><tr><td>Ana Silva</td><td>2</td><td><input class="cell-input wide" value="" placeholder="No override" inputmode="numeric" aria-label="Monthly limit override for Ana Silva" /></td><td><span class="pill ok"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14Zm-3-7 2 2 4-4"/></svg>Live</span></td><td><button class="btn raised" type="button" data-revoke-member="Ana Silva">Revoke all keys</button></td></tr><tr><td>Ben Ortiz</td><td>1</td><td><input class="cell-input wide" value="300" placeholder="No override" inputmode="numeric" aria-label="Monthly limit override for Ben Ortiz" /></td><td><span class="pill warn"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 2.5 18.5 17h-17L10 2.5Zm-.8 5.5v4.5h1.6V8H9.2Zm0 6v1.6h1.6V14H9.2Z"/></svg>Exhausted</span></td><td><button class="btn raised" type="button" data-revoke-member="Ben Ortiz">Revoke all keys</button></td></tr><tr><td>Ruben Mangorrinha</td><td>2</td><td><input class="cell-input wide" value="" placeholder="No override" inputmode="numeric" aria-label="Monthly limit override for Ruben Mangorrinha" /></td><td><span class="pill ok"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14Zm-3-7 2 2 4-4"/></svg>Live</span></td><td><button class="btn raised" type="button" data-revoke-member="Ruben Mangorrinha">Revoke all keys</button></td></tr></tbody></table>
+  </section>
+  <section class="card">
+    <div class="card-head"><h2>By key</h2></div>
+    <table><thead><tr><th>Key</th><th>Member</th><th>Override</th><th>Set by</th><th></th></tr></thead>
+      <tbody>
+        <tr><td class="mono">Release notes bot</td><td>Ana Silva</td><td>Limit 200 a month</td><td>Ruben · Oct 20</td><td><button class="btn ghost" type="button" data-row-remove>Remove</button></td></tr>
+        <tr><td class="mono">Old staging</td><td>Ben Ortiz</td><td><span class="pill revoked">Revoked</span></td><td>Ruben · Sep 30</td><td><button class="btn raised" type="button" data-toast="success|Old staging restored">Restore</button></td></tr>
+      </tbody></table>
+  </section>
+
+</main></div></div>
+
+<div class="overlay" id="revoke-modal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="revoke-modal-t">
+    <div class="modal-head"><h2 id="revoke-modal-t">Revoke all keys of <span data-who>Ben Ortiz</span>?</h2></div>
+    <p class="lede"><span data-first>Ben</span>’s active key stops working at once and calls are refused. You can restore keys one by one later.</p>
+    
+    <div class="modal-actions"><button class="btn ghost" type="button" data-close>Cancel</button><button class="btn danger" type="button" id="revoke-confirm">Revoke all keys</button></div>
+  </div>
+</div>
+<script>
+(function () {
+  let row = null;
+  const m = document.getElementById("revoke-modal");
+  document.querySelectorAll("[data-revoke-member]").forEach((b) => b.addEventListener("click", () => {
+    const who = b.dataset.revokeMember;
+    row = b.closest("tr");
+    m.querySelector("[data-who]").textContent = who;
+    m.querySelector("[data-first]").textContent = who.split(" ")[0];
+    openModal("revoke-modal");
+  }));
+  document.getElementById("revoke-confirm").addEventListener("click", (e) => {
+    const who = m.querySelector("[data-who]").textContent;
+    busy(e.currentTarget, 600, () => {
+      closeModal(m);
+      const r = row || [...document.querySelectorAll("[data-revoke-member]")].find((b) => b.dataset.revokeMember === who)?.closest("tr");
+      if (r) {
+        r.children[1].textContent = "0";
+        r.children[3].innerHTML = '<span class="pill revoked">Revoked</span>';
+        const btn = r.querySelector("[data-revoke-member]");
+        btn.textContent = "Restore keys"; btn.removeAttribute("data-revoke-member");
+        btn.addEventListener("click", () => location.reload(), { once: true });
+        r.classList.add("flash");
+      }
+      toast("success", "All keys of " + who + " revoked");
+    });
+  });
+})();
+</script>
+<script src="console.js?v=7"></script>
+</body>
+</html>

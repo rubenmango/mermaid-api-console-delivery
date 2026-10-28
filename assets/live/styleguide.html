@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mermaid API console — Style guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="console.css?v=7" />
+<style>
+.sg-body { display:flex; flex-direction:column; gap:16px; }
+.sg-row { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+.sg-stack { display:flex; flex-direction:column; gap:20px; }
+.sg-k { display:block; font-size:12px; color:var(--storm-400); margin-bottom:8px; }
+.sg-note { margin:0; font-size:12px; color:var(--storm-400); }
+.sg-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:12px; }
+.sg-swatch { display:flex; flex-direction:column; gap:4px; font-size:12px; }
+.sg-swatch i { height:56px; border-radius:var(--radius); border:1px solid var(--storm-800); }
+.sg-swatch strong { font-weight:500; font-size:14px; }
+.sg-swatch em { font-style:normal; color:var(--storm-400); }
+.sg-type { display:grid; grid-template-columns:220px 1fr; align-items:baseline; gap:16px; padding:8px 0; border-bottom:1px solid var(--storm-800); }
+.sg-type:last-child { border-bottom:0; }
+.sg-wrap { max-width:1120px; margin:0 auto; width:100%; }
+</style>
+</head>
+<body data-mode="customer">
+<main class="content sg-wrap">
+  <div class="title-row">
+    <div class="grow"><h1>Style guide</h1><p class="sub">Coral tokens and console components, rendered from the same CSS and JS as every screen.</p></div>
+    
+  </div>
+  <section class="card">
+    <div class="card-head"><h2>Colour</h2><p class="sub-right">Dark mode only</p></div>
+    <div class="card-body sg-body"><div class="sg-grid"><div class="sg-swatch"><i style="background:var(--storm-975)"></i><strong>--storm-975</strong><span class="mono">#18171c</span><em>App, sidebar, top bar</em></div><div class="sg-swatch"><i style="background:var(--storm-950)"></i><strong>--storm-950</strong><span class="mono">#1f1e24</span><em>Cards</em></div><div class="sg-swatch"><i style="background:var(--storm-900)"></i><strong>--storm-900</strong><span class="mono">#242329</span><em>Inputs, code</em></div><div class="sg-swatch"><i style="background:var(--storm-850)"></i><strong>--storm-850</strong><span class="mono">#2e2d34</span><em>Hover tint</em></div><div class="sg-swatch"><i style="background:var(--storm-800)"></i><strong>--storm-800</strong><span class="mono">#3a3944</span><em>Hairlines, borders</em></div><div class="sg-swatch"><i style="background:var(--storm-700)"></i><strong>--storm-700</strong><span class="mono">#504d60</span><em>Selected pill</em></div><div class="sg-swatch"><i style="background:var(--storm-400)"></i><strong>--storm-400</strong><span class="mono">#8585a4</span><em>Secondary text</em></div><div class="sg-swatch"><i style="background:var(--storm-200)"></i><strong>--storm-200</strong><span class="mono">#c4c4d4</span><em>Muted labels</em></div><div class="sg-swatch"><i style="background:var(--storm-50)"></i><strong>--storm-50</strong><span class="mono">#f2f3f7</span><em>Primary text</em></div><div class="sg-swatch"><i style="background:var(--deep-300)"></i><strong>--deep-300</strong><span class="mono">#7b72e9</span><em>Plan series</em></div><div class="sg-swatch"><i style="background:var(--deep-200)"></i><strong>--deep-200</strong><span class="mono">#b7b2f5</span><em>Purchased series, focus</em></div><div class="sg-swatch"><i style="background:var(--pink)"></i><strong>--pink</strong><span class="mono">#e0095f</span><em>Primary button</em></div><div class="sg-swatch"><i style="background:var(--green)"></i><strong>--green</strong><span class="mono">#4ade80</span><em>OK</em></div><div class="sg-swatch"><i style="background:var(--amber)"></i><strong>--amber</strong><span class="mono">#f5a524</span><em>Warning</em></div><div class="sg-swatch"><i style="background:var(--red)"></i><strong>--red</strong><span class="mono">#f05264</span><em>Danger</em></div><div class="sg-swatch"><i style="background:var(--blue)"></i><strong>--blue</strong><span class="mono">#4ea1f5</span><em>Info</em></div><div class="sg-swatch"><i style="background:var(--teal)"></i><strong>--teal</strong><span class="mono">#a8dcd6</span><em>Switch on</em></div></div></div>
+  </section>
+  <section class="card">
+    <div class="card-head"><h2>Type</h2><p class="sub-right">Inter + JetBrains Mono</p></div>
+    <div class="card-body sg-body">
+<div class="sg-type"><span class="sg-k">Page title · 24 / 600</span><span style="font-size:24px;font-weight:600">Billing</span></div>
+<div class="sg-type"><span class="sg-k">Section · 20 / 600</span><span style="font-size:20px;font-weight:600">250 credits available</span></div>
+<div class="sg-type"><span class="sg-k">Body · 18 / 400</span><span style="font-size:18px">Allowance first, then purchased credits.</span></div>
+<div class="sg-type"><span class="sg-k">Label · 14 / 500</span><span style="font-size:14px;font-weight:500">Buy 5,000 credits for $5.00</span></div>
+<div class="sg-type"><span class="sg-k">Note · 12 / 400</span><span style="font-size:12px;color:var(--storm-400)">Refused or failed calls cost 0 credits.</span></div>
+<div class="sg-type"><span class="sg-k">Code · JetBrains Mono 14</span><span class="mono">mmd_0889••••••b574</span></div></div>
+  </section>
+  <section class="card">
+    <div class="card-head"><h2>Buttons</h2><p class="sub-right">One pink primary per screen</p></div>
+    <div class="card-body sg-body">
+<div class="sg-row">
+  <button class="btn primary" type="button" data-toast="success|Primary: one per screen">Primary</button>
+  <button class="btn light" type="button" data-toast="info|Light: main action on dark headers">Light</button>
+  <button class="btn secondary" type="button" data-toast="info|Secondary">Secondary</button>
+  <button class="btn raised" type="button" data-toast="info|Raised">Raised</button>
+  <button class="btn ghost" type="button" data-toast="info|Ghost">Ghost</button>
+  <button class="btn danger" type="button" data-toast="error|Danger: destructive confirm only">Danger</button>
+  <button class="btn icon" type="button" aria-label="More"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 5.8a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm0 5.4a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm0 5.4a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Z"/></svg></button>
+  <a class="btn link-arrow" href="#">Manage email notifications <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M4.5 10h11m-4-4 4 4-4 4"/></svg></a>
+</div>
+<p class="sg-note">Click any button: 520 ms busy spinner, then a toast. Buttons scale to 0.97 on press.</p></div>
+  </section>
+  <section class="card">
+    <div class="card-head"><h2>Status</h2><p class="sub-right">Pills and badges</p></div>
+    <div class="card-body sg-body"><div class="sg-row"><span class="pill ok"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14Zm-3-7 2 2 4-4"/></svg>Active</span><span class="pill ok"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14Zm-3-7 2 2 4-4"/></svg>OK 200</span><span class="pill warn"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 2.5 18.5 17h-17L10 2.5Zm-.8 5.5v4.5h1.6V8H9.2Zm0 6v1.6h1.6V14H9.2Z"/></svg>Low</span><span class="pill bad"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 2.5 18.5 17h-17L10 2.5Zm-.8 5.5v4.5h1.6V8H9.2Zm0 6v1.6h1.6V14H9.2Z"/></svg>Refused 400</span><span class="pill revoked">Revoked</span><span class="pill muted">Not yet</span><span class="pill plan">Your plan</span><span class="credits-pill">250 credits</span></div></div>
+  </section>
+  <section class="card">
+    <div class="card-head"><h2>Alerts</h2><p class="sub-right">Persistent, inline, no shadow</p></div>
+    <div class="card-body sg-body"><div class="alert warn" role="status"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M10 3.5 17.5 16.5h-15L10 3.5Zm0 5V12m0 2.2h.01"/></svg><div class="grow">Your 1,240 purchased credits expire Nov 14, 2026.</div></div><div class="alert danger" role="status"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 2.5a7.5 7.5 0 1 1 0 15 7.5 7.5 0 0 1 0-15Zm-.8 3.3v5.4h1.6V5.8H9.2Zm0 6.8v1.6h1.6v-1.6H9.2Z"/></svg><div class="grow">Your keys stopped: allowance and purchased credits are used up.</div></div><div class="alert info" role="status"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 2.5a7.5 7.5 0 1 1 0 15 7.5 7.5 0 0 1 0-15Zm-.8 6.3V14h1.6V8.8H9.2Zm0-3V7.4h1.6V5.8H9.2Z"/></svg><div class="grow">Only purchases of Mermaid API credits are listed here.</div></div><div class="alert ok" role="status"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 2.5a7.5 7.5 0 1 1 0 15 7.5 7.5 0 0 1 0-15Zm3.3 4.7-4.2 4.2-2-2-1.1 1.1 3.1 3.1 5.3-5.3-1.1-1.1Z"/></svg><div class="grow"><strong>Payment complete</strong> · 5,000 credits added.</div><button class="x" type="button" aria-label="Dismiss"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m5.5 5.5 9 9m0-9-9 9"/></svg></button></div><div class="alert note" role="status"><div class="grow">New members get an equal part of the unallocated credits.</div></div></div>
+  </section>
+  <section class="card">
+    <div class="card-head"><h2>Data</h2><p class="sub-right">deep-300 plan · deep-200 purchased</p></div>
+    <div class="card-body sg-body">
+<div class="sg-stack">
+  <div><span class="sg-k">Meter · plan + purchased</span><div class="meter" role="img"><span class="seg plan" style="flex:1"><i style="width:40%"></i></span><span class="seg purchased" style="flex:1"><i style="width:100%"></i></span></div></div>
+  <div><span class="sg-k">Share bar</span><span class="share"><i style="width:72%"></i></span></div>
+  <div class="sg-row"><div><span class="sg-k">Sparkline</span><span class="spark"><i style="height:4px;animation-delay:0ms"></i><i style="height:7px;animation-delay:30ms"></i><i style="height:5px;animation-delay:60ms"></i><i style="height:9px;animation-delay:90ms"></i><i style="height:6px;animation-delay:120ms"></i><i style="height:11px;animation-delay:150ms"></i><i style="height:8px;animation-delay:180ms"></i><i style="height:13px;animation-delay:210ms"></i></span></div></div>
+  <div class="chart-panel" style="max-width:420px"><span class="sg-k">Bars</span><div class="bars" id="sg-bars" data-series='[20, 34, 14, 40, 52, 26, 44, 56, 32, 22, 40, 62, 46, 28, 50, 42, 16, 36, 56, 48, 30, 40, 52, 34, 22, 46, 38, 58, 44, 64]'><i style="height:25%" title="16 credits"></i><i style="height:56%" title="36 credits"></i><i style="height:88%" title="56 credits"></i><i style="height:75%" title="48 credits"></i><i style="height:47%" title="30 credits"></i><i style="height:62%" title="40 credits"></i><i style="height:81%" title="52 credits"></i><i style="height:53%" title="34 credits"></i><i style="height:34%" title="22 credits"></i><i style="height:72%" title="46 credits"></i><i style="height:59%" title="38 credits"></i><i style="height:91%" title="58 credits"></i><i style="height:69%" title="44 credits"></i><i style="height:100%" title="64 credits"></i></div></div>
+</div>
+<p class="sg-note">Meters grow on x, bars and sparks grow on y, staggered 30 ms.</p></div>
+  </section>
+  <section class="card">
+    <div class="card-head"><h2>Pack picker</h2><p class="sub-right">Custom validates multiples of 1,000</p></div>
+    <div class="card-body sg-body"><div class="packs" id="sg-packs" role="radiogroup">
+<button class="pack" type="button" role="radio" data-pack="5000" data-amt="5,000" data-price="$5.00" aria-pressed="true">
+          <span class="radio"><i></i></span><span class="label"><strong>5,000</strong><span class="price">$5.00</span></span><span class="coin"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4.5 6c0-1.1 2.5-2 5.5-2s5.5.9 5.5 2-2.5 2-5.5 2-5.5-.9-5.5-2Zm0 0v8c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2V6m-11 4c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2"/></svg></span>
+        </button>
+<button class="pack" type="button" role="radio" data-pack="10000" data-amt="10,000" data-price="$10.00" aria-pressed="false">
+          <span class="radio"><i></i></span><span class="label"><strong>10,000</strong><span class="price">$10.00</span></span><span class="coin"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4.5 6c0-1.1 2.5-2 5.5-2s5.5.9 5.5 2-2.5 2-5.5 2-5.5-.9-5.5-2Zm0 0v8c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2V6m-11 4c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2"/></svg></span>
+        </button>
+<button class="pack" type="button" role="radio" data-pack="15000" data-amt="15,000" data-price="$15.00" aria-pressed="false">
+          <span class="radio"><i></i></span><span class="label"><strong>15,000</strong><span class="price">$15.00</span></span><span class="coin"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4.5 6c0-1.1 2.5-2 5.5-2s5.5.9 5.5 2-2.5 2-5.5 2-5.5-.9-5.5-2Zm0 0v8c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2V6m-11 4c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2"/></svg></span>
+        </button>
+<div class="pack" role="radio" tabindex="0" data-pack="custom" aria-pressed="false">
+          <span class="radio"><i></i></span><span class="label"><strong>Custom</strong>
+          <span class="stepper"><input value="25,000" inputmode="numeric" aria-label="Custom credit amount" /><span class="arrows"><button type="button" data-step="up" aria-label="More"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M5.5 12 10 7.5l4.5 4.5"/></svg></button><button type="button" data-step="down" aria-label="Less"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M5.5 8 10 12.5 14.5 8"/></svg></button></span></span></span>
+          <span class="coin"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4.5 6c0-1.1 2.5-2 5.5-2s5.5.9 5.5 2-2.5 2-5.5 2-5.5-.9-5.5-2Zm0 0v8c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2V6m-11 4c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2"/></svg></span>
+        </div>
+</div></div>
+  </section>
+  <div class="limits-row">
+    <section class="card">
+      <div class="toggle-head"><div class="copy"><h2>Spend limit</h2><p>Cap purchased credits used per month.</p></div>
+        <button class="switch" type="button" aria-pressed="true" aria-label="Spend limit"></button></div>
+      <div class="reveal open"><div class="inner"><div class="card-body">
+        <p class="lede-sm">Your keys may spend up to 2,000 purchased credits a month.</p>
+        <div class="form-line"><label class="suffix-input"><input value="2,000" inputmode="numeric" aria-label="Spend limit" /><span>credits a month</span></label><button class="btn secondary" type="button" data-toast="success|Spend limit set to 2,000 credits a month">Set spend limit</button></div>
+      </div></div></div>
+    </section>
+    <section class="card">
+      <div class="toggle-head"><div class="copy"><h2>Low-balance email</h2><p>Email me when credits run low.</p></div>
+        <button class="switch" type="button" aria-pressed="false" aria-label="Low-balance email"></button></div>
+      <div class="reveal"><div class="inner"><div class="card-body">
+        <p class="lede-sm">We email you when your balance falls under 25 credits, the default: a tenth of your allowance.</p>
+        <div class="form-line"><label class="suffix-input"><input value="25" inputmode="numeric" aria-label="Threshold" /><span>credits</span></label><button class="btn secondary" type="button" data-toast="success|We’ll email you under 25 credits">Set threshold</button></div>
+        <div><a class="btn link-arrow" href="settings.html">Manage email notifications <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M4.5 10h11m-4-4 4 4-4 4"/></svg></a></div>
+      </div></div></div>
+    </section>
+  </div>
+  <section class="card">
+    <div class="card-head"><h2>Controls</h2><p class="sub-right">Tabs, toggle, copy, inputs, dialog</p></div>
+    <div class="card-body sg-body">
+<div class="sg-stack">
+  <div><span class="sg-k">Segmented tabs</span><nav class="tabs" role="tablist"><a role="tab" href="#" aria-selected="true">Overview</a><a role="tab" href="#">Purchases</a></nav></div>
+  <div><span class="sg-k">Mode toggle (top bar)</span><nav class="mode-toggle" aria-label="View as">
+      <a href="overview.html" aria-current="page" class="on">User</a><a href="admin-overview.html">Admin</a>
+    </nav></div>
+  <div><span class="sg-k">Copy</span><button class="btn ghost" type="button" data-copy="export MERMAID_API_KEY=&quot;mmd_…&quot;" data-copied-label="Copied" data-copy-toast="Copied to clipboard"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M7 7V4.5h8.5V13H13M4.5 7H13v8.5H4.5V7Z"/></svg> Copy prompt</button></div>
+  <div><span class="sg-k">Suffix input</span><div class="form-line"><label class="suffix-input"><input value="2,000" inputmode="numeric" aria-label="Spend limit" /><span>credits a month</span></label><button class="btn secondary" type="button" data-toast="success|Spend limit set">Set spend limit</button></div></div>
+  <div><span class="sg-k">Modal</span><button class="btn secondary" type="button" data-open="sg-modal">Open dialog</button></div>
+</div></div>
+  </section>
+  <section class="card">
+    <div class="card-head"><h2>Row menu</h2><p class="sub-right">Keys table context</p></div>
+    <div class="card-body sg-body"><table><tbody><tr><td>CI render bot</td><td class="mono">mmd_0889••••••b574</td><td><span class="pill ok"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14Zm-3-7 2 2 4-4"/></svg>Active</span></td><td class="rel" data-no-row-nav style="width:48px">
+            <button class="btn icon bare" type="button" data-kebab="sg-kebab" aria-label="More" aria-haspopup="menu" aria-expanded="false"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 5.8a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm0 5.4a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm0 5.4a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Z"/></svg></button>
+            <div class="popover kebab-menu" id="sg-kebab" role="menu"><button type="button" data-row-rename>Rename</button><button type="button" data-copy="key_0889" data-copy-toast="Key ID copied">Copy key ID</button><hr /><button type="button" class="danger" data-row-revoke>Revoke key</button></div>
+          </td></tr></tbody></table>
+<p class="sg-note">Row menu springs open (scale 0.96 → 1). Rename edits inline: Enter saves, Escape cancels.</p></div>
+  </section>
+  <section class="card">
+    <div class="card-head"><h2>Toasts</h2><p class="sub-right">Action feedback</p></div>
+    <div class="card-body sg-body"><div class="sg-row">
+  <button class="btn secondary" type="button" onclick="toast('success','Key “CI render bot” is ready')">Success</button>
+  <button class="btn secondary" type="button" onclick="toast('info','Copied to clipboard')">Info</button>
+  <button class="btn secondary" type="button" onclick="toast('warning','Balance under 25 credits')">Warning</button>
+  <button class="btn secondary" type="button" onclick="toast('error','We couldn’t reach Stripe. Try again.')">Error</button>
+</div>
+<p class="sg-note">Bottom-right stack, slides in, leaves after ~3.2 s. Used for action feedback only; balance and payment states stay as inline alerts.</p></div>
+  </section>
+  <section class="card">
+    <div class="card-head"><h2>Motion</h2><p class="sub-right">Tokens in console.css</p></div>
+    <div class="card-body sg-body"><table><thead><tr><th>Token</th><th>Value</th><th>Use</th></tr></thead><tbody><tr><td class="mono">--dur-1</td><td class="mono">120 ms</td><td>Hover, colour, press</td></tr><tr><td class="mono">--dur-2</td><td class="mono">200 ms</td><td>Popovers, icons</td></tr><tr><td class="mono">--dur-3</td><td class="mono">320 ms</td><td>Modals, reveals</td></tr><tr><td class="mono">--ease-out</td><td class="mono">cubic-bezier(.22,1,.36,1)</td><td>Default easing</td></tr><tr><td class="mono">--ease-spring</td><td class="mono">cubic-bezier(.34,1.4,.64,1)</td><td>Menus, switch thumb</td></tr><tr><td class="mono">View transition</td><td class="mono">280 ms</td><td>Page cross-fade; nav pill, tab and mode toggle slide</td></tr><tr><td class="mono">Content stagger</td><td class="mono">fade-up 6 px</td><td>Each block on page load</td></tr><tr><td class="mono">Login background</td><td class="mono">16 s ease-out</td><td>Zoom 1 → 1.05</td></tr></tbody></table><p class="sg-note">All motion collapses under prefers-reduced-motion.</p></div>
+  </section>
+</main>
+
+<div class="overlay" id="sg-modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="sg-modal-t">
+    <div class="modal-head"><h2 id="sg-modal-t">Revoke key?</h2><button class="btn icon" type="button" data-close aria-label="Close"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m5.5 5.5 9 9m0-9-9 9"/></svg></button></div>
+    <p class="lede">Calls with this key are refused and cost 0 credits.</p>
+    
+    <div class="modal-actions"><button class="btn ghost" type="button" data-close>Cancel</button><button class="btn danger" type="button" data-close data-toast="success|Key revoked">Revoke key</button></div>
+  </div>
+</div>
+<script src="console.js?v=7"></script>
+</body>
+</html>

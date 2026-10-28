@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mermaid API — Credit pool</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="console.css?v=7" />
+</head>
+<body data-mode="admin">
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><img src="assets/mermaid-logo.svg" alt="" /><span>API console</span></div>
+  <div class="nav-group"><a class="nav" href="admin-overview.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4 16V8.5l6-4.5 6 4.5V16h-4v-4H8v4H4Z"/></svg>Dashboard</a></div>
+  <p class="nav-label">Access</p>
+  <div class="nav-group">
+    <a class="nav" href="admin-keys.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M7 13a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm3-3h7.5M15 10v2.5M17.5 10v2"/></svg>All Keys<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+    <a class="nav" href="admin-overrides.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M10 3.2 15.5 5v4.6c0 3.4-2.3 6-5.5 7.2-3.2-1.2-5.5-3.8-5.5-7.2V5L10 3.2Z"/></svg>Overrides<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+  </div>
+  <p class="nav-label">Spend</p>
+  <div class="nav-group">
+    <a class="nav" href="admin-consumption.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4.5 5.5c0-1.1 2.5-2 5.5-2s5.5.9 5.5 2-2.5 2-5.5 2-5.5-.9-5.5-2Zm0 0v9c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2v-9M4.5 10c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2"/></svg>Consumption<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+    <a class="nav" href="admin-billing.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M3.5 5.5h13v9h-13v-9Zm0 3h13"/></svg>Billing<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+    <a class="nav active" href="admin-pool.html" aria-current="page"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M7.5 9.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Zm-4 6c0-2.2 1.8-3.5 4-3.5s4 1.3 4 3.5m2-6.2a2 2 0 1 0 0-4m1.5 10.2c0-1.6-.8-2.7-2-3.2"/></svg>Credit pool<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+    <a class="nav" href="admin-burst.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M10 16.5a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13ZM10 6.5V10l2.5 1.5"/></svg>Burst limits<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+  </div>
+  <p class="nav-label">Resources</p>
+  <div class="nav-group"><a class="nav" href="docs.html" target="_blank" rel="noopener"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M10 5.5C8.5 4.5 6 4 3.5 4.5v10c2.5-.5 5 0 6.5 1m0-10c1.5-1 4-1.5 6.5-1v10c-2.5-.5-5 0-6.5 1m0-10v10"/></svg>Docs<span class="ext"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M11.5 4.5h4v4m0-4-6 6M14 11.5v4H4.5V6h4"/></svg></span></a></div>
+  <div class="spacer"></div>
+  <div class="sidebar-divider"></div>
+  <div class="account-wrap">
+    <div class="popover account-menu switcher" id="account-menu" role="menu">
+      <a href="overview.html"><span class="ws"><strong>Personal</strong><em>ruben@mermaidchart.com</em></span></a>
+      <a href="admin-overview.html" class="active" aria-current="true"><span class="ws"><strong>Acme Inc · Admin view</strong><em>All keys, consumption, overrides</em></span></a>
+      <a href="usage-org.html"><span class="ws"><strong>Acme Inc · Member view</strong><em>Only your keys and share</em></span></a>
+    </div>
+    <button class="account-row" type="button" id="account" aria-haspopup="menu" aria-expanded="false">
+      <img class="avatar" src="assets/avatar.png" alt="" />
+      <span class="meta"><strong>Ruben</strong><em>Acme Inc · Admin</em></span>
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M5.5 8 10 12.5 14.5 8"/></svg>
+    </button>
+  </div>
+</aside>
+<div class="main">
+<header class="topbar">
+  <div class="breadcrumb">Spend / Credit pool</div>
+  <div class="search-wrap"><label class="search"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M9 14.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Zm4-1.5 3.5 3.5"/></svg><input type="search" placeholder="Search console…" aria-label="Search console" autocomplete="off" /></label></div>
+  <div class="top-actions">
+    <nav class="mode-toggle" aria-label="View as">
+      <a href="overview.html">User</a><a href="admin-overview.html" aria-current="page" class="on">Admin</a>
+    </nav>
+    <span class="credits-pill">250 credits</span>
+    <a class="btn secondary" href="docs.html" target="_blank" rel="noopener">Documentation <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M11.5 4.5h4v4m0-4-6 6M14 11.5v4H4.5V6h4"/></svg></a>
+  </div>
+</header>
+<main class="content">
+
+  <div class="title-row">
+    <div class="grow"><h1>Credit pool</h1><p class="sub">Split Acme Inc’s monthly API credits between members. Purchased credits stay shared.</p></div>
+    <button class="btn primary" type="button" data-toast="success|Split saved — applies from now">Save split</button>
+  </div>
+  <section class="card stat-strip"><div><span class="k">Plan credits</span><span class="v">2,000 a month</span></div><div><span class="k">Allocated</span><span class="v"><span id="alloc">1,800</span></span></div><div><span class="k">Unallocated</span><span class="v"><span id="unalloc">200</span></span></div><div><span class="k">Purchased (shared)</span><span class="v">10,000</span></div><div><span class="k">Refresh</span><span class="v">Nov 1, 00:00 UTC</span></div></section>
+  <section class="card">
+    <div class="card-head"><h2>Split by member</h2><p class="sub-right">Each member’s keys draw from their share first, then from shared purchased credits if allowed.</p></div>
+    <table><thead><tr><th>Member</th><th>Monthly share</th><th>Spent</th><th>Used of share</th><th>After share runs out</th></tr></thead><tbody><tr><td>Ana Silva</td><td><input class="cell-input" value="600" inputmode="numeric" data-share aria-label="Monthly share for Ana Silva" /></td><td>468</td><td style="width:24%"><span class="share"><i style="width:78%"></i></span></td><td><select class="select bare" aria-label="After share runs out for Ana Silva"><option selected>Use purchased</option><option>Refuse calls</option></select></td></tr><tr><td>Ben Ortiz</td><td><input class="cell-input" value="300" inputmode="numeric" data-share aria-label="Monthly share for Ben Ortiz" /></td><td>300</td><td style="width:24%"><span class="share"><i style="width:100%"></i></span></td><td><select class="select bare" aria-label="After share runs out for Ben Ortiz"><option>Use purchased</option><option selected>Refuse calls</option></select></td></tr><tr><td>Ruben Mangorrinha</td><td><input class="cell-input" value="400" inputmode="numeric" data-share aria-label="Monthly share for Ruben Mangorrinha" /></td><td>212</td><td style="width:24%"><span class="share"><i style="width:53%"></i></span></td><td><select class="select bare" aria-label="After share runs out for Ruben Mangorrinha"><option selected>Use purchased</option><option>Refuse calls</option></select></td></tr><tr><td>Chloé Martin</td><td><input class="cell-input" value="300" inputmode="numeric" data-share aria-label="Monthly share for Chloé Martin" /></td><td>230</td><td style="width:24%"><span class="share"><i style="width:77%"></i></span></td><td><select class="select bare" aria-label="After share runs out for Chloé Martin"><option selected>Use purchased</option><option>Refuse calls</option></select></td></tr><tr><td>Dev Patel</td><td><input class="cell-input" value="200" inputmode="numeric" data-share aria-label="Monthly share for Dev Patel" /></td><td>150</td><td style="width:24%"><span class="share"><i style="width:75%"></i></span></td><td><select class="select bare" aria-label="After share runs out for Dev Patel"><option>Use purchased</option><option selected>Refuse calls</option></select></td></tr></tbody></table>
+  </section>
+  <div class="alert note" role="status"><div class="grow">New members get an equal part of the unallocated credits.</div></div>
+
+</main></div></div>
+
+<script>
+(function () {
+  const ins = [...document.querySelectorAll("[data-share]")];
+  const upd = () => {
+    const sum = ins.reduce((a, i) => a + (Number(i.value.replace(/[^\d]/g, "")) || 0), 0);
+    document.getElementById("alloc").textContent = sum.toLocaleString("en-US");
+    const un = 2000 - sum;
+    const el = document.getElementById("unalloc");
+    el.textContent = un.toLocaleString("en-US");
+    el.parentElement.classList.toggle("warn-text", un < 0);
+    ins.forEach((i) => {
+      const tr = i.closest("tr");
+      const spent = Number(tr.children[2].textContent);
+      const s = Number(i.value.replace(/[^\d]/g, "")) || 1;
+      tr.querySelector(".share i").style.width = Math.min(100, Math.round((spent / s) * 100)) + "%";
+    });
+  };
+  ins.forEach((i) => i.addEventListener("input", upd));
+})();
+</script>
+<script src="console.js?v=7"></script>
+</body>
+</html>

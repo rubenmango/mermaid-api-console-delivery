@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mermaid API — CI render bot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="console.css?v=7" />
+</head>
+<body data-mode="customer">
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><img src="assets/mermaid-logo.svg" alt="" /><span>API console</span></div>
+  <div class="nav-group"><a class="nav" href="overview.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4 16V8.5l6-4.5 6 4.5V16h-4v-4H8v4H4Z"/></svg>Dashboard</a></div>
+  <p class="nav-label">Access</p>
+  <div class="nav-group"><a class="nav active" href="keys.html" aria-current="page"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M7 13a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm3-3h7.5M15 10v2.5M17.5 10v2"/></svg>Keys<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a></div>
+  <p class="nav-label">Spend</p>
+  <div class="nav-group">
+    <a class="nav" href="usage.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4.5 5.5c0-1.1 2.5-2 5.5-2s5.5.9 5.5 2-2.5 2-5.5 2-5.5-.9-5.5-2Zm0 0v9c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2v-9M4.5 10c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2"/></svg>Usage<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+    <a class="nav" href="billing.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M3.5 5.5h13v9h-13v-9Zm0 3h13"/></svg>Billing<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+  </div>
+  <p class="nav-label">Resources</p>
+  <div class="nav-group"><a class="nav" href="docs.html" target="_blank" rel="noopener"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M10 5.5C8.5 4.5 6 4 3.5 4.5v10c2.5-.5 5 0 6.5 1m0-10c1.5-1 4-1.5 6.5-1v10c-2.5-.5-5 0-6.5 1m0-10v10"/></svg>Docs<span class="ext"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M11.5 4.5h4v4m0-4-6 6M14 11.5v4H4.5V6h4"/></svg></span></a></div>
+  <div class="spacer"></div>
+  <div class="sidebar-divider"></div>
+  <div class="account-wrap">
+    <div class="popover account-menu" id="account-menu" role="menu">
+      <div class="hdr"><img src="assets/avatar.png" alt="" /><div><strong>Ruben</strong><em>ruben@mermaidchart.com</em></div></div>
+      <hr />
+      <a href="settings.html">Settings</a>
+      <a href="index.html">Back to Mermaid Chart</a>
+      <hr />
+      <a href="login.html">Log out</a>
+    </div>
+    <button class="account-row" type="button" id="account" aria-haspopup="menu" aria-expanded="false">
+      <img class="avatar" src="assets/avatar.png" alt="" />
+      <span class="meta"><strong>Ruben</strong><em>ruben@mermaidchart.com</em></span>
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M5.5 8 10 12.5 14.5 8"/></svg>
+    </button>
+  </div>
+</aside>
+<div class="main">
+<header class="topbar">
+  <div class="breadcrumb">Keys / CI render bot</div>
+  <div class="search-wrap"><label class="search"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M9 14.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Zm4-1.5 3.5 3.5"/></svg><input type="search" placeholder="Search console…" aria-label="Search console" autocomplete="off" /></label></div>
+  <div class="top-actions">
+    <nav class="mode-toggle" aria-label="View as">
+      <a href="overview.html" aria-current="page" class="on">User</a><a href="admin-overview.html">Admin</a>
+    </nav>
+    <span class="credits-pill">250 credits</span>
+    <a class="btn secondary" href="docs.html" target="_blank" rel="noopener">Documentation <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M11.5 4.5h4v4m0-4-6 6M14 11.5v4H4.5V6h4"/></svg></a>
+  </div>
+</header>
+<main class="content">
+
+  <div class="title-row">
+    <div class="grow"><h1>CI render bot</h1><p class="sub">Personal key · calls the Mermaid API with your plan’s credits.</p></div>
+    <div style="display:flex;gap:8px"><button class="btn secondary" type="button" data-toast="success|Key restored — calls work again">Restore</button></div>
+  </div>
+  <div class="alert warn" role="status"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M10 3.5 17.5 16.5h-15L10 3.5Zm0 5V12m0 2.2h.01"/></svg><div class="grow">Key revoked - Revoked Oct 27, 2026. Calls with this key are refused and cost 0 credits.</div></div>
+  <section class="card">
+    <div class="card-head"><h2>Details</h2></div>
+    <div class="card-body"><div class="details6">
+      <div><span class="k">Name</span><span class="v">CI render bot</span></div>
+      <div><span class="k">Key</span><span class="v mono">mmd_0889••••••b574</span></div>
+      <div><span class="k">State</span><span class="v"><span class="pill revoked">Revoked</span></span></div>
+      <div><span class="k">Created</span><span class="v">Oct 3, 2026</span></div>
+      <div><span class="k">Created by</span><span class="v">Ruben Mangorrinha</span></div>
+      <div><span class="k">Last used</span><span class="v">14 min ago</span></div>
+    </div></div>
+  </section>
+  <div class="split-2">
+    <section class="card">
+      <div class="card-head"><h2>Credits this month</h2><p class="sub-right">Daily credits, Oct 1–26</p></div>
+      <div class="card-body">
+        <p class="balance-big xl" data-count="149">149 <span>credits</span></p>
+        <div class="bars" id="kd-bars" data-series='[18, 28, 12, 34, 46, 22, 38, 50, 28, 18, 34, 56, 40, 22, 44, 36, 12, 30, 50, 40, 22, 34, 46, 28, 18, 40]'><i style="height:32%" title="18 credits"></i><i style="height:50%" title="28 credits"></i><i style="height:21%" title="12 credits"></i><i style="height:61%" title="34 credits"></i><i style="height:82%" title="46 credits"></i><i style="height:39%" title="22 credits"></i><i style="height:68%" title="38 credits"></i><i style="height:89%" title="50 credits"></i><i style="height:50%" title="28 credits"></i><i style="height:32%" title="18 credits"></i><i style="height:61%" title="34 credits"></i><i style="height:100%" title="56 credits"></i><i style="height:71%" title="40 credits"></i><i style="height:39%" title="22 credits"></i><i style="height:79%" title="44 credits"></i><i style="height:64%" title="36 credits"></i><i style="height:21%" title="12 credits"></i><i style="height:54%" title="30 credits"></i><i style="height:89%" title="50 credits"></i><i style="height:71%" title="40 credits"></i><i style="height:39%" title="22 credits"></i><i style="height:61%" title="34 credits"></i><i style="height:82%" title="46 credits"></i><i style="height:50%" title="28 credits"></i><i style="height:32%" title="18 credits"></i><i style="height:71%" title="40 credits"></i></div>
+        <div class="axis"><span>Oct 1</span><span>Oct 26</span></div>
+      </div>
+    </section>
+    <section class="card">
+      <div class="card-head"><h2>Calls by endpoint</h2><p class="sub-right">This month</p></div>
+      <table>
+        <thead><tr><th>Endpoint</th><th>Per call</th><th>Calls</th><th>Credits</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">GET /v1/balance</td><td>0</td><td>12</td><td>0</td></tr>
+          <tr><td class="mono">POST /v1/validate</td><td>1</td><td>24</td><td>24</td></tr>
+          <tr><td class="mono">POST /v1/render</td><td>1</td><td>125</td><td>125</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+  <section class="card">
+    <div class="card-head">
+      <h2>Recent calls</h2><p class="sub-inline">Refused or failed calls cost 0 credits.</p>
+      <div class="right">
+        <select class="select" aria-label="Status" data-filter-table="kd-calls" data-filter-key="status"><option value="all" data-word="" selected>Status: All</option><option value="ok" data-word="successful">Status: OK</option><option value="refused" data-word="refused">Status: Refused</option><option value="failed" data-word="failed">Status: Failed</option></select>
+        <select class="select" aria-label="Endpoint"><option>Endpoint: All</option><option>POST /v1/render</option><option>POST /v1/validate</option><option>GET /v1/balance</option></select>
+      </div>
+    </div>
+    <table id="kd-calls">
+      <thead><tr><th style="width:45%">Time</th><th>Endpoint</th><th>Credits</th><th>Status</th></tr></thead>
+      <tbody><tr data-status="ok"><td>14 min ago</td><td class="mono">POST /v1/render</td><td>1</td><td><span class="pill ok"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14Zm-3-7 2 2 4-4"/></svg>OK</span></td></tr><tr data-status="ok"><td>15 min ago</td><td class="mono">POST /v1/validate</td><td>1</td><td><span class="pill ok"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14Zm-3-7 2 2 4-4"/></svg>OK</span></td></tr><tr data-status="ok"><td>22 min ago</td><td class="mono">GET /v1/balance</td><td>0</td><td><span class="pill ok"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14Zm-3-7 2 2 4-4"/></svg>OK</span></td></tr><tr data-status="refused"><td>1 h ago</td><td class="mono">POST /v1/render</td><td>0</td><td><span class="pill warn"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 2.5 18.5 17h-17L10 2.5Zm-.8 5.5v4.5h1.6V8H9.2Zm0 6v1.6h1.6V14H9.2Z"/></svg>Refused</span></td></tr><tr data-status="failed"><td>2 h ago</td><td class="mono">POST /v1/validate</td><td>0</td><td><span class="pill bad"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 2.5 18.5 17h-17L10 2.5Zm-.8 5.5v4.5h1.6V8H9.2Zm0 6v1.6h1.6V14H9.2Z"/></svg>Failed</span></td></tr><tr class="empty-row" hidden><td class="empty-cell" colspan="4"></td></tr></tbody>
+    </table>
+  </section>
+
+</main></div></div>
+
+<script src="console.js?v=7"></script>
+</body>
+</html>

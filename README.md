@@ -1,22 +1,24 @@
 # Mermaid API console — delivery
 
-Password-gated designer → developer package for the **Non-admin · v3** API console.
+Password-gated designer → developer package for the API console: customer and org admin, v3.
 
 | | |
 |---|---|
 | Notion-plain | `docs/notion-plain-docs.mdc` |
 | Taste layer | `docs/ruben-taste-layer.mdc` |
-| Figma | [Platform · `141:3891`](https://www.figma.com/design/SkEVtrAYLajpQjBeXLD5QU/Platform?node-id=141-3891) · `FIGMA.md` |
-| HTML delivery | `index.html` · Pages URL after publish |
-| Live JS | `assets/api-console-live.js` + `assets/live/` |
-| Decisions | `docs/DECISIONS.md` |
+| Figma | [Platform · customer `141:3891`](https://www.figma.com/design/SkEVtrAYLajpQjBeXLD5QU/Platform?node-id=141-3891) · [admin `206:12847`](https://www.figma.com/design/SkEVtrAYLajpQjBeXLD5QU/Platform?node-id=206-12847) · `FIGMA.md` |
+| HTML delivery | `index.html` (slide) · [Pages](https://rubenmango.github.io/mermaid-api-console-delivery/) |
+| Styles | `styles.html` (tokens, type, motion, components, live specimen) |
+| Decisions & rules | `decisions.html` · `docs/DECISIONS.md` |
+| Live | `assets/live/` (42 pages) · seeds in `assets/api-console-live.js` |
+| Screenshots | `assets/screenshots/` (27 frames + style guide) |
 | Integration | `docs/INTEGRATION.md` |
 | Product source | [`Mermaid-Chart/app-team` · `handoffs/mermaid-api-console/`](https://github.com/Mermaid-Chart/app-team/tree/main/handoffs/mermaid-api-console) |
 
 ## Local
 
-Open `index.html` (or any static server). Unlock with the shared Mermaid delivery password (told out-of-band — not in this README).
+Open `index.html` with any static server. Unlock with the shared Mermaid delivery password (told out-of-band, not in this README).
 
-## Live console
+## Rebuild
 
-Seed buttons on the slide switch `assets/live/*.html`. Full hub: `assets/live/index.html`.
+`python3 tools/build.py` regenerates `index.html`, `styles.html` and `decisions.html` from the shot list and decision data in that script.

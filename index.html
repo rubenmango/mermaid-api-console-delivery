@@ -4,114 +4,12 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Mermaid API console — Developer delivery</title>
-<!--
-  Docs chrome: Notion-plain (docs/notion-plain-docs.mdc)
-  Judgement:   docs/ruben-taste-layer.mdc
-  Product UI:  Figma Platform Non-admin · v3 (system wins)
--->
+<!-- Docs chrome: Notion-plain (docs/notion-plain-docs.mdc) · judgement: docs/ruben-taste-layer.mdc · product UI: Figma Platform (system wins) -->
 <script>
 (function(){try{if(localStorage.getItem('mc-delivery-gate-v1')==='ok')return;}catch(e){}document.documentElement.classList.add('dg-locked');})();
 </script>
 <style>html.dg-locked body > *:not(#delivery-gate){visibility:hidden}</style>
-<style>
-  :root{
-    --ink:#37352F; --muted:#787774; --faint:#9B9A97;
-    --line:#E9E9E7; --line-soft:#EDEDEC; --bg:#FFFFFF; --card:#FFFFFF; --tint:#F7F6F3;
-    --pink:#AD1A72; --purple:#5B4FC4;
-    --green:#448361; --green-bg:#EDF3EC;
-    --amber:#9F6B17; --amber-bg:#FBF3DB;
-    --red:#C4554D; --red-bg:#FBE4E2;
-    --gray-bg:#F1F1EF; --radius:6px;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,"Apple Color Emoji",Arial,sans-serif;
-    font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:880px;margin:0 auto;padding:48px 24px 120px}
-  a{color:var(--ink);text-decoration:underline;text-decoration-color:rgba(55,53,47,.25);text-underline-offset:2px}
-  a:hover{text-decoration-color:var(--ink)}
-  .topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:32px}
-  .topbar-left{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--faint);font-weight:500;letter-spacing:.02em}
-  .logo{width:18px;height:18px;border-radius:4px;background:var(--ink);display:inline-block;flex-shrink:0}
-  .topbar-links{display:flex;flex-wrap:wrap;gap:12px;align-items:center;font-size:13px}
-  .topbar-links a{color:var(--muted);text-decoration:none}
-  .topbar-links a:hover{color:var(--ink)}
-  .btn-primary{display:inline-flex;align-items:center;height:32px;padding:0 12px;border-radius:var(--radius);background:var(--ink);color:#fff;font-size:13px;font-weight:500;text-decoration:none}
-  .btn-primary:hover{background:#000;color:#fff;text-decoration:none}
-  .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
-  .tag{font-size:12.5px;font-weight:500;padding:2px 9px;border-radius:4px;background:var(--gray-bg);color:var(--muted)}
-  .tag.holds{background:var(--green-bg);color:var(--green)}
-  .tag.feature{background:#EDE9FE;color:var(--purple)}
-  .tag.tweak{background:var(--amber-bg);color:var(--amber)}
-  .tag.blocked{background:var(--red-bg);color:var(--red)}
-  .stage-rail{display:grid;gap:10px;margin-top:14px;grid-template-columns:1fr}
-  @media (min-width:720px){.stage-rail{grid-template-columns:repeat(5,1fr);gap:8px}}
-  .stage-card{border:1px solid var(--line);border-radius:var(--radius);background:var(--card);padding:12px 12px 14px;min-height:100%;display:flex;flex-direction:column;gap:8px}
-  .stage-card.you{border-color:var(--purple);box-shadow:inset 0 0 0 1px rgba(91,79,196,.15)}
-  .stage-card .n{font-size:11px;font-weight:600;color:var(--faint);letter-spacing:.04em}
-  .stage-card h3{margin:0;font-size:13.5px;line-height:1.35;font-weight:600;color:var(--ink)}
-  .stage-card .where{font-size:12px;color:var(--muted);line-height:1.45;margin-top:auto}
-  .metric-grid{display:grid;gap:10px;margin-top:14px;grid-template-columns:1fr}
-  @media (min-width:640px){.metric-grid{grid-template-columns:repeat(3,1fr)}}
-  .metric{border:1px solid var(--line);border-radius:var(--radius);background:var(--tint);padding:16px 14px}
-  .metric .num{font-size:28px;font-weight:700;letter-spacing:-.02em;line-height:1.1;color:var(--ink)}
-  .metric .label{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.45}
-  .dir-grid{display:grid;gap:12px;margin-top:14px;grid-template-columns:1fr}
-  @media (min-width:640px){.dir-grid{grid-template-columns:1fr 1fr}}
-  .dir-card{border:1px solid var(--line);border-radius:var(--radius);padding:0;background:var(--card);border-left:3px solid var(--line);overflow:hidden;display:flex;flex-direction:column}
-  .dir-card.pull{border-left-color:var(--green)}
-  .dir-card.push{border-left-color:var(--purple)}
-  .dir-card .dir-body{padding:14px 16px 16px}
-  .dir-card h3{margin:0 0 6px;font-size:15px;font-weight:600}
-  .dir-card p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.5}
-  .dir-card .tag{margin-top:10px;display:inline-block}
-  .dir-shot{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top center;border-bottom:1px solid var(--line);background:var(--tint)}
-  .storyboard{display:grid;gap:10px;margin-top:14px;grid-template-columns:1fr}
-  @media (min-width:640px){.storyboard{grid-template-columns:repeat(3,1fr)}}
-  @media (min-width:900px){.storyboard.six{grid-template-columns:repeat(6,1fr)}}
-  .sb-step{margin:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--card)}
-  .sb-step a{display:block;color:inherit;text-decoration:none}
-  .sb-step img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top center;background:var(--tint)}
-  .sb-step figcaption{padding:10px 10px 12px;font-size:12.5px;line-height:1.4;color:var(--muted);border-top:1px solid var(--line-soft)}
-  .sb-step figcaption b{display:block;color:var(--ink);font-weight:600;font-size:12.5px;margin-bottom:2px}
-  .sb-step .sb-n{color:var(--faint);font-weight:600;font-size:11px;letter-spacing:.03em;margin-right:4px}
-  .film{display:grid;gap:8px;margin-top:14px;grid-template-columns:repeat(2,1fr)}
-  @media (min-width:720px){.film{grid-template-columns:repeat(4,1fr)}}
-  .film a{display:block;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--card);text-decoration:none;color:inherit}
-  .film a:hover{border-color:var(--muted)}
-  .film img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top center}
-  .film span{display:block;padding:8px 10px;font-size:12px;color:var(--muted);border-top:1px solid var(--line-soft)}
-  h1{font-size:36px;line-height:1.2;margin:.1em 0 .3em;letter-spacing:-.01em;font-weight:700}
-  .sub{font-size:16px;color:var(--muted);max-width:64ch;margin:0}
-  .meta{display:flex;flex-wrap:wrap;gap:28px;margin-top:26px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:13.5px}
-  .meta b{display:block;color:var(--faint);font-weight:500;font-size:12px;margin-bottom:2px}
-  .toc{display:flex;flex-wrap:wrap;gap:8px 16px;margin:28px 0 0;padding:14px 0;border-bottom:1px solid var(--line-soft);font-size:13px}
-  .toc a{color:var(--muted);text-decoration:none}
-  .toc a:hover{color:var(--ink)}
-  section{margin-top:44px}
-  .sec-head{display:flex;align-items:baseline;gap:10px;margin-bottom:6px;padding-bottom:8px;border-bottom:1px solid var(--line-soft)}
-  .sec-num{font-size:13px;font-weight:600;color:var(--faint)}
-  h2{font-size:23px;margin:0;letter-spacing:-.01em;font-weight:700}
-  .sec-sub{font-size:14.5px;color:var(--muted);margin:10px 0 18px}
-  .callout{background:var(--tint);border:1px solid var(--line-soft);border-radius:var(--radius);padding:16px 18px;font-size:14.5px;line-height:1.6;margin-top:16px}
-  .seeds{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 16px}
-  .seeds button{font:inherit;font-size:12.5px;padding:4px 10px;border-radius:4px;border:1px solid var(--line);background:var(--gray-bg);color:var(--muted);cursor:pointer}
-  .seeds button.active,.seeds button:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
-  .live-frame-wrap{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#121214;height:min(720px,78vh)}
-  .live-frame-wrap iframe{width:100%;height:100%;border:0;display:block}
-  .live-meta{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:8px;font-size:13px;color:var(--muted)}
-  .live-meta b{color:var(--ink)}
-  figure{margin:0}
-  figure h3{margin:0 0 8px;font-size:13px;font-weight:500;color:var(--muted)}
-  .shot{display:block;width:100%;border-radius:var(--radius);border:1px solid var(--line);background:#fff}
-  .grid{display:grid;gap:20px;grid-template-columns:1fr;margin-top:8px}
-  @media (min-width:720px){.grid.two{grid-template-columns:1fr 1fr}}
-  ul.compact{margin:8px 0 0;padding-left:18px;font-size:14.5px;color:var(--muted)}
-  ul.compact li{margin:6px 0}
-  ul.compact strong{color:var(--ink)}
-  .foot{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
-  code{font-size:13px;background:var(--tint);padding:1px 6px;border-radius:4px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
-</style>
+<link rel="stylesheet" href="./assets/delivery.css" />
 </head>
 <body>
 <script>
@@ -122,155 +20,145 @@ window.DELIVERY_GATE = {
 };
 </script>
 <script src="./assets/gate.js"></script>
-
 <div class="wrap">
   <header class="topbar">
     <div class="topbar-left"><span class="logo" aria-hidden="true"></span> MERMAID · PLATFORM · DELIVERY</div>
     <div class="topbar-links">
-      <a href="./docs/DECISIONS.md">Decisions</a>
+      <a href="./index.html" aria-current="page" class="on">Slide</a>
+      <a href="./styles.html">Styles</a>
+      <a href="./decisions.html">Decisions &amp; rules</a>
       <a href="./docs/INTEGRATION.md">Integration</a>
-      <a href="./FIGMA.md">Figma notes</a>
       <a class="btn-primary" href="https://www.figma.com/design/SkEVtrAYLajpQjBeXLD5QU/Platform?node-id=141-3891" target="_blank" rel="noopener">Open Figma</a>
     </div>
   </header>
-
   <div class="pill-row">
     <span class="tag feature">API console</span>
-    <span class="tag holds">Non-admin · v3</span>
-    <span class="tag tweak">Admin · later</span>
+    <span class="tag holds">Customer · v3</span>
+    <span class="tag holds">Admin · v3</span>
+    <span class="tag tweak">Motion + feedback</span>
   </div>
   <h1>Mermaid API console</h1>
-  <p class="sub">Customer keys, usage, and billing — dark Coral shell from Platform meeting decisions. Entry from Chart · Developer mode. Keys shown once; agent setup is Copy prompt only.</p>
+  <p class="sub">Keys, usage and billing for the Mermaid API, inside the Mermaid Chart account. Entry from the Chart header, account menu and search. Customer and org-admin views share one dark Coral shell, switched from the top bar.</p>
   <div class="meta">
-    <div><b>Figma</b>Platform · <code>141:3891</code></div>
-    <div><b>Status</b>Customer HTML prototype</div>
-    <div><b>Live</b>Static screens in this package</div>
-    <div><b>Product src</b>app-team / handoffs/mermaid-api-console</div>
+    <div><b>Figma</b>Platform · <code>141:3891</code> · <code>206:12847</code></div>
+    <div><b>Status</b>Clickable HTML prototype</div>
+    <div><b>Screens</b>42 live pages</div>
+    <div><b>Product src</b><a href="https://github.com/Mermaid-Chart/app-team/tree/main/handoffs/mermaid-api-console">app-team / handoffs</a></div>
   </div>
 
   <nav class="toc" aria-label="On this page">
-    <a href="#stages">Stages</a>
-    <a href="#directions">Directions</a>
-    <a href="#live">Live</a>
-    <a href="#flows">Flows</a>
-    <a href="#shots">Screenshots</a>
-    <a href="#spec">Spec</a>
+    <a href="#stages">Stages</a><a href="#entry">Entry</a><a href="#roles">Roles</a><a href="#live">Live</a>
+    <a href="#flows">Flows</a><a href="#motion">Motion</a><a href="#shots">Screenshots</a><a href="#spec">Spec</a>
+    <a href="./styles.html">Styles →</a><a href="./decisions.html">Decisions &amp; rules →</a>
   </nav>
 
   <div class="callout">
-    <strong>Chrome vs product.</strong> This page uses Notion-plain docs chrome. The console UI inside Live and the screenshots follows the Figma / Coral system — dark storm surfaces, pink primary, deep purple meters.
+    <strong>Chrome vs product.</strong> These pages use Notion-plain docs chrome. Everything inside Live and the screenshots follows the Figma Coral system: storm surfaces, one pink primary, deep-purple data.
   </div>
 
   <section id="stages">
     <div class="sec-head"><span class="sec-num">01</span><h2>Where this sits</h2></div>
-    <p class="sec-sub">Customer path first. Admin stays on the prior prototype until phase 2.</p>
+    <p class="sec-sub">Both roles are prototyped. Wiring to real auth, balance and Stripe is next.</p>
+    
     <div class="stage-rail">
-      <div class="stage-card"><span class="n">01</span><h3>Chart entry</h3><p class="where">Developer mode → login</p></div>
-      <div class="stage-card"><span class="n">02</span><h3>Get started</h3><p class="where">Agent card · manual steps</p></div>
-      <div class="stage-card you"><span class="n">03 · THIS PAGE</span><h3>Customer console</h3><p class="where">Keys · usage · billing · overview</p></div>
-      <div class="stage-card"><span class="n">04</span><h3>Wire APIs</h3><p class="where">Real balance · Stripe · keys</p></div>
-      <div class="stage-card"><span class="n">05</span><h3>Admin · v3</h3><p class="where">Deferred</p></div>
+      <div class="stage-card"><span class="n">01</span><h3>Chart entry</h3><p class="where">Header button · account menu · search</p></div>
+      <div class="stage-card"><span class="n">02</span><h3>Login</h3><p class="where">Chart SSO · loading</p></div>
+      <div class="stage-card you"><span class="n">03 · THIS PAGE</span><h3>Customer + admin console</h3><p class="where">Keys · usage · billing · org</p></div>
+      <div class="stage-card"><span class="n">04</span><h3>Wire APIs</h3><p class="where">Keys · balance · Stripe</p></div>
+      <div class="stage-card"><span class="n">05</span><h3>Super admin</h3><p class="where">Not designed · out of scope</p></div>
     </div>
     <div class="metric-grid">
-      <div class="metric"><div class="num">10</div><div class="label">Customer screens in the live set</div></div>
-      <div class="metric"><div class="num">1×</div><div class="label">Key secret shown — create modal only</div></div>
-      <div class="metric"><div class="num">0</div><div class="label">Admin screens in this package</div></div>
+      <div class="metric"><div class="num">42</div><div class="label">Live pages, customer and admin</div></div>
+      <div class="metric"><div class="num">3</div><div class="label">Entry points from Mermaid Chart</div></div>
+      <div class="metric"><div class="num">1×</div><div class="label">Key secret shown: the create dialog only</div></div>
     </div>
   </section>
-
-  <section id="directions">
-    <div class="sec-head"><span class="sec-num">02</span><h2>Two jobs</h2></div>
-    <p class="sec-sub">First-run setup vs returning spend control.</p>
+  <section id="entry">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Entry from Mermaid Chart</h2></div>
+    <p class="sec-sub">Meeting decision 1: “API keys” lives in the main app, not only the account menu.</p>
+    
+    <div class="dir-grid three">
+      <div class="dir-card push">
+        <a href="#shot-01"><img class="dir-shot" src="./assets/screenshots/00a-chart-header-button.png" alt="" loading="lazy" /></a>
+        <div class="dir-body"><h3>Header button</h3><p>Dark API keys button with a key icon, before Invite teammates.</p><span class="tag holds">Pick</span></div>
+      </div>
+      <div class="dir-card pull">
+        <a href="#shot-02"><img class="dir-shot" src="./assets/screenshots/00b-chart-account-menu.png" alt="" loading="lazy" /></a>
+        <div class="dir-body"><h3>Account menu</h3><p>Same entry, same tooltip copy.</p><span class="tag holds">Also</span></div>
+      </div>
+      <div class="dir-card pull">
+        <a href="#shot-03"><img class="dir-shot" src="./assets/screenshots/00c-chart-search.png" alt="" loading="lazy" /></a>
+        <div class="dir-body"><h3>Global search</h3><p>Typing “API” shows API keys, docs, and usage and credits.</p><span class="tag holds">Also</span></div>
+      </div>
+    </div>
+  </section>
+  <section id="roles">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Two roles, one shell</h2></div>
+    <p class="sec-sub">The User / Admin toggle in the top bar switches roles on every page. The account menu on Acme pages switches workspace.</p>
+    
     <div class="dir-grid">
       <div class="dir-card pull">
-        <a href="#shot-01"><img class="dir-shot" src="./assets/screenshots/01-get-started.png" alt="" /></a>
-        <div class="dir-body">
-          <h3>↓ First key</h3>
-          <p>Copy an agent prompt or create a key yourself. The page never shows the secret.</p>
-          <span class="tag holds">Get started · Keys modal</span>
-        </div>
+        <a href="#shot-11"><img class="dir-shot" src="./assets/screenshots/08-overview.png" alt="" loading="lazy" /></a>
+        <div class="dir-body"><h3>User</h3><p>Own keys, allowance, purchased credits, recent calls. Billing holds packs, auto top-up and limits.</p><span class="tag holds">Customer · v3</span></div>
       </div>
       <div class="dir-card push">
-        <a href="#shot-05"><img class="dir-shot" src="./assets/screenshots/05-overview.png" alt="" /></a>
-        <div class="dir-body">
-          <h3>↑ Returning</h3>
-          <p>Overview of credits and calls; Billing for packs, auto top-up, and limits.</p>
-          <span class="tag holds">Overview B · Billing</span>
-        </div>
+        <a href="#shot-21"><img class="dir-shot" src="./assets/screenshots/18-admin-overview.png" alt="" loading="lazy" /></a>
+        <div class="dir-body"><h3>Org admin</h3><p>Org pool, members near their limits, all keys, overrides, consumption, credit pool split, burst limits.</p><span class="tag holds">Admin · v3</span></div>
       </div>
     </div>
   </section>
-
   <section id="live">
-    <div class="sec-head"><span class="sec-num">03</span><h2>Live console</h2></div>
-    <p class="sec-sub">Same static HTML eng can click through. Seeds jump screens — no build.</p>
-    <div class="live-meta"><span>Showing <b id="live-label">Get started</b></span><span>Open full page → <a href="./assets/live/" target="_blank" rel="noopener">assets/live/</a></span></div>
-    <div class="seeds" role="toolbar" aria-label="Screen seeds">
-      <button type="button" data-live="get-started" class="active">Get started</button>
-      <button type="button" data-live="keys">Keys</button>
-      <button type="button" data-live="new-key">New key</button>
-      <button type="button" data-live="overview">Overview</button>
-      <button type="button" data-live="billing">Billing</button>
-      <button type="button" data-live="usage">Usage</button>
-      <button type="button" data-live="settings">Settings</button>
-      <button type="button" data-live="login">Login</button>
-    </div>
-    <div class="live-frame-wrap">
-      <iframe id="live-frame" title="Mermaid API console live" src="./assets/live/get-started.html"></iframe>
-    </div>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Live console</h2></div>
+    <p class="sec-sub">The same static HTML engineering can click through. Seeds jump between screens; every page links on from there. No build.</p>
+    
+    <div class="live-meta"><span>Showing <b id="live-label">Login</b></span><span>Open full hub → <a href="./assets/live/index.html" target="_blank" rel="noopener">assets/live/</a></span></div>
+    <div class="seeds" role="toolbar" aria-label="Screen seeds"><button type="button" data-live="login" data-src="./assets/live/login.html" class="active">Login</button><button type="button" data-live="get-started" data-src="./assets/live/get-started.html">Get started</button><button type="button" data-live="new-key" data-src="./assets/live/keys.html?new=1">New key</button><button type="button" data-live="overview" data-src="./assets/live/overview.html">Overview</button><button type="button" data-live="billing" data-src="./assets/live/billing.html">Billing</button><button type="button" data-live="usage" data-src="./assets/live/usage.html">Usage</button><button type="button" data-live="settings" data-src="./assets/live/settings.html">Settings</button><button type="button" data-live="admin" data-src="./assets/live/admin-overview.html">Admin</button><button type="button" data-live="admin-pool" data-src="./assets/live/admin-pool.html">Credit pool</button><button type="button" data-live="styleguide" data-src="./assets/live/styleguide.html">Style guide</button></div>
+    <div class="live-frame-wrap"><iframe id="live-frame" title="Mermaid API console live" src="./assets/live/login.html"></iframe></div>
   </section>
-
   <section id="flows">
-    <div class="sec-head"><span class="sec-num">04</span><h2>Storyboard</h2></div>
-    <p class="sec-sub">First-run path. Thumbs jump to full frames below.</p>
-    <div class="storyboard six">
-      <figure class="sb-step"><a href="#shot-10"><img src="./assets/screenshots/10-login.png" alt="" /><figcaption><b><span class="sb-n">01</span> Login</b>Chart SSO</figcaption></a></figure>
-      <figure class="sb-step"><a href="#shot-01"><img src="./assets/screenshots/01-get-started.png" alt="" /><figcaption><b><span class="sb-n">02</span> Get started</b>Agent + manual</figcaption></a></figure>
-      <figure class="sb-step"><a href="#shot-03"><img src="./assets/screenshots/03-new-key.png" alt="" /><figcaption><b><span class="sb-n">03</span> New key</b>Shown once</figcaption></a></figure>
-      <figure class="sb-step"><a href="#shot-02"><img src="./assets/screenshots/02-keys.png" alt="" /><figcaption><b><span class="sb-n">04</span> Keys</b>Masked table</figcaption></a></figure>
-      <figure class="sb-step"><a href="#shot-07"><img src="./assets/screenshots/07-billing.png" alt="" /><figcaption><b><span class="sb-n">05</span> Billing</b>Packs + limits</figcaption></a></figure>
-      <figure class="sb-step"><a href="#shot-05"><img src="./assets/screenshots/05-overview.png" alt="" /><figcaption><b><span class="sb-n">06</span> Overview</b>Returning B</figcaption></a></figure>
-    </div>
-    <div class="film" style="margin-top:18px">
-      <a href="#shot-04"><img src="./assets/screenshots/04-key-detail.png" alt="" /><span>Key detail</span></a>
-      <a href="#shot-06"><img src="./assets/screenshots/06-usage.png" alt="" /><span>Usage · free</span></a>
-      <a href="#shot-08"><img src="./assets/screenshots/08-billing-success.png" alt="" /><span>Payment complete</span></a>
-      <a href="#shot-09"><img src="./assets/screenshots/09-settings.png" alt="" /><span>Settings</span></a>
-    </div>
+    <div class="sec-head"><span class="sec-num">05</span><h2>Storyboards</h2></div>
+    <p class="sec-sub">Three journeys. Thumbs jump to full frames below.</p>
+    
+    <h3 class="flow-h">First key</h3>
+    <div class="storyboard six"><figure class="sb-step"><a href="#shot-04"><img src="./assets/screenshots/01-login.png" alt="" loading="lazy" /><figcaption><b><span class="sb-n">01</span> Login</b>Log in with Mermaid Chart</figcaption></a></figure><figure class="sb-step"><a href="#shot-05"><img src="./assets/screenshots/02-login-loading.png" alt="" loading="lazy" /><figcaption><b><span class="sb-n">02</span> Login · loading</b>What you can do here</figcaption></a></figure><figure class="sb-step"><a href="#shot-06"><img src="./assets/screenshots/03-get-started.png" alt="" loading="lazy" /><figcaption><b><span class="sb-n">03</span> Get started</b>Agent prompt + manual steps</figcaption></a></figure><figure class="sb-step"><a href="#shot-07"><img src="./assets/screenshots/04-new-key.png" alt="" loading="lazy" /><figcaption><b><span class="sb-n">04</span> Your new key</b>Secret shown once</figcaption></a></figure><figure class="sb-step"><a href="#shot-08"><img src="./assets/screenshots/05-keys-row-menu.png" alt="" loading="lazy" /><figcaption><b><span class="sb-n">05</span> Keys · row menu</b>Rename, copy ID, revoke</figcaption></a></figure><figure class="sb-step"><a href="#shot-09"><img src="./assets/screenshots/06-key-detail.png" alt="" loading="lazy" /><figcaption><b><span class="sb-n">06</span> Key detail</b>Chart, endpoints, recent calls</figcaption></a></figure></div>
+    <h3 class="flow-h">Spend</h3>
+    <div class="storyboard six"><figure class="sb-step"><a href="#shot-11"><img src="./assets/screenshots/08-overview.png" alt="" loading="lazy" /><figcaption><b><span class="sb-n">01</span> Overview · returning</b>Expiry alert, API card, credits</figcaption></a></figure><figure class="sb-step"><a href="#shot-12"><img src="./assets/screenshots/09-usage.png" alt="" loading="lazy" /><figcaption><b><span class="sb-n">02</span> Usage · free plan</b>Allowance + plan table</figcaption></a></figure><figure class="sb-step"><a href="#shot-14"><img src="./assets/screenshots/11-billing.png" alt="" loading="lazy" /><figcaption><b><span class="sb-n">03</span> Billing</b>Balance, packs, limits</figcaption></a></figure><figure class="sb-step"><a href="#shot-15"><img src="./assets/screenshots/12-billing-custom.png" alt="" loading="lazy" /><figcaption><b><span class="sb-n">04</span> Billing · custom amount</b>Multiples of 1,000</figcaption></a></figure><figure class="sb-step"><a href="#shot-16"><img src="./assets/screenshots/13-billing-checkout.png" alt="" loading="lazy" /><figcaption><b><span class="sb-n">05</span> Billing · Stripe Checkout</b>Confirm dialog</figcaption></a></figure><figure class="sb-step"><a href="#shot-17"><img src="./assets/screenshots/14-billing-success.png" alt="" loading="lazy" /><figcaption><b><span class="sb-n">06</span> Billing · payment complete</b>Success alert</figcaption></a></figure></div>
+    <h3 class="flow-h">Org admin</h3>
+    <div class="storyboard six"><figure class="sb-step"><a href="#shot-21"><img src="./assets/screenshots/18-admin-overview.png" alt="" loading="lazy" /><figcaption><b><span class="sb-n">01</span> Admin · overview</b>Org pool, members near limits</figcaption></a></figure><figure class="sb-step"><a href="#shot-22"><img src="./assets/screenshots/19-admin-switcher.png" alt="" loading="lazy" /><figcaption><b><span class="sb-n">02</span> Admin · workspace switcher</b>Personal · Admin · Member</figcaption></a></figure><figure class="sb-step"><a href="#shot-23"><img src="./assets/screenshots/20-admin-keys.png" alt="" loading="lazy" /><figcaption><b><span class="sb-n">03</span> Admin · all keys</b>Across the org</figcaption></a></figure><figure class="sb-step"><a href="#shot-24"><img src="./assets/screenshots/21-admin-revoke.png" alt="" loading="lazy" /><figcaption><b><span class="sb-n">04</span> Admin · revoke member keys</b>Confirm dialog</figcaption></a></figure><figure class="sb-step"><a href="#shot-26"><img src="./assets/screenshots/23-admin-pool.png" alt="" loading="lazy" /><figcaption><b><span class="sb-n">05</span> Admin · credit pool</b>Split by member, live totals</figcaption></a></figure><figure class="sb-step"><a href="#shot-27"><img src="./assets/screenshots/24-admin-burst.png" alt="" loading="lazy" /><figcaption><b><span class="sb-n">06</span> Admin · burst limits</b>Org default + overrides</figcaption></a></figure></div>
+    <div class="film"><a href="#shot-10"><img src="./assets/screenshots/07-key-detail-revoked.png" alt="" loading="lazy" /><span>Key detail · revoked</span></a><a href="#shot-13"><img src="./assets/screenshots/10-usage-org.png" alt="" loading="lazy" /><span>Usage · org member</span></a><a href="#shot-18"><img src="./assets/screenshots/15-billing-autotopup.png" alt="" loading="lazy" /><span>Billing · auto top-up active</span></a><a href="#shot-19"><img src="./assets/screenshots/16-billing-purchases.png" alt="" loading="lazy" /><span>Billing · purchases</span></a><a href="#shot-20"><img src="./assets/screenshots/17-settings.png" alt="" loading="lazy" /><span>Settings</span></a><a href="#shot-25"><img src="./assets/screenshots/22-admin-consumption.png" alt="" loading="lazy" /><span>Admin · consumption</span></a></div>
   </section>
-
+  <section id="motion">
+    <div class="sec-head"><span class="sec-num">06</span><h2>Motion and feedback</h2></div>
+    <p class="sec-sub">Every action answers. Full tokens and live specimens are on the Styles page.</p>
+    
+    <div class="metric-grid four">
+      <div class="metric"><div class="num">280<small>ms</small></div><div class="label">Page cross-fade; sidebar and top bar stay put, nav pill and tabs slide</div></div>
+      <div class="metric"><div class="num">520<small>ms</small></div><div class="label">Busy spinner before a toast or navigation</div></div>
+      <div class="metric"><div class="num">30<small>ms</small></div><div class="label">Stagger on bars, sparks and page blocks</div></div>
+      <div class="metric"><div class="num">16<small>s</small></div><div class="label">Login background zoom, 1 → 1.05</div></div>
+    </div>
+    <div class="callout">Feedback patterns: toasts for actions (copy, save, revoke, rename), inline alerts for balance and payment state, inline rename, row flash, empty filter rows, disabled Buy with a reason. <a href="./styles.html#motion">Motion tokens →</a></div>
+  </section>
   <section id="shots">
-    <div class="sec-head"><span class="sec-num">05</span><h2>Screenshots</h2></div>
-    <p class="sec-sub">Full frames for review. Same files as storyboard thumbs.</p>
-    <div class="grid two">
-      <figure id="shot-01"><h3>01 · Get started</h3><img class="shot" src="./assets/screenshots/01-get-started.png" alt="Get started" /></figure>
-      <figure id="shot-02"><h3>02 · Keys</h3><img class="shot" src="./assets/screenshots/02-keys.png" alt="Keys" /></figure>
-      <figure id="shot-03"><h3>03 · Your new key</h3><img class="shot" src="./assets/screenshots/03-new-key.png" alt="New key modal" /></figure>
-      <figure id="shot-04"><h3>04 · Key detail</h3><img class="shot" src="./assets/screenshots/04-key-detail.png" alt="Key detail" /></figure>
-      <figure id="shot-05"><h3>05 · Overview · returning</h3><img class="shot" src="./assets/screenshots/05-overview.png" alt="Overview" /></figure>
-      <figure id="shot-06"><h3>06 · Usage · free</h3><img class="shot" src="./assets/screenshots/06-usage.png" alt="Usage" /></figure>
-      <figure id="shot-07"><h3>07 · Billing</h3><img class="shot" src="./assets/screenshots/07-billing.png" alt="Billing" /></figure>
-      <figure id="shot-08"><h3>08 · Payment complete</h3><img class="shot" src="./assets/screenshots/08-billing-success.png" alt="Payment complete" /></figure>
-      <figure id="shot-09"><h3>09 · Settings</h3><img class="shot" src="./assets/screenshots/09-settings.png" alt="Settings" /></figure>
-      <figure id="shot-10"><h3>10 · Login</h3><img class="shot" src="./assets/screenshots/10-login.png" alt="Login" /></figure>
-    </div>
+    <div class="sec-head"><span class="sec-num">07</span><h2>Screenshots</h2></div>
+    <p class="sec-sub">1440 × 900 frames from the live package. Click to open full size.</p>
+    
+    <div class="grid two"><figure id="shot-01"><h3>01 · Chart · header button</h3><a href="./assets/screenshots/00a-chart-header-button.png" target="_blank" rel="noopener"><img class="shot" src="./assets/screenshots/00a-chart-header-button.png" alt="Chart · header button" loading="lazy" /></a></figure><figure id="shot-02"><h3>02 · Chart · account menu</h3><a href="./assets/screenshots/00b-chart-account-menu.png" target="_blank" rel="noopener"><img class="shot" src="./assets/screenshots/00b-chart-account-menu.png" alt="Chart · account menu" loading="lazy" /></a></figure><figure id="shot-03"><h3>03 · Chart · global search</h3><a href="./assets/screenshots/00c-chart-search.png" target="_blank" rel="noopener"><img class="shot" src="./assets/screenshots/00c-chart-search.png" alt="Chart · global search" loading="lazy" /></a></figure><figure id="shot-04"><h3>04 · Login</h3><a href="./assets/screenshots/01-login.png" target="_blank" rel="noopener"><img class="shot" src="./assets/screenshots/01-login.png" alt="Login" loading="lazy" /></a></figure><figure id="shot-05"><h3>05 · Login · loading</h3><a href="./assets/screenshots/02-login-loading.png" target="_blank" rel="noopener"><img class="shot" src="./assets/screenshots/02-login-loading.png" alt="Login · loading" loading="lazy" /></a></figure><figure id="shot-06"><h3>06 · Get started</h3><a href="./assets/screenshots/03-get-started.png" target="_blank" rel="noopener"><img class="shot" src="./assets/screenshots/03-get-started.png" alt="Get started" loading="lazy" /></a></figure><figure id="shot-07"><h3>07 · Your new key</h3><a href="./assets/screenshots/04-new-key.png" target="_blank" rel="noopener"><img class="shot" src="./assets/screenshots/04-new-key.png" alt="Your new key" loading="lazy" /></a></figure><figure id="shot-08"><h3>08 · Keys · row menu</h3><a href="./assets/screenshots/05-keys-row-menu.png" target="_blank" rel="noopener"><img class="shot" src="./assets/screenshots/05-keys-row-menu.png" alt="Keys · row menu" loading="lazy" /></a></figure><figure id="shot-09"><h3>09 · Key detail</h3><a href="./assets/screenshots/06-key-detail.png" target="_blank" rel="noopener"><img class="shot" src="./assets/screenshots/06-key-detail.png" alt="Key detail" loading="lazy" /></a></figure><figure id="shot-10"><h3>10 · Key detail · revoked</h3><a href="./assets/screenshots/07-key-detail-revoked.png" target="_blank" rel="noopener"><img class="shot" src="./assets/screenshots/07-key-detail-revoked.png" alt="Key detail · revoked" loading="lazy" /></a></figure><figure id="shot-11"><h3>11 · Overview · returning</h3><a href="./assets/screenshots/08-overview.png" target="_blank" rel="noopener"><img class="shot" src="./assets/screenshots/08-overview.png" alt="Overview · returning" loading="lazy" /></a></figure><figure id="shot-12"><h3>12 · Usage · free plan</h3><a href="./assets/screenshots/09-usage.png" target="_blank" rel="noopener"><img class="shot" src="./assets/screenshots/09-usage.png" alt="Usage · free plan" loading="lazy" /></a></figure><figure id="shot-13"><h3>13 · Usage · org member</h3><a href="./assets/screenshots/10-usage-org.png" target="_blank" rel="noopener"><img class="shot" src="./assets/screenshots/10-usage-org.png" alt="Usage · org member" loading="lazy" /></a></figure><figure id="shot-14"><h3>14 · Billing</h3><a href="./assets/screenshots/11-billing.png" target="_blank" rel="noopener"><img class="shot" src="./assets/screenshots/11-billing.png" alt="Billing" loading="lazy" /></a></figure><figure id="shot-15"><h3>15 · Billing · custom amount</h3><a href="./assets/screenshots/12-billing-custom.png" target="_blank" rel="noopener"><img class="shot" src="./assets/screenshots/12-billing-custom.png" alt="Billing · custom amount" loading="lazy" /></a></figure><figure id="shot-16"><h3>16 · Billing · Stripe Checkout</h3><a href="./assets/screenshots/13-billing-checkout.png" target="_blank" rel="noopener"><img class="shot" src="./assets/screenshots/13-billing-checkout.png" alt="Billing · Stripe Checkout" loading="lazy" /></a></figure><figure id="shot-17"><h3>17 · Billing · payment complete</h3><a href="./assets/screenshots/14-billing-success.png" target="_blank" rel="noopener"><img class="shot" src="./assets/screenshots/14-billing-success.png" alt="Billing · payment complete" loading="lazy" /></a></figure><figure id="shot-18"><h3>18 · Billing · auto top-up active</h3><a href="./assets/screenshots/15-billing-autotopup.png" target="_blank" rel="noopener"><img class="shot" src="./assets/screenshots/15-billing-autotopup.png" alt="Billing · auto top-up active" loading="lazy" /></a></figure><figure id="shot-19"><h3>19 · Billing · purchases</h3><a href="./assets/screenshots/16-billing-purchases.png" target="_blank" rel="noopener"><img class="shot" src="./assets/screenshots/16-billing-purchases.png" alt="Billing · purchases" loading="lazy" /></a></figure><figure id="shot-20"><h3>20 · Settings</h3><a href="./assets/screenshots/17-settings.png" target="_blank" rel="noopener"><img class="shot" src="./assets/screenshots/17-settings.png" alt="Settings" loading="lazy" /></a></figure><figure id="shot-21"><h3>21 · Admin · overview</h3><a href="./assets/screenshots/18-admin-overview.png" target="_blank" rel="noopener"><img class="shot" src="./assets/screenshots/18-admin-overview.png" alt="Admin · overview" loading="lazy" /></a></figure><figure id="shot-22"><h3>22 · Admin · workspace switcher</h3><a href="./assets/screenshots/19-admin-switcher.png" target="_blank" rel="noopener"><img class="shot" src="./assets/screenshots/19-admin-switcher.png" alt="Admin · workspace switcher" loading="lazy" /></a></figure><figure id="shot-23"><h3>23 · Admin · all keys</h3><a href="./assets/screenshots/20-admin-keys.png" target="_blank" rel="noopener"><img class="shot" src="./assets/screenshots/20-admin-keys.png" alt="Admin · all keys" loading="lazy" /></a></figure><figure id="shot-24"><h3>24 · Admin · revoke member keys</h3><a href="./assets/screenshots/21-admin-revoke.png" target="_blank" rel="noopener"><img class="shot" src="./assets/screenshots/21-admin-revoke.png" alt="Admin · revoke member keys" loading="lazy" /></a></figure><figure id="shot-25"><h3>25 · Admin · consumption</h3><a href="./assets/screenshots/22-admin-consumption.png" target="_blank" rel="noopener"><img class="shot" src="./assets/screenshots/22-admin-consumption.png" alt="Admin · consumption" loading="lazy" /></a></figure><figure id="shot-26"><h3>26 · Admin · credit pool</h3><a href="./assets/screenshots/23-admin-pool.png" target="_blank" rel="noopener"><img class="shot" src="./assets/screenshots/23-admin-pool.png" alt="Admin · credit pool" loading="lazy" /></a></figure><figure id="shot-27"><h3>27 · Admin · burst limits</h3><a href="./assets/screenshots/24-admin-burst.png" target="_blank" rel="noopener"><img class="shot" src="./assets/screenshots/24-admin-burst.png" alt="Admin · burst limits" loading="lazy" /></a></figure></div>
   </section>
-
   <section id="spec">
-    <div class="sec-head"><span class="sec-num">06</span><h2>Spec · roads · code</h2></div>
-    <p class="sec-sub">Short bullets only — decisions file has the full list.</p>
+    <div class="sec-head"><span class="sec-num">08</span><h2>Spec · code</h2></div>
+    <p class="sec-sub">Short bullets. The full list is on Decisions &amp; rules.</p>
+    
     <ul class="compact">
-      <li><strong>Keys once</strong> — no reveal on Get started or key detail.</li>
-      <li><strong>Agent card</strong> — Copy prompt only; payload not displayed.</li>
-      <li><strong>Shell</strong> — Access / Spend / Resources; breadcrumb top bar; no Flow.</li>
-      <li><strong>Credits</strong> — allowance then purchased; packs + auto top-up + spend limit + low-balance email.</li>
-      <li><strong>Not shipping</strong> — Admin · v3, transactional emails HTML, marketing landing.</li>
-      <li><strong>Integrate</strong> — <a href="./docs/INTEGRATION.md">INTEGRATION.md</a> · product tree in <code>Mermaid-Chart/app-team/handoffs/mermaid-api-console/</code></li>
+      <li><strong>Keys once</strong>: full secret only in the create dialog; masked everywhere else; no reveal.</li>
+      <li><strong>Agent card</strong>: Copy prompt only; the prompt reads <code>MERMAID_API_KEY</code>.</li>
+      <li><strong>Credits</strong>: allowance first, then one purchased pool; packs 5k / 10k / 15k / custom ×1,000.</li>
+      <li><strong>Roles</strong>: members see their share, no admin actions; admins see names and last 4, never secrets.</li>
+      <li><strong>Integrate</strong>: <a href="./docs/INTEGRATION.md">INTEGRATION.md</a> · product tree in <code>Mermaid-Chart/app-team/handoffs/mermaid-api-console/</code></li>
     </ul>
   </section>
-
   <footer class="foot">
-    Sources: Figma Platform <code>141:3891</code> · handoff Non-admin · v3 · Notion-plain chrome · taste layer in <code>docs/</code>.
+    Sources: Figma Platform customer <code>141:3891</code> and admin <code>206:12847</code> · handoff v3 · meeting Oct 27, 2026 (Knut, Ashish) · Ruben's design reviews. 
   </footer>
 </div>
 <script src="./assets/api-console-live.js"></script>

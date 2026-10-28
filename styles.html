@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mermaid API console — Styles</title>
+<!-- Docs chrome: Notion-plain (docs/notion-plain-docs.mdc) · judgement: docs/ruben-taste-layer.mdc · product UI: Figma Platform (system wins) -->
+<script>
+(function(){try{if(localStorage.getItem('mc-delivery-gate-v1')==='ok')return;}catch(e){}document.documentElement.classList.add('dg-locked');})();
+</script>
+<style>html.dg-locked body > *:not(#delivery-gate){visibility:hidden}</style>
+<link rel="stylesheet" href="./assets/delivery.css" />
+</head>
+<body>
+<script>
+window.DELIVERY_GATE = {
+  hash: "756027fb4eb79a876aa00ee052d2876f8c10eb834930cf93e6810af1cb8d3432",
+  storageKey: "mc-delivery-gate-v1",
+  title: "MERMAID · API CONSOLE · DELIVERY"
+};
+</script>
+<script src="./assets/gate.js"></script>
+<div class="wrap">
+  <header class="topbar">
+    <div class="topbar-left"><span class="logo" aria-hidden="true"></span> MERMAID · PLATFORM · DELIVERY</div>
+    <div class="topbar-links">
+      <a href="./index.html">Slide</a>
+      <a href="./styles.html" aria-current="page" class="on">Styles</a>
+      <a href="./decisions.html">Decisions &amp; rules</a>
+      <a href="./docs/INTEGRATION.md">Integration</a>
+      <a class="btn-primary" href="https://www.figma.com/design/SkEVtrAYLajpQjBeXLD5QU/Platform?node-id=141-3891" target="_blank" rel="noopener">Open Figma</a>
+    </div>
+  </header>
+  <div class="pill-row"><span class="tag feature">Styles</span><span class="tag holds">Coral · dark only</span><span class="tag tweak">Motion tokens</span></div>
+  <h1>Styles</h1>
+  <p class="sub">Tokens, type, components and motion for the API console. The specimen below renders from the same <code>console.css</code> and <code>console.js</code> as every screen, so what you click here is what ships.</p>
+  <nav class="toc" aria-label="On this page">
+    <a href="#specimen">Live specimen</a><a href="#colour">Colour</a><a href="#type">Type</a><a href="#space">Spacing + radius</a>
+    <a href="#motion">Motion</a><a href="#components">Components</a><a href="#frame">Full frame</a>
+  </nav>
+  <div class="callout"><strong>Source of truth.</strong> Figma Coral Foundations for values; <code>assets/live/console.css</code> for how they're applied. When the two disagree, Figma wins and the CSS is the bug.</div>
+
+  <section id="specimen">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Live specimen</h2></div>
+    <p class="sec-sub">Click buttons for the busy spinner and toast, flip switches, open the dialog and the row menu.</p>
+    
+    <div class="live-frame-wrap tall"><iframe title="Style guide specimen" src="./assets/live/styleguide.html" loading="lazy"></iframe></div>
+  </section>
+  <section id="colour">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Colour</h2></div>
+    <p class="sec-sub">Dark mode only. Use tokens, never raw hex, in product code.</p>
+    
+    <div class="sw-grid"><div class="sw-group"><h3>Surfaces</h3><div class="sw"><i style="background:#18171C"></i><div><code>--storm-975</code><span>#18171C · App, sidebar, top bar</span></div></div><div class="sw"><i style="background:#1F1E24"></i><div><code>--storm-950</code><span>#1F1E24 · Cards</span></div></div><div class="sw"><i style="background:#242329"></i><div><code>--storm-900</code><span>#242329 · Inputs, code blocks</span></div></div><div class="sw"><i style="background:#2E2D34"></i><div><code>--storm-850</code><span>#2E2D34 · Hover tint, raised</span></div></div></div><div class="sw-group"><h3>Lines + text</h3><div class="sw"><i style="background:#3A3944"></i><div><code>--storm-800</code><span>#3A3944 · Hairlines, borders, bar track</span></div></div><div class="sw"><i style="background:#504D60"></i><div><code>--storm-700</code><span>#504D60 · Selected nav pill, tab</span></div></div><div class="sw"><i style="background:#8585A4"></i><div><code>--storm-400</code><span>#8585A4 · Descriptions, labels</span></div></div><div class="sw"><i style="background:#C4C4D4"></i><div><code>--storm-200</code><span>#C4C4D4 · Breadcrumb, muted</span></div></div><div class="sw"><i style="background:#F2F3F7"></i><div><code>--storm-50</code><span>#F2F3F7 · Primary text</span></div></div></div><div class="sw-group"><h3>Brand + data</h3><div class="sw"><i style="background:#E0095F"></i><div><code>--pink</code><span>#E0095F · Primary button, one per screen</span></div></div><div class="sw"><i style="background:#7B72E9"></i><div><code>--deep-300</code><span>#7B72E9 · Plan allowance series</span></div></div><div class="sw"><i style="background:#B7B2F5"></i><div><code>--deep-200</code><span>#B7B2F5 · Purchased series, focus ring</span></div></div></div><div class="sw-group"><h3>Status</h3><div class="sw"><i style="background:#4ADE80"></i><div><code>--green</code><span>#4ADE80 · OK, Live, Active</span></div></div><div class="sw"><i style="background:#F5A524"></i><div><code>--amber</code><span>#F5A524 · Low, warning</span></div></div><div class="sw"><i style="background:#F05264"></i><div><code>--red</code><span>#F05264 · Refused, danger</span></div></div><div class="sw"><i style="background:#4EA1F5"></i><div><code>--blue</code><span>#4EA1F5 · Info</span></div></div><div class="sw"><i style="background:#A8DCD6"></i><div><code>--teal</code><span>#A8DCD6 · Switch on</span></div></div></div></div>
+  </section>
+  <section id="type">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Type</h2></div>
+    <p class="sec-sub">Inter for UI, JetBrains Mono for keys and code. Title to description gap 8 px.</p>
+    
+    <table class="spec"><thead><tr><th>Role</th><th>Size / weight</th><th>Example</th></tr></thead><tbody><tr><td>Page title</td><td><code>24 / 600</code></td><td class="ex">Billing</td></tr><tr><td>Section number</td><td><code>20 / 600</code></td><td class="ex">250 credits available</td></tr><tr><td>Body</td><td><code>18 / 400</code></td><td class="ex">Allowance first, then purchased credits.</td></tr><tr><td>Label, nav, table</td><td><code>14 / 500</code></td><td class="ex">Buy 5,000 credits for $5.00</td></tr><tr><td>Note, card subtitle</td><td><code>12 / 400</code></td><td class="ex">Refused or failed calls cost 0 credits.</td></tr><tr><td>Code, keys</td><td><code>JetBrains Mono 14</code></td><td class="ex">mmd_0889••••••b574</td></tr></tbody></table>
+  </section>
+  <section id="space">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Spacing + radius</h2></div>
+    <p class="sec-sub">4 px grid. These numbers come straight from the Figma shell spec.</p>
+    
+    <div class="metric-grid four">
+      <div class="metric"><div class="num">240</div><div class="label">Sidebar width</div></div>
+      <div class="metric"><div class="num">60</div><div class="label">Top bar height</div></div>
+      <div class="metric"><div class="num">24 / 16</div><div class="label">Content padding / gap between blocks</div></div>
+      <div class="metric"><div class="num">8 / 6</div><div class="label">Card radius / inner radius</div></div>
+      <div class="metric"><div class="num">36</div><div class="label">Nav item, button and input height</div></div>
+      <div class="metric"><div class="num">48</div><div class="label">Inline card header height</div></div>
+      <div class="metric"><div class="num">16</div><div class="label">Card body padding, title → subtitle gap</div></div>
+      <div class="metric"><div class="num">1px</div><div class="label">storm-800 hairline everywhere</div></div>
+    </div>
+  </section>
+  <section id="motion">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Motion</h2></div>
+    <p class="sec-sub">Small, quick, and always answering a user action or a page change.</p>
+    
+    <table class="spec"><thead><tr><th>Token</th><th>Value</th><th>Use</th></tr></thead><tbody><tr><td><code>--dur-1</code></td><td><code>120 ms</code></td><td>Hover, colour, button press (scale 0.97)</td></tr><tr><td><code>--dur-2</code></td><td><code>200 ms</code></td><td>Popovers, nav icons, toasts</td></tr><tr><td><code>--dur-3</code></td><td><code>320 ms</code></td><td>Modals in/out, reveal panels (grid rows 0fr → 1fr)</td></tr><tr><td><code>--ease-out</code></td><td><code>cubic-bezier(.22, 1, .36, 1)</code></td><td>Default for everything that settles</td></tr><tr><td><code>--ease-spring</code></td><td><code>cubic-bezier(.34, 1.4, .64, 1)</code></td><td>Menus, switch thumb, pack radio dot</td></tr><tr><td><code>View transition</code></td><td><code>280 ms</code></td><td>Cross-document; sidebar + top bar fixed; nav pill, tab, mode toggle slide</td></tr><tr><td><code>Content stagger</code></td><td><code>fade-up 6 px, 40 ms steps</code></td><td>Each block of .content on load</td></tr><tr><td><code>Data</code></td><td><code>grow x / grow y, 30 ms stagger</code></td><td>Meters, share bars, chart bars, sparklines</td></tr><tr><td><code>Count-up</code></td><td><code>~600 ms</code></td><td>Big numbers with data-count</td></tr><tr><td><code>Login background</code></td><td><code>16 s ease-out</code></td><td>Zoom 1 → 1.05 behind the card</td></tr><tr><td><code>Reduced motion</code></td><td><code>1 ms</code></td><td>All of the above collapse to their end state</td></tr></tbody></table>
+  </section>
+  <section id="components">
+    <div class="sec-head"><span class="sec-num">06</span><h2>Components</h2></div>
+    <p class="sec-sub">Figma component → suggested code component.</p>
+    
+    <div class="comp-grid"><div class="comp"><h3>Sidebar</h3><span class="node">184:11527 · admin 205:15830</span><code><AppSidebar role selected></code></div><div class="comp"><h3>Top bar</h3><span class="node">18:3680</span><code><TopBar breadcrumb credits mode></code></div><div class="comp"><h3>Nav item</h3><span class="node">182:13500</span><code><NavItem icon label href active></code></div><div class="comp"><h3>Account row + menu</h3><span class="node">183:13724 · 108:36016</span><code><AccountSwitcher> → <AccountMenu></code></div><div class="comp"><h3>Button / Secondary</h3><span class="node">175:11102</span><code><Button variant surface size></code></div><div class="comp"><h3>Switch</h3><span class="node">175:11107</span><code><Switch checked> + reveal body</code></div><div class="comp"><h3>Input / Stepper</h3><span class="node">180:16052</span><code><NumberInput suffix> · <Stepper></code></div><div class="comp"><h3>Tabs (segmented)</h3><span class="node">Coral Navigation / Tabs</span><code><SegmentedTabs></code></div><div class="comp"><h3>Alert / Note</h3><span class="node">Coral library</span><code><Alert tone></code></div><div class="comp"><h3>Dialog</h3><span class="node">Coral Dialog</span><code><Dialog> new key, Stripe, upgrade, revoke</code></div><div class="comp"><h3>Row menu</h3><span class="node">108:36016</span><code><DropdownMenu> per context</code></div><div class="comp"><h3>Status badge</h3><span class="node">Coral library</span><code><StatusBadge status></code></div><div class="comp"><h3>Pack card</h3><span class="node">hand-built</span><code><PackPicker> with custom ×1,000</code></div><div class="comp"><h3>Balance bar + legend</h3><span class="node">hand-built</span><code><BalanceMeter plan purchased></code></div><div class="comp"><h3>Toast stack</h3><span class="node">prototype only</span><code><Toaster> (see decision D3)</code></div></div>
+  </section>
+  <section id="frame">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Full frame</h2></div>
+    <p class="sec-sub">The specimen as one image, for review without clicking.</p>
+    
+    <a href="./assets/screenshots/25-styleguide.png" target="_blank" rel="noopener"><img class="shot" src="./assets/screenshots/25-styleguide.png" alt="Style guide" loading="lazy" /></a>
+  </section>
+  <footer class="foot">
+    Sources: Figma Platform customer <code>141:3891</code> and admin <code>206:12847</code> · handoff v3 · meeting Oct 27, 2026 (Knut, Ashish) · Ruben's design reviews. 
+  </footer>
+</div>
+</body>
+</html>

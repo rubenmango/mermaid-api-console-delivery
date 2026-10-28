@@ -4,185 +4,164 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mermaid API — Billing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="console.css" />
+<link rel="stylesheet" href="console.css?v=7" />
 </head>
-<body>
+<body data-mode="customer">
 <div class="app">
 <aside class="sidebar">
   <div class="brand"><img src="assets/mermaid-logo.svg" alt="" /><span>API console</span></div>
-  <div class="nav-group">
-    <a class="nav" href="overview.html"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M4 15.2V8.3l6-4.5 6 4.5v6.9H12V12H8v4.8H4Z"/></svg>Dashboard</a>
-  </div>
+  <div class="nav-group"><a class="nav" href="overview.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4 16V8.5l6-4.5 6 4.5V16h-4v-4H8v4H4Z"/></svg>Dashboard</a></div>
   <p class="nav-label">Access</p>
-  <div class="nav-group">
-    <a class="nav" href="keys.html"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M7.2 13.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4Zm3-3.9h6.1V7.8h1.5v2.8h-1.5v1.3h-1.5V10.6H10.2V9.3Z"/></svg>Keys<span class="chev"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M7.6 5.4 12.2 10l-4.6 4.6-1.1-1.1L10 10 6.5 6.5l1.1-1.1Z"/></svg></span></a>
-  </div>
+  <div class="nav-group"><a class="nav" href="keys.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M7 13a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm3-3h7.5M15 10v2.5M17.5 10v2"/></svg>Keys<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a></div>
   <p class="nav-label">Spend</p>
   <div class="nav-group">
-    <a class="nav" href="usage.html"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M4 4.5h12c.6 0 1 .4 1 1v2.2c-1 .4-1.7 1.3-1.7 2.3S15 12 16 12.4V15c0 .6-.4 1-1 1H4c-.6 0-1-.4-1-1V5.5c0-.6.4-1 1-1Z"/></svg>Usage<span class="chev"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M7.6 5.4 12.2 10l-4.6 4.6-1.1-1.1L10 10 6.5 6.5l1.1-1.1Z"/></svg></span></a>
-    <a class="nav active" href="billing.html" aria-current="page"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M3.5 5.2h13c.6 0 1 .4 1 1v7.6c0 .6-.4 1-1 1h-13c-.6 0-1-.4-1-1V6.2c0-.6.4-1 1-1Zm.4 2.2v1.4h12.2V7.4H3.9Z"/></svg>Billing<span class="chev"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M7.6 5.4 12.2 10l-4.6 4.6-1.1-1.1L10 10 6.5 6.5l1.1-1.1Z"/></svg></span></a>
+    <a class="nav" href="usage.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4.5 5.5c0-1.1 2.5-2 5.5-2s5.5.9 5.5 2-2.5 2-5.5 2-5.5-.9-5.5-2Zm0 0v9c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2v-9M4.5 10c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2"/></svg>Usage<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+    <a class="nav active" href="billing.html" aria-current="page"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M3.5 5.5h13v9h-13v-9Zm0 3h13"/></svg>Billing<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
   </div>
   <p class="nav-label">Resources</p>
-  <div class="nav-group">
-    <a class="nav" href="../mermaid-api/website.html"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M5 3.5h6.2L16 8.3V16.5H5V3.5Zm5.5 1.2V8H15L10.5 4.7Z"/></svg>Docs<span class="ext"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M5.2 6.2h5.1v1.4H7.6l6.2 6.2-1 1-6.2-6.2v2.7H5.2V6.2Zm7.2 0H15v6.2h-1.4V8.6l-1.2-1.2V6.2Z"/></svg></span></a>
-  </div>
+  <div class="nav-group"><a class="nav" href="docs.html" target="_blank" rel="noopener"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M10 5.5C8.5 4.5 6 4 3.5 4.5v10c2.5-.5 5 0 6.5 1m0-10c1.5-1 4-1.5 6.5-1v10c-2.5-.5-5 0-6.5 1m0-10v10"/></svg>Docs<span class="ext"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M11.5 4.5h4v4m0-4-6 6M14 11.5v4H4.5V6h4"/></svg></span></a></div>
   <div class="spacer"></div>
   <div class="sidebar-divider"></div>
-  <div style="position:relative">
-    <div class="account-menu" id="account-menu">
-      <div class="hdr">
-        <img class="avatar" src="assets/avatar.png" alt="" />
-        <div class="meta"><strong>Ruben</strong><em>ruben@mermaidchart.com</em></div>
-      </div>
-      <a href="settings.html">Settings</a>
-      <a href="http://127.0.0.1:5173/dashboard">Back to Mermaid Chart</a>
+  <div class="account-wrap">
+    <div class="popover account-menu" id="account-menu" role="menu">
+      <div class="hdr"><img src="assets/avatar.png" alt="" /><div><strong>Ruben</strong><em>ruben@mermaidchart.com</em></div></div>
       <hr />
-      <button type="button" class="danger">Log out</button>
+      <a href="settings.html">Settings</a>
+      <a href="index.html">Back to Mermaid Chart</a>
+      <hr />
+      <a href="login.html">Log out</a>
     </div>
-    <button class="account-row" type="button" id="account" aria-expanded="false">
+    <button class="account-row" type="button" id="account" aria-haspopup="menu" aria-expanded="false">
       <img class="avatar" src="assets/avatar.png" alt="" />
       <span class="meta"><strong>Ruben</strong><em>ruben@mermaidchart.com</em></span>
-      <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M5.4 7.6 10 12.2l4.6-4.6 1.1 1.1L10 14.4 4.3 8.7l1.1-1.1Z"/></svg>
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M5.5 8 10 12.5 14.5 8"/></svg>
     </button>
   </div>
 </aside>
 <div class="main">
 <header class="topbar">
   <div class="breadcrumb">Billing / Overview</div>
-  <div class="search-wrap"><label class="search"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M8.5 15a6.5 6.5 0 1 1 4.1-1.5l3.6 3.6-1.2 1.2-3.6-3.6A6.5 6.5 0 0 1 8.5 15Zm0-2a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Z"/></svg><input type="search" placeholder="Search console…" aria-label="Search console" /></label></div>
+  <div class="search-wrap"><label class="search"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M9 14.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Zm4-1.5 3.5 3.5"/></svg><input type="search" placeholder="Search console…" aria-label="Search console" autocomplete="off" /></label></div>
   <div class="top-actions">
+    <nav class="mode-toggle" aria-label="View as">
+      <a href="overview.html" aria-current="page" class="on">User</a><a href="admin-overview.html">Admin</a>
+    </nav>
     <span class="credits-pill">250 credits</span>
-    <a class="btn secondary" href="../mermaid-api/website.html">Documentation <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M5.2 6.2h5.1v1.4H7.6l6.2 6.2-1 1-6.2-6.2v2.7H5.2V6.2Zm7.2 0H15v6.2h-1.4V8.6l-1.2-1.2V6.2Z"/></svg></a>
+    <a class="btn secondary" href="docs.html" target="_blank" rel="noopener">Documentation <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M11.5 4.5h4v4m0-4-6 6M14 11.5v4H4.5V6h4"/></svg></a>
   </div>
 </header>
-<div class="content">
-
+<main class="content">
 
   <div class="title-row">
-    <div class="grow">
-      <h1>Billing</h1>
-      <p class="sub">Buy API credits for your keys when the monthly allowance is not enough.</p>
-    </div>
-    <button class="btn secondary" type="button" id="upgrade">Upgrade plan</button>
+    <div class="grow"><h1>Billing</h1><p class="sub">Buy API credits for your keys when the monthly allowance is not enough.</p></div>
+    <button class="btn secondary" type="button" data-open="upgrade-modal">Upgrade plan</button>
   </div>
-  <div class="tabs" role="tablist">
-    <button type="button" aria-selected="true">Overview</button>
-    <a href="billing-purchases.html">Purchases</a>
-  </div>
+  <nav class="tabs" role="tablist"><a role="tab" href="billing.html" aria-selected="true">Overview</a><a role="tab" href="billing-purchases.html">Purchases</a></nav>
+  
   <section class="card">
     <div class="card-head"><h2>Balance</h2><p class="sub-right">Allowance first, then purchased credits.</p></div>
     <div class="card-body">
-      <p class="balance-big">250 <span style="font-size:14px;font-weight:500;color:var(--storm-400)">credits available</span></p>
-      <div class="meter"><span class="plan" style="width:100%"></span></div>
-      <div class="legend">
-        <span><i class="dot plan"></i>Plan · 250 of 250 · resets Nov 1</span>
-        <span><i class="dot purchased"></i>Purchased · none</span>
-      </div>
+      <p class="balance-big xl" data-count="250">250 <span>credits available</span></p>
+      <div class="meter" role="img"><span class="seg plan" style="flex:1"><i style="width:100%"></i></span></div>
+      <div class="legend"><span><i class="dot plan"></i>Plan · 250 of 250 · resets Nov 1</span><span><i class="dot purchased"></i>Purchased · none</span></div>
     </div>
   </section>
   <section class="card">
-    <div class="card-head"><h2>Buy credits</h2><p class="sub-inline">Used after your monthly allowance. Expires 12 months after purchase.</p></div>
+    <div class="card-head"><h2>Buy credits</h2><p class="sub-right">Used after your monthly allowance. Expires 12 months after purchase.</p></div>
     <div class="card-body">
-      <div class="packs" id="packs">
-        <button class="pack" type="button" data-pack="5000" data-price="$5.00" aria-pressed="true">
-          <div class="top"><strong>5,000</strong><span class="coin"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 3c3.3 0 6 1.1 6 2.5v9c0 1.4-2.7 2.5-6 2.5s-6-1.1-6-2.5v-9C4 4.1 6.7 3 10 3Zm0 1.2c-2.8 0-4.8.8-4.8 1.3S7.2 6.8 10 6.8s4.8-.8 4.8-1.3-2-1.3-4.8-1.3Z"/></svg></span></div>
-          <span class="price">$5.00</span>
+      <div class="packs" id="buy-packs" role="radiogroup" data-buy="buy">
+<button class="pack" type="button" role="radio" data-pack="5000" data-amt="5,000" data-price="$5.00" aria-pressed="true">
+          <span class="radio"><i></i></span><span class="label"><strong>5,000</strong><span class="price">$5.00</span></span><span class="coin"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4.5 6c0-1.1 2.5-2 5.5-2s5.5.9 5.5 2-2.5 2-5.5 2-5.5-.9-5.5-2Zm0 0v8c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2V6m-11 4c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2"/></svg></span>
         </button>
-        <button class="pack" type="button" data-pack="10000" data-price="$10.00" aria-pressed="false">
-          <div class="top"><strong>10,000</strong><span class="coin"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 3c3.3 0 6 1.1 6 2.5v9c0 1.4-2.7 2.5-6 2.5s-6-1.1-6-2.5v-9C4 4.1 6.7 3 10 3Zm0 1.2c-2.8 0-4.8.8-4.8 1.3S7.2 6.8 10 6.8s4.8-.8 4.8-1.3-2-1.3-4.8-1.3Z"/></svg></span></div>
-          <span class="price">$10.00</span>
+<button class="pack" type="button" role="radio" data-pack="10000" data-amt="10,000" data-price="$10.00" aria-pressed="false">
+          <span class="radio"><i></i></span><span class="label"><strong>10,000</strong><span class="price">$10.00</span></span><span class="coin"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4.5 6c0-1.1 2.5-2 5.5-2s5.5.9 5.5 2-2.5 2-5.5 2-5.5-.9-5.5-2Zm0 0v8c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2V6m-11 4c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2"/></svg></span>
         </button>
-        <button class="pack" type="button" data-pack="15000" data-price="$15.00" aria-pressed="false">
-          <div class="top"><strong>15,000</strong><span class="coin"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 3c3.3 0 6 1.1 6 2.5v9c0 1.4-2.7 2.5-6 2.5s-6-1.1-6-2.5v-9C4 4.1 6.7 3 10 3Zm0 1.2c-2.8 0-4.8.8-4.8 1.3S7.2 6.8 10 6.8s4.8-.8 4.8-1.3-2-1.3-4.8-1.3Z"/></svg></span></div>
-          <span class="price">$15.00</span>
+<button class="pack" type="button" role="radio" data-pack="15000" data-amt="15,000" data-price="$15.00" aria-pressed="false">
+          <span class="radio"><i></i></span><span class="label"><strong>15,000</strong><span class="price">$15.00</span></span><span class="coin"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4.5 6c0-1.1 2.5-2 5.5-2s5.5.9 5.5 2-2.5 2-5.5 2-5.5-.9-5.5-2Zm0 0v8c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2V6m-11 4c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2"/></svg></span>
         </button>
-        <button class="pack" type="button" data-pack="custom" data-price="custom" aria-pressed="false">
-          <div class="top"><strong>Custom</strong><span class="coin"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 3c3.3 0 6 1.1 6 2.5v9c0 1.4-2.7 2.5-6 2.5s-6-1.1-6-2.5v-9C4 4.1 6.7 3 10 3Zm0 1.2c-2.8 0-4.8.8-4.8 1.3S7.2 6.8 10 6.8s4.8-.8 4.8-1.3-2-1.3-4.8-1.3Z"/></svg></span></div>
-          <input class="custom-amt" type="text" value="25,000" aria-label="Custom credit amount" onclick="event.stopPropagation()" />
-        </button>
-      </div>
-      <div><button class="btn primary lg" type="button" id="buy">Buy 5,000 credits for $5.00 <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M5.2 6.2h5.1v1.4H7.6l6.2 6.2-1 1-6.2-6.2v2.7H5.2V6.2Zm7.2 0H15v6.2h-1.4V8.6l-1.2-1.2V6.2Z"/></svg></button></div>
+<div class="pack" role="radio" tabindex="0" data-pack="custom" aria-pressed="false">
+          <span class="radio"><i></i></span><span class="label"><strong>Custom</strong>
+          <span class="stepper"><input value="25,000" inputmode="numeric" aria-label="Custom credit amount" /><span class="arrows"><button type="button" data-step="up" aria-label="More"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M5.5 12 10 7.5l4.5 4.5"/></svg></button><button type="button" data-step="down" aria-label="Less"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M5.5 8 10 12.5 14.5 8"/></svg></button></span></span></span>
+          <span class="coin"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4.5 6c0-1.1 2.5-2 5.5-2s5.5.9 5.5 2-2.5 2-5.5 2-5.5-.9-5.5-2Zm0 0v8c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2V6m-11 4c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2"/></svg></span>
+        </div>
+</div>
+      <div><button class="btn primary" type="button" id="buy" data-open="stripe-modal">Buy 5,000 credits for $5.00 <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M11.5 4.5h4v4m0-4-6 6M14 11.5v4H4.5V6h4"/></svg></button></div>
     </div>
   </section>
-  <section class="card">
+  <section class="card" data-autotopup>
     <div class="toggle-head">
       <div class="copy"><h2>Auto top-up</h2><p>Buys a pack when your balance runs low.</p></div>
       <button class="switch" type="button" aria-pressed="false" aria-label="Auto top-up"></button>
     </div>
-    <div class="card-body" data-toggle-body hidden>
-      <div class="inline-field">Buy when the balance falls under <input value="500" /> API credits</div>
-      <div><button class="btn secondary" type="button">Turn on auto top-up</button></div>
-    </div>
+    <div class="reveal"><div class="inner"><div class="card-body">
+      <div data-topup-form>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="packs" id="topup-packs" role="radiogroup">
+<button class="pack" type="button" role="radio" data-pack="5000" data-amt="5,000" data-price="$5.00" aria-pressed="true">
+          <span class="radio"><i></i></span><span class="label"><strong>5,000</strong><span class="price">$5.00</span></span><span class="coin"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4.5 6c0-1.1 2.5-2 5.5-2s5.5.9 5.5 2-2.5 2-5.5 2-5.5-.9-5.5-2Zm0 0v8c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2V6m-11 4c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2"/></svg></span>
+        </button>
+<button class="pack" type="button" role="radio" data-pack="10000" data-amt="10,000" data-price="$10.00" aria-pressed="false">
+          <span class="radio"><i></i></span><span class="label"><strong>10,000</strong><span class="price">$10.00</span></span><span class="coin"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4.5 6c0-1.1 2.5-2 5.5-2s5.5.9 5.5 2-2.5 2-5.5 2-5.5-.9-5.5-2Zm0 0v8c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2V6m-11 4c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2"/></svg></span>
+        </button>
+<button class="pack" type="button" role="radio" data-pack="15000" data-amt="15,000" data-price="$15.00" aria-pressed="false">
+          <span class="radio"><i></i></span><span class="label"><strong>15,000</strong><span class="price">$15.00</span></span><span class="coin"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4.5 6c0-1.1 2.5-2 5.5-2s5.5.9 5.5 2-2.5 2-5.5 2-5.5-.9-5.5-2Zm0 0v8c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2V6m-11 4c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2"/></svg></span>
+        </button>
+<div class="pack" role="radio" tabindex="0" data-pack="custom" aria-pressed="false">
+          <span class="radio"><i></i></span><span class="label"><strong>Custom</strong>
+          <span class="stepper"><input value="25,000" inputmode="numeric" aria-label="Custom credit amount" /><span class="arrows"><button type="button" data-step="up" aria-label="More"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M5.5 12 10 7.5l4.5 4.5"/></svg></button><button type="button" data-step="down" aria-label="Less"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M5.5 8 10 12.5 14.5 8"/></svg></button></span></span></span>
+          <span class="coin"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4.5 6c0-1.1 2.5-2 5.5-2s5.5.9 5.5 2-2.5 2-5.5 2-5.5-.9-5.5-2Zm0 0v8c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2V6m-11 4c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2"/></svg></span>
+        </div>
+</div>
+          <div class="inline-field">Buy when the balance falls under <input value="500" data-topup-threshold inputmode="numeric" aria-label="Threshold" /> API credits</div>
+          <div><button class="btn secondary" type="button" data-topup-on>Turn on auto top-up</button></div>
+        </div>
+      </div>
+      <div class="row-between" data-topup-active hidden>
+        <p class="lede-sm" data-topup-summary>Buys 5,000 credits ($5.00) on your saved card when the balance falls under 500.</p>
+        <button class="btn secondary" type="button" data-topup-edit>Edit</button>
+      </div>
+    </div></div></div>
   </section>
   <div class="limits-row">
     <section class="card">
-      <div class="toggle-head">
-        <div class="copy"><h2>Spend limit</h2><p>Cap purchased credits used per month.</p></div>
-        <button class="switch" type="button" aria-pressed="false" aria-label="Spend limit"></button>
-      </div>
-      <div class="card-body" data-toggle-body hidden>
-        <p style="margin:0;font-size:13px;color:var(--storm-400)">Your keys may spend up to 2,000 purchased credits a month.</p>
-        <div class="inline-field"><input value="2000" /> credits a month <button class="btn secondary" type="button">Set spend limit</button></div>
-      </div>
+      <div class="toggle-head"><div class="copy"><h2>Spend limit</h2><p>Cap purchased credits used per month.</p></div>
+        <button class="switch" type="button" aria-pressed="false" aria-label="Spend limit"></button></div>
+      <div class="reveal"><div class="inner"><div class="card-body">
+        <p class="lede-sm">Your keys may spend up to 2,000 purchased credits a month.</p>
+        <div class="form-line"><label class="suffix-input"><input value="2,000" inputmode="numeric" aria-label="Spend limit" /><span>credits a month</span></label><button class="btn secondary" type="button" data-toast="success|Spend limit set to 2,000 credits a month">Set spend limit</button></div>
+      </div></div></div>
     </section>
     <section class="card">
-      <div class="toggle-head">
-        <div class="copy"><h2>Low-balance email</h2><p>Email me when credits run low.</p></div>
-        <button class="switch" type="button" aria-pressed="true" aria-label="Low-balance email"></button>
-      </div>
-      <div class="card-body" data-toggle-body>
-        <p style="margin:0;font-size:13px;color:var(--storm-400)">We email you when your balance falls under 25 credits, the default: a tenth of your allowance.</p>
-        <div class="inline-field"><input value="25" /> credits <button class="btn secondary" type="button">Set threshold</button></div>
-        <a class="btn link" href="settings.html">Manage email notifications</a>
-      </div>
+      <div class="toggle-head"><div class="copy"><h2>Low-balance email</h2><p>Email me when credits run low.</p></div>
+        <button class="switch" type="button" aria-pressed="true" aria-label="Low-balance email"></button></div>
+      <div class="reveal open"><div class="inner"><div class="card-body">
+        <p class="lede-sm">We email you when your balance falls under 25 credits, the default: a tenth of your allowance.</p>
+        <div class="form-line"><label class="suffix-input"><input value="25" inputmode="numeric" aria-label="Threshold" /><span>credits</span></label><button class="btn secondary" type="button" data-toast="success|We’ll email you under 25 credits">Set threshold</button></div>
+        <div><a class="btn link-arrow" href="settings.html">Manage email notifications <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M4.5 10h11m-4-4 4 4-4 4"/></svg></a></div>
+      </div></div></div>
     </section>
   </div>
 
-</div></div></div>
+</main></div></div>
 
 <div class="overlay" id="stripe-modal" hidden>
-  <div class="modal" role="dialog">
-    <div class="modal-head"><h2>Continue to Stripe Checkout</h2><button class="btn icon bare" type="button" id="stripe-cancel" aria-label="Close"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M5.4 4.3 10 8.9l4.6-4.6 1.1 1.1L11.1 10l4.6 4.6-1.1 1.1L10 11.1l-4.6 4.6-1.1-1.1L8.9 10 4.3 5.4l1.1-1.1Z"/></svg></button></div>
-    <p class="lede">You’re buying <strong id="stripe-amt">5,000</strong> credits for <strong id="stripe-price">$5.00</strong>. You’ll pay on Stripe and come back to Billing when it’s done.</p>
-    <div class="modal-actions">
-      <button class="btn secondary" type="button" id="stripe-cancel-2">Cancel</button>
-      <a class="btn primary lg" href="billing-success.html">Continue to Stripe</a>
-    </div>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="stripe-modal-t">
+    <div class="modal-head"><h2 id="stripe-modal-t">Continue to Stripe Checkout</h2></div>
+    <p class="lede">You’re buying <span id="stripe-amt">5,000</span> credits for <span id="stripe-price">$5.00</span>. You’ll pay on Stripe and come back to Billing when it’s done.</p>
+    
+    <div class="modal-actions"><button class="btn ghost" type="button" data-close>Cancel</button><a class="btn primary" href="billing-success.html" data-busy>Continue to Stripe <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M11.5 4.5h4v4m0-4-6 6M14 11.5v4H4.5V6h4"/></svg></a></div>
   </div>
 </div>
-<script>
-const packs = document.getElementById("packs");
-const buy = document.getElementById("buy");
-const modal = document.getElementById("stripe-modal");
-const buyIcon = `<svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M5.2 6.2h5.1v1.4H7.6l6.2 6.2-1 1-6.2-6.2v2.7H5.2V6.2Zm7.2 0H15v6.2h-1.4V8.6l-1.2-1.2V6.2Z"/></svg>`;
-const setBuy = (label, amt, price) => {
-  buy.innerHTML = label + " " + buyIcon;
-  document.getElementById("stripe-amt").textContent = amt;
-  document.getElementById("stripe-price").textContent = price;
-};
-packs.addEventListener("click", (e) => {
-  const p = e.target.closest(".pack");
-  if (!p) return;
-  packs.querySelectorAll(".pack").forEach((x) => x.setAttribute("aria-pressed", "false"));
-  p.setAttribute("aria-pressed", "true");
-  if (p.dataset.pack === "custom") {
-    const raw = (p.querySelector("input")?.value || "0").replace(/,/g, "");
-    const n = Number(raw) || 0;
-    const dollars = (n / 1000).toFixed(2);
-    setBuy(`Buy ${n.toLocaleString("en-US")} credits for $${dollars}`, n.toLocaleString("en-US"), `$${dollars}`);
-  } else {
-    const n = Number(p.dataset.pack).toLocaleString("en-US");
-    setBuy(`Buy ${n} credits for ${p.dataset.price}`, n, p.dataset.price);
-  }
-});
-
-buy.addEventListener("click", () => { modal.hidden = false; });
-document.getElementById("stripe-cancel").addEventListener("click", () => { modal.hidden = true; });
-document.getElementById("stripe-cancel-2").addEventListener("click", () => { modal.hidden = true; });
-modal.addEventListener("click", (e) => { if (e.target === modal) modal.hidden = true; });
-</script>
-
-<script src="console.js"></script>
+<div class="overlay" id="upgrade-modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="upgrade-modal-t">
+    <div class="modal-head"><h2 id="upgrade-modal-t">Upgrade your Mermaid Chart plan</h2></div>
+    <p class="lede">A bigger plan raises your monthly API allowance. You’ll pay on Stripe and come back to Billing when it’s done.</p>
+    
+    <div class="modal-actions"><button class="btn ghost" type="button" data-close>Cancel</button><a class="btn primary" href="#" data-busy>Upgrade on Stripe <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M11.5 4.5h4v4m0-4-6 6M14 11.5v4H4.5V6h4"/></svg></a></div>
+  </div>
+</div>
+<script src="console.js?v=7"></script>
 </body>
 </html>

@@ -1,25 +1,61 @@
-# Decisions — Mermaid API console (Non-admin · v3)
+# Decisions — Mermaid API console (v3)
 
-Figma: [Platform · `141:3891`](https://www.figma.com/design/SkEVtrAYLajpQjBeXLD5QU/Platform?node-id=141-3891)  
-Handoff: `mermaid-api-console-handoff.md` (customer UI first; admin phase 2)
+The visual version is `decisions.html`. This file mirrors it for reading in GitHub.
 
-## Locked for v3
+Figma: [Platform · customer `141:3891`](https://www.figma.com/design/SkEVtrAYLajpQjBeXLD5QU/Platform?node-id=141-3891) · [admin `206:12847`](https://www.figma.com/design/SkEVtrAYLajpQjBeXLD5QU/Platform?node-id=206-12847)
+Handoff: `mermaid-api-console-handoff.md` (v3)
 
-1. **Keys shown once.** Full secret only in the create-key modal. Get started never displays a key. Key detail / table show masked IDs only (no eye icon).
-2. **Agent setup is a prompt card.** One-line “Set up with your coding agent” + **Copy prompt**. Prompt text is not shown on the page; clipboard payload includes env + render/validate/balance guidance.
-3. **Entry from Chart.** API console opens from Mermaid Chart profile → Developer mode → API keys (same account). Login is Chart SSO, not a separate signup.
-4. **Shell.** Grouped sidebar (Access / Spend / Resources), breadcrumb + search top bar, credits pill. No “Flow” in the top chrome.
-5. **Credits model.** Plan allowance first, then purchased packs. Packs: 5k / 10k / 15k / custom (×1,000). Auto top-up, spend limit, low-balance email on Billing.
-6. **Returning overview layout B** (`141:4937`): API card full width; left stack Credits → Top keys → Endpoints; tall Recent calls on the right.
-7. **Alerts, not toasts** for balance / expiry / payment complete (inline alert banners).
-8. **Admin · v3 deferred.** Customer screens ship first; admin remains on the prior v2 prototype until rebuilt.
+## Meeting decisions (Oct 27, 2026 · Knut, Ashish)
+
+1. **Entry is “API keys”**: in the Chart header and global search, not only the account menu.
+2. **Keys are shown once**: at creation, no eye icon, no reveal later.
+3. **The agent prompt uses `MERMAID_API_KEY`**, never the raw key.
+4. **Flow is removed from the header.**
+5. **Upgrading reuses the Chart upgrade popup** and the Stripe redirect.
+6. **One purchased-credit pool**: each purchase resets the expiry to 12 months (see open question 1).
+
+## Design review decisions (Ruben, same day)
+
+- Low balance and auto top-up settings live on Billing only. The dashboard Credits card shows the combined balance and Buy credits.
+- Get started never shows a key. The agent card is one line with Copy prompt, and the prompt text isn't displayed.
+- Settings is reached through the account menu at the bottom of the sidebar.
+- Breadcrumbs appear once, in the top bar.
+- Data colours: plan deep-300, purchased deep-200, track storm-800.
+- Account row is full-bleed and square.
+
+## Prototype calls (this delivery)
+
+| # | Call | Status |
+|---|---|---|
+| D1 | Admin · v3 built: overview, all keys, overrides, revoke, consumption, credit pool, burst limits, composed Billing | Shipped |
+| D2 | User / Admin toggle in the top bar on every page; Acme account menu switches workspace | Confirm with design |
+| D3 | Toasts for action feedback (copy, save, rename, revoke); balance and payment states stay inline alerts. The handoff says “Never Toasts”. | **Needs decision** |
+| D4 | Motion system: view transitions, stagger, growing data, spring menus, reduced-motion safe | Shipped |
+| D5 | Header button uses a key icon | Shipped |
+| D6 | Sign-in loading shows “what you can do here” for ~3.6 s; slow background zoom on login screens | Shipped |
+
+## Rules
+
+Product and design rules are listed in `decisions.html` (sections 04 and 05) and come from sections 4 and 7 of the handoff. Tokens and motion values are in `styles.html`.
 
 ## Roads not taken
 
 | Idea | Why not |
 |---|---|
-| Dual-column Get started with visible prompt + “Create key and fill” | Meeting pick: single agent row + Copy prompt; key created elsewhere |
+| Dual-column Get started with a visible prompt | Meeting pick: single agent row + Copy prompt |
 | Eye / reveal on key rows | Secrets are one-shot only |
-| Separate API product home | Entry must feel in-product from Chart dashboard |
-| Toast for payment success | Spec uses persistent alert on Billing |
-| Shipping Admin · v3 in this package | Explicit phase 2 in the handoff |
+| Separate API product home | Entry must feel in-product from Chart |
+| Toast for payment success | Spec keeps a persistent alert on Billing |
+| Admin switch only in the account menu | Hard to find from personal pages (D2) |
+| Plus icon on the header button | Key icon reads as “API keys” (D5) |
+
+## Open questions
+
+1. Expiry model: single pool reset vs per-pack expiry in some copy and emails (Knut).
+2. Tier allowances: Free 25 → Enterprise custom (Ashish, Knut).
+3. Real upgrade popup: how it returns to Billing.
+4. Emails: nine templates with Dom.
+5. Admin values: `/v1/generate` and `/v1/repair` cost, burst values, split rule, Billing admin-only?
+6. Coin icon: Coral has none.
+7. Auto top-up pack: can the user choose it?
+8. Toasts (D3): keep for action feedback, or alerts only?
