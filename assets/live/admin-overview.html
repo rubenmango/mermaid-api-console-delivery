@@ -6,7 +6,7 @@
 <title>Mermaid API — Admin overview</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="console.css?v=7" />
+<link rel="stylesheet" href="console.css?v=8" />
 </head>
 <body data-mode="admin">
 <div class="app">
@@ -63,21 +63,9 @@
   <section class="card">
     <div class="card-head"><h2>Org pool</h2><p class="sub-inline">Acme Inc · shared by 5 members</p><div class="right"><a class="btn raised" href="admin-pool.html">Credit pool</a></div></div>
     <div class="card-body">
-      <div class="split-2" style="gap:24px">
-        <div class="pool-col">
-          <span class="k">Pool allowance left</span>
-          <p class="pool-num" data-count="640">640 <span>of 2,000 · Premium plan</span></p>
-          <div class="meter" role="img"><span class="seg plan" style="flex:1"><i style="width:32%"></i></span></div>
-          <p class="fine">Split between 5 members. Resets Nov 1, 00:00 UTC.</p>
-        </div>
-        <div class="pool-col">
-          <span class="k">Purchased (shared)</span>
-          <p class="pool-num" data-count="10000">10,000 <span>credits, used after member shares</span></p>
-          <div class="packs-list"><span class="expiring">4,000</span><span class="expiring">expire Dec 2, 2026</span><span>6,000</span><span class="muted">expire Jun 18, 2027</span></div>
-          <p class="fine">Packs last 12 months; the oldest pack is used first.</p>
-        </div>
-      </div>
-      <div class="alert warn" role="status"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M10 3.5 17.5 16.5h-15L10 3.5Zm0 5V12m0 2.2h.01"/></svg><div class="grow">4,000 shared credits expire Dec 2, 2026 Member shares are used first, so most of this pack may lapse at October’s pace (1,360 a month).</div></div>
+      <p class="balance-big" data-count="10640">10,640 <span>credits available</span></p>
+      <div class="meter" role="img"><span class="seg plan" style="flex:2000"><i style="width:32%"></i></span><span class="seg purchased" style="flex:10000"><i style="width:100%"></i></span></div>
+      <div class="legend"><span><i class="dot plan"></i>Pool · 640 of 2,000 · resets Nov 1</span><span><i class="dot purchased"></i>Purchased · 10,000</span></div>
     </div>
   </section>
   <div class="split-2">
@@ -88,7 +76,7 @@
     </section>
     <section class="card">
       <div class="card-head"><div class="stack-title"><h2>Members near their limits</h2><p>Over 75% of an override, share or burst limit</p></div><div class="right"><a class="btn raised" href="admin-overrides.html">Overrides</a></div></div>
-      <table><thead><tr><th>Member</th><th>Limit</th><th>Used</th><th></th><th></th></tr></thead><tbody><tr><td><span class="two"><strong>Ben Ortiz</strong><em>member override</em></span></td><td>300 a month</td><td>300</td><td style="width:26%"><span class="share"><i style="width:100%"></i></span></td><td><span class="pill warn"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 2.5 18.5 17h-17L10 2.5Zm-.8 5.5v4.5h1.6V8H9.2Zm0 6v1.6h1.6V14H9.2Z"/></svg>Exhausted</span></td></tr><tr><td><span class="two"><strong>Ana Silva</strong><em>Release notes bot</em></span></td><td>200 a month</td><td>186</td><td style="width:26%"><span class="share"><i style="width:93%"></i></span></td><td><span class="pill warn"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 2.5 18.5 17h-17L10 2.5Zm-.8 5.5v4.5h1.6V8H9.2Zm0 6v1.6h1.6V14H9.2Z"/></svg>Low</span></td></tr><tr><td><span class="two"><strong>Dev Patel</strong><em>burst override</em></span></td><td>120 / min</td><td>114</td><td style="width:26%"><span class="share"><i style="width:95%"></i></span></td><td><span class="pill warn"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 2.5 18.5 17h-17L10 2.5Zm-.8 5.5v4.5h1.6V8H9.2Zm0 6v1.6h1.6V14H9.2Z"/></svg>Low</span></td></tr><tr><td><span class="two"><strong>Chloé Martin</strong><em>pool share</em></span></td><td>300 a month</td><td>230</td><td style="width:26%"><span class="share"><i style="width:77%"></i></span></td><td><span class="pill ok"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14Zm-3-7 2 2 4-4"/></svg>Live</span></td></tr></tbody></table>
+      <table><thead><tr><th>Member</th><th>Limit</th><th>Used</th><th></th><th></th></tr></thead><tbody><tr><td class="nowrap"><span class="two"><strong>Ben Ortiz</strong><em>member override</em></span></td><td class="nowrap">300 a month</td><td>300</td><td style="width:26%"><span class="share"><i style="width:100%"></i></span></td><td><span class="pill warn"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 2.5 18.5 17h-17L10 2.5Zm-.8 5.5v4.5h1.6V8H9.2Zm0 6v1.6h1.6V14H9.2Z"/></svg>Exhausted</span></td></tr><tr><td class="nowrap"><span class="two"><strong>Ana Silva</strong><em>Release notes bot</em></span></td><td class="nowrap">200 a month</td><td>186</td><td style="width:26%"><span class="share"><i style="width:93%"></i></span></td><td><span class="pill warn"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 2.5 18.5 17h-17L10 2.5Zm-.8 5.5v4.5h1.6V8H9.2Zm0 6v1.6h1.6V14H9.2Z"/></svg>Low</span></td></tr><tr><td class="nowrap"><span class="two"><strong>Dev Patel</strong><em>burst override</em></span></td><td class="nowrap">120 / min</td><td>114</td><td style="width:26%"><span class="share"><i style="width:95%"></i></span></td><td><span class="pill warn"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 2.5 18.5 17h-17L10 2.5Zm-.8 5.5v4.5h1.6V8H9.2Zm0 6v1.6h1.6V14H9.2Z"/></svg>Low</span></td></tr><tr><td class="nowrap"><span class="two"><strong>Chloé Martin</strong><em>pool share</em></span></td><td class="nowrap">300 a month</td><td>230</td><td style="width:26%"><span class="share"><i style="width:77%"></i></span></td><td><span class="pill ok"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14Zm-3-7 2 2 4-4"/></svg>Live</span></td></tr></tbody></table>
     </section>
   </div>
   <section class="card">
@@ -125,6 +113,6 @@
     <div class="modal-actions"><button class="btn ghost" type="button" data-close>Cancel</button><button class="btn primary" type="button" data-toast="success|Invites sent">Send invites</button></div>
   </div>
 </div>
-<script src="console.js?v=7"></script>
+<script src="console.js?v=8"></script>
 </body>
 </html>
