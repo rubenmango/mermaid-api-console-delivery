@@ -7,7 +7,7 @@ Handoff: `mermaid-api-console-handoff.md` (v3)
 
 ## Meeting decisions (Oct 27, 2026 · Knut, Ashish)
 
-1. **Entry is “API keys”**: in the Chart header and global search, not only the account menu.
+1. **Entry is “API keys”**: in the main app and global search, not only buried in settings. Now delivered as Developer mode → banner (D10).
 2. **Keys are shown once**: at creation, no eye icon, no reveal later.
 3. **The agent prompt uses `MERMAID_API_KEY`**, never the raw key.
 4. **Flow is removed from the header.**
@@ -31,11 +31,12 @@ Handoff: `mermaid-api-console-handoff.md` (v3)
 | D2 | User / Admin toggle in the top bar on every page; Acme account menu switches workspace | Confirm with design |
 | D3 | Toasts for action feedback (copy, save, rename, revoke); balance and payment states stay inline alerts. The handoff says “Never Toasts”. | **Needs decision** |
 | D4 | Motion system: view transitions, stagger, growing data, spring menus, reduced-motion safe | Shipped |
-| D5 | Header button uses a key icon | Shipped |
+| D5 | Header button uses a key icon | Superseded by D10 |
 | D6 | Signing in is a scene (Figma `233:96981`): reef + rising jellyfish, “what you can do here” for ~3.6 s; Log in → Signing in is one continuous transition | Shipped |
 | D7 | Get started greets by first name: “{first name}, let’s get started” (same source as the account menu) | Shipped |
 | D8 | Admin Org pool is one line (“10,640 credits available”, pool / purchased bar); pack-expiry warning moved off the overview, still on admin Billing | Confirm expiry hint |
 | D9 | Quieter alert surfaces: darker fills, low-contrast borders (warning, success, info) from Figma | Shipped |
+| D10 | Entry is Developer mode (account menu) → dashboard banner with Create; ⌘K keeps API results. Replaces the header button (Figma Entry 0 / 0.1 / 0.2) | Shipped |
 
 ## Rules
 
@@ -51,6 +52,7 @@ Product and design rules are listed in `decisions.html` (sections 04 and 05) and
 | Toast for payment success | Spec keeps a persistent alert on Billing |
 | Admin switch only in the account menu | Hard to find from personal pages (D2) |
 | Plus icon on the header button | Key icon reads as “API keys” (D5) |
+| Header API keys button | Figma Entry moved to Developer mode + banner (D10) |
 
 ## Open questions
 

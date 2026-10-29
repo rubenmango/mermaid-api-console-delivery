@@ -164,3 +164,10 @@ table.spec td.ex{color:var(--muted)}
 .q h3{margin-top:2px}
 
 .foot{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.motion-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+@media (max-width:860px){.motion-grid{grid-template-columns:1fr}}
+.motion-clip{margin:16px 0 0;border:1px solid var(--line,#e9e9e7);border-radius:8px;overflow:hidden;background:#111}
+.motion-grid .motion-clip{margin:0}
+.motion-clip video{display:block;width:100%;height:auto;aspect-ratio:1280/712;object-fit:cover;object-position:top;background:#111}
+.motion-clip figcaption{padding:10px 12px;background:#fff;font-size:13px;color:#555;line-height:1.45}
+.motion-clip figcaption b{display:block;color:#111;font-weight:600;margin-bottom:2px}

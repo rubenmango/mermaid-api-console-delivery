@@ -14,8 +14,8 @@ GATE_HASH = "756027fb4eb79a876aa00ee052d2876f8c10eb834930cf93e6810af1cb8d3432"
 
 # (file stem, title, caption)
 SHOTS = [
-    ("00a-chart-header-button", "Chart · header button", "API keys button with tooltip"),
-    ("00b-chart-account-menu", "Chart · account menu", "API keys item with tooltip"),
+    ("00a-chart-developer-mode", "Chart · account menu", "Developer mode"),
+    ("00b-chart-dev-banner", "Chart · developer banner", "Create API keys and manage usage and credits"),
     ("00c-chart-search", "Chart · global search", "API keys, docs, usage results"),
     ("01-login", "Login", "Log in with Mermaid Chart"),
     ("02-login-loading", "Signing in", "Reef + jellyfish, what you can do here"),
@@ -175,7 +175,7 @@ index = head("Mermaid API console — Developer delivery") + topbar("index") + f
     <span class="tag tweak">Motion + feedback</span>
   </div>
   <h1>Mermaid API console</h1>
-  <p class="sub">Keys, usage and billing for the Mermaid API, inside the Mermaid Chart account. Entry from the Chart header, account menu and search. Customer and org-admin views share one dark Coral shell, switched from the top bar.</p>
+  <p class="sub">Keys, usage and billing for the Mermaid API, inside the Mermaid Chart account. Entry from Developer mode in the Chart account menu, and from search. Customer and org-admin views share one dark Coral shell, switched from the top bar.</p>
   <div class="meta">
     <div><b>Figma</b>Platform · <code>141:3891</code> · <code>206:12847</code></div>
     <div><b>Status</b>Clickable HTML prototype</div>
@@ -194,7 +194,7 @@ index = head("Mermaid API console — Developer delivery") + topbar("index") + f
   </div>
 """ + sec("01", "stages", "Where this sits", "Both roles are prototyped. Wiring to real auth, balance and Stripe is next.", """
     <div class="stage-rail">
-      <div class="stage-card"><span class="n">01</span><h3>Chart entry</h3><p class="where">Header button · account menu · search</p></div>
+      <div class="stage-card"><span class="n">01</span><h3>Chart entry</h3><p class="where">Developer mode · banner · search</p></div>
       <div class="stage-card"><span class="n">02</span><h3>Login</h3><p class="where">Chart SSO · loading</p></div>
       <div class="stage-card you"><span class="n">03 · THIS PAGE</span><h3>Customer + admin console</h3><p class="where">Keys · usage · billing · org</p></div>
       <div class="stage-card"><span class="n">04</span><h3>Wire APIs</h3><p class="where">Keys · balance · Stripe</p></div>
@@ -202,14 +202,15 @@ index = head("Mermaid API console — Developer delivery") + topbar("index") + f
     </div>
     <div class="metric-grid">
       <div class="metric"><div class="num">42</div><div class="label">Live pages, customer and admin</div></div>
-      <div class="metric"><div class="num">3</div><div class="label">Entry points from Mermaid Chart</div></div>
+      <div class="metric"><div class="num">2</div><div class="label">Entry points from Mermaid Chart: Developer mode, search</div></div>
       <div class="metric"><div class="num">1×</div><div class="label">Key secret shown: the create dialog only</div></div>
-    </div>""") + sec("02", "entry", "Entry from Mermaid Chart", "Meeting decision 1: “API keys” lives in the main app, not only the account menu.", f"""
+    </div>""") + sec("02", "entry", "Entry from Mermaid Chart", "Figma Entry 0 → 0.1 → 0.2: Developer mode in the account menu turns on a banner on the dashboard; Create opens the console.", f"""
     <div class="dir-grid three">
-      {dir_card("00a-chart-header-button", "push", "Header button", "Dark API keys button with a key icon, before Invite teammates.", "Pick")}
-      {dir_card("00b-chart-account-menu", "pull", "Account menu", "Same entry, same tooltip copy.", "Also")}
-      {dir_card("00c-chart-search", "pull", "Global search", "Typing “API” shows API keys, docs, and usage and credits.", "Also")}
-    </div>""") + sec("03", "roles", "Two roles, one shell", "The User / Admin toggle in the top bar switches roles on every page. The account menu on Acme pages switches workspace.", f"""
+      {dir_card("00a-chart-developer-mode", "pull", "1 · Developer mode", "Account menu, between Settings and Sign out. Toggles developer mode; remembered per user.", "Entry")}
+      {dir_card("00b-chart-dev-banner", "push", "2 · Banner", "“Create API keys and manage usage and credits.” with Create, on top of the dashboard while developer mode is on. Slides in.", "Pick")}
+      {dir_card("00c-chart-search", "pull", "3 · Global search", "Typing “API” shows API keys, docs, and usage and credits. Works with or without developer mode.", "Also")}
+    </div>
+    <figure class="motion-clip"><video src="./assets/motion/entry.webm" autoplay muted loop playsinline preload="metadata"></video><figcaption><b>Entry in motion</b> Account menu → Developer mode → banner slides in → ⌘K “API”.</figcaption></figure>""") + sec("03", "roles", "Two roles, one shell", "The User / Admin toggle in the top bar switches roles on every page. The account menu on Acme pages switches workspace.", f"""
     <div class="dir-grid">
       {dir_card("08-overview", "pull", "User", "Own keys, allowance, purchased credits, recent calls. Billing holds packs, auto top-up and limits.", "Customer · v3")}
       {dir_card("18-admin-overview", "push", "Org admin", "Org pool, members near their limits, all keys, overrides, consumption, credit pool split, burst limits.", "Admin · v3")}
@@ -229,6 +230,10 @@ index = head("Mermaid API console — Developer delivery") + topbar("index") + f
       <div class="metric"><div class="num">520<small>ms</small></div><div class="label">Busy spinner before a toast or navigation</div></div>
       <div class="metric"><div class="num">30<small>ms</small></div><div class="label">Stagger on bars, sparks and page blocks</div></div>
       <div class="metric"><div class="num">16<small>s</small></div><div class="label">Login background zoom, 1 → 1.05</div></div>
+    </div>
+    <div class="motion-grid">
+      <figure class="motion-clip"><video src="./assets/motion/login-flow.webm" autoplay muted loop playsinline preload="metadata"></video><figcaption><b>Login → Signing in → Get started</b> Copy softens, the screen dims, the card morphs, the reef brightens back and the jellyfish rise.</figcaption></figure>
+      <figure class="motion-clip"><video src="./assets/motion/components.webm" autoplay muted loop playsinline preload="metadata"></video><figcaption><b>Components</b> Busy spinner → toast, pack picker, switches, row menu (spring), dialog in and out.</figcaption></figure>
     </div>
     <div class="callout">Feedback patterns: toasts for actions (copy, save, revoke, rename), inline alerts for balance and payment state, inline rename, row flash, empty filter rows, disabled Buy with a reason. <a href="./styles.html#motion">Motion tokens →</a></div>""") + sec("07", "shots", "Screenshots", "1440 × 900 frames from the live package. Click to open full size.", f"""
     <div class="grid two">{gallery}</div>""") + sec("08", "spec", "Spec · code", "Short bullets. The full list is on Decisions &amp; rules.", f"""
@@ -330,6 +335,10 @@ styles = head("Mermaid API console — Styles") + topbar("styles") + f"""
       <div class="metric"><div class="num">16</div><div class="label">Card body padding, title → subtitle gap</div></div>
       <div class="metric"><div class="num">1px</div><div class="label">storm-800 hairline everywhere</div></div>
     </div>""") + sec("05", "motion", "Motion", "Small, quick, and always answering a user action or a page change.", f"""
+    <div class="motion-grid">
+      <figure class="motion-clip"><video src="./assets/motion/components.webm" autoplay muted loop playsinline preload="metadata"></video><figcaption><b>Components</b> Busy spinner → toast, pack picker, switches, row menu, dialog.</figcaption></figure>
+      <figure class="motion-clip"><video src="./assets/motion/login-flow.webm" autoplay muted loop playsinline preload="metadata"></video><figcaption><b>Login</b> Log in → Signing in (reef, jellyfish) → Get started.</figcaption></figure>
+    </div>
     <table class="spec"><thead><tr><th>Token</th><th>Value</th><th>Use</th></tr></thead><tbody>{motion_rows}</tbody></table>""") + sec("06", "components", "Components", "Figma component → suggested code component.", f"""
     <div class="comp-grid">{comp_cards}</div>""") + sec("07", "frame", "Full frame", "The specimen as one image, for review without clicking.", f"""
     <a href="{src('25-styleguide')}" target="_blank" rel="noopener"><img class="shot" src="{src('25-styleguide')}" alt="Style guide" loading="lazy" /></a>""") + foot() + """
@@ -339,7 +348,7 @@ styles = head("Mermaid API console — Styles") + topbar("styles") + f"""
 
 # ====================================================================== DECISIONS
 MEETING = [
-    ("Entry is “API keys”", "In the Chart header and global search, not only the account menu.", "00a-chart-header-button"),
+    ("Entry is “API keys”", "In the main app and global search, not only buried in settings. Now delivered as Developer mode → banner (D10).", "00b-chart-dev-banner"),
     ("Keys shown once", "At creation only. No eye icon, no reveal later.", "04-new-key"),
     ("Agent prompt uses the env var", "<code>MERMAID_API_KEY</code>, never the raw key.", "03-get-started"),
     ("Flow removed from the header", "Top bar: breadcrumb, search, credits, Documentation.", "11-billing"),
@@ -364,11 +373,12 @@ PROTO = [
     ("D2", "User / Admin toggle in the top bar", "Every page can switch role. The Acme account menu also switches workspace (Personal, Admin view, Member view).", "tweak", "Confirm with design"),
     ("D3", "Toasts for action feedback", "Copy, save, rename and revoke answer with a toast. Balance, expiry and payment states stay as inline alerts. The handoff says “Never Toasts”, so this needs a yes or no.", "blocked", "Needs decision"),
     ("D4", "Motion system", "View transitions between pages, staggered content, growing data, spring menus, reduced-motion safe.", "holds", "Shipped"),
-    ("D5", "Header button uses a key icon", "Instead of the plus in the export.", "holds", "Shipped"),
+    ("D5", "Header button uses a key icon", "Superseded by D10: the header button is gone.", "tweak", "Superseded"),
     ("D6", "Signing in is a scene", "Figma 233:96981: reef + rising jellyfish, three “what you can do here” bullets, about 3.6 s before Get started. Log in → Signing in is one continuous transition.", "holds", "Shipped"),
     ("D7", "Get started greets by first name", "“{first name}, let’s get started”, from the same source as the account menu.", "holds", "Shipped"),
     ("D8", "Admin Org pool is one line", "“10,640 credits available” with a pool / purchased bar, per Figma. The pack-expiry warning moved off the overview (still on admin Billing).", "tweak", "Confirm expiry hint"),
     ("D9", "Quieter alert surfaces", "Darker fills, low-contrast borders for warning, success and info, sampled from Figma.", "holds", "Shipped"),
+    ("D10", "Entry is Developer mode → banner", "Figma Entry 0 / 0.1 / 0.2: account menu Developer mode turns on a dashboard banner with Create; search keeps API results. Replaces the header API keys button.", "holds", "Shipped"),
 ]
 proto_cards = "".join(
     f'<div class="stage-card"><span class="n">{n}</span><h3>{t}</h3><p class="where">{b}</p><span class="tag {k}">{tag}</span></div>'
@@ -417,6 +427,7 @@ ROADS = [
     ("Toast for payment success", "Spec keeps a persistent alert on Billing."),
     ("Admin switch only in the account menu", "Hard to find on personal pages; added the top-bar toggle (D2)."),
     ("Plus icon on the header button", "Key icon reads as “API keys” at a glance (D5)."),
+    ("Header API keys button", "Figma Entry moved the way in to Developer mode + dashboard banner (D10)."),
 ]
 roads_cards = "".join(f'<div class="road"><h3>{a}</h3><p>{b}</p></div>' for a, b in ROADS)
 OPEN = [

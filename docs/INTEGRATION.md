@@ -16,7 +16,7 @@ Static HTML prototype of the API console, customer and org admin (Coral / Storm 
 
 | Concern | Prototype today | Product target |
 |---|---|---|
-| Entry | Chart header “API keys” button, account menu item, ⌘K results | Same three entries; deep-link to console routes |
+| Entry | Account menu **Developer mode** (toggle, remembered per user) → dashboard banner “Create API keys and manage usage and credits.” + **Create**; ⌘K results for API keys / docs / usage | Persist developer mode on the user profile; Create deep-links to console login |
 | Auth | Fake “Log in with Mermaid Chart” → loading → Get started | Chart session / SSO |
 | Role | User / Admin toggle in the top bar; workspace switcher in the Acme account menu | Role from the org membership; hide the toggle for non-admins |
 | Keys | Once-shown dialog; row rename / revoke in the page | Create key API; show the secret once; never re-fetch |
