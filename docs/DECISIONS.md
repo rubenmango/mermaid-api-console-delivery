@@ -32,7 +32,10 @@ Handoff: `mermaid-api-console-handoff.md` (v3)
 | D3 | Toasts for action feedback (copy, save, rename, revoke); balance and payment states stay inline alerts. The handoff says “Never Toasts”. | **Needs decision** |
 | D4 | Motion system: view transitions, stagger, growing data, spring menus, reduced-motion safe | Shipped |
 | D5 | Header button uses a key icon | Shipped |
-| D6 | Sign-in loading shows “what you can do here” for ~3.6 s; slow background zoom on login screens | Shipped |
+| D6 | Signing in is a scene (Figma `233:96981`): reef + rising jellyfish, “what you can do here” for ~3.6 s; Log in → Signing in is one continuous transition | Shipped |
+| D7 | Get started greets by first name: “{first name}, let’s get started” (same source as the account menu) | Shipped |
+| D8 | Admin Org pool is one line (“10,640 credits available”, pool / purchased bar); pack-expiry warning moved off the overview, still on admin Billing | Confirm expiry hint |
+| D9 | Quieter alert surfaces: darker fills, low-contrast borders (warning, success, info) from Figma | Shipped |
 
 ## Rules
 
@@ -59,3 +62,4 @@ Product and design rules are listed in `decisions.html` (sections 04 and 05) and
 6. Coin icon: Coral has none.
 7. Auto top-up pack: can the user choose it?
 8. Toasts (D3): keep for action feedback, or alerts only?
+9. Expiry hint (D8): keep any pack-expiry hint on the admin overview?

@@ -255,6 +255,8 @@ COLORS = [
                       ("deep-200", "#B7B2F5", "Purchased series, focus ring")]),
     ("Status", [("green", "#4ADE80", "OK, Live, Active"), ("amber", "#F5A524", "Low, warning"),
                 ("red", "#F05264", "Refused, danger"), ("blue", "#4EA1F5", "Info"), ("teal", "#A8DCD6", "Switch on")]),
+    ("Alert surfaces", [("alert-warn-bg", "#461A01", "Warning fill · border #5F371E"), ("alert-ok-bg", "#1F3423", "Success fill · border #2A3A2F"),
+                        ("alert-info-bg", "#1A3048", "Info fill · border #253A4D")]),
 ]
 swatches = "".join(
     f'<div class="sw-group"><h3>{g}</h3>' + "".join(
@@ -278,7 +280,9 @@ MOTION = [
     ("Content stagger", "fade-up 6 px, 40 ms steps", "Each block of .content on load"),
     ("Data", "grow x / grow y, 30 ms stagger", "Meters, share bars, chart bars, sparklines"),
     ("Count-up", "~600 ms", "Big numbers with data-count"),
-    ("Login background", "16 s ease-out", "Zoom 1 → 1.05 behind the card"),
+    ("Login background", "16 s ease-out", "Zoom 1 → 1.05 behind the card; carries over into Signing in (no restart)"),
+    ("Log in → Signing in", "0.9 s + 0.7 s", "Copy softens away, screen dims to 60%, card tints, card morphs (view transition), reef brightens back over 1.6 s"),
+    ("Jellyfish", "pulse 5–7 s · glide 28–44 s", "Bell breathes (scale 1.045 / .955); one steady upward glide, never bobs back; far ones move less"),
     ("Reduced motion", "1 ms", "All of the above collapse to their end state"),
 ]
 motion_rows = "".join(f"<tr><td><code>{a}</code></td><td><code>{b}</code></td><td>{c}</td></tr>" for a, b, c in MOTION)
@@ -361,7 +365,10 @@ PROTO = [
     ("D3", "Toasts for action feedback", "Copy, save, rename and revoke answer with a toast. Balance, expiry and payment states stay as inline alerts. The handoff says “Never Toasts”, so this needs a yes or no.", "blocked", "Needs decision"),
     ("D4", "Motion system", "View transitions between pages, staggered content, growing data, spring menus, reduced-motion safe.", "holds", "Shipped"),
     ("D5", "Header button uses a key icon", "Instead of the plus in the export.", "holds", "Shipped"),
-    ("D6", "Sign-in loading explains the console", "Three “what you can do here” bullets, about 3.6 s before Get started; slow background zoom on both login screens.", "holds", "Shipped"),
+    ("D6", "Signing in is a scene", "Figma 233:96981: reef + rising jellyfish, three “what you can do here” bullets, about 3.6 s before Get started. Log in → Signing in is one continuous transition.", "holds", "Shipped"),
+    ("D7", "Get started greets by first name", "“{first name}, let’s get started”, from the same source as the account menu.", "holds", "Shipped"),
+    ("D8", "Admin Org pool is one line", "“10,640 credits available” with a pool / purchased bar, per Figma. The pack-expiry warning moved off the overview (still on admin Billing).", "tweak", "Confirm expiry hint"),
+    ("D9", "Quieter alert surfaces", "Darker fills, low-contrast borders for warning, success and info, sampled from Figma.", "holds", "Shipped"),
 ]
 proto_cards = "".join(
     f'<div class="stage-card"><span class="n">{n}</span><h3>{t}</h3><p class="where">{b}</p><span class="tag {k}">{tag}</span></div>'
@@ -421,11 +428,12 @@ OPEN = [
     ("Coin icon", "Coral has none; pack cards borrow the database icon."),
     ("Auto top-up pack", "Can the user pick which pack auto top-up buys?"),
     ("Toasts (D3)", "Keep toasts for action feedback, or alerts only?"),
+    ("Expiry hint on admin overview (D8)", "Figma drops the “4,000 shared credits expire Dec 2” warning. Keep a hint anywhere on the overview?"),
 ]
 open_cards = "".join(f'<div class="q"><span class="n">Q{i}</span><h3>{a}</h3><p>{b}</p></div>' for i, (a, b) in enumerate(OPEN, 1))
 
 decisions = head("Mermaid API console — Decisions & rules") + topbar("decisions") + f"""
-  <div class="pill-row"><span class="tag feature">Decisions</span><span class="tag holds">Rules</span><span class="tag blocked">8 open questions</span></div>
+  <div class="pill-row"><span class="tag feature">Decisions</span><span class="tag holds">Rules</span><span class="tag blocked">{len(OPEN)} open questions</span></div>
   <h1>Decisions &amp; rules</h1>
   <p class="sub">What was decided, by whom, and the rules the screens follow. Meeting decisions are quoted from the Oct 27 review; prototype decisions are this delivery's calls and are marked when they need sign-off.</p>
   <nav class="toc" aria-label="On this page">
