@@ -214,7 +214,7 @@ index = head("Mermaid API console — Developer delivery") + topbar("index") + f
     <div class="dir-grid">
       {dir_card("08-overview", "pull", "User", "Own keys, allowance, purchased credits, recent calls. Billing holds packs, auto top-up and limits.", "Customer · v3")}
       {dir_card("18-admin-overview", "push", "Org admin", "Org pool, members near their limits, all keys, overrides, consumption, credit pool split, burst limits.", "Admin · v3")}
-    </div>""") + sec("04", "live", "Live console", "The same static HTML engineering can click through. Seeds jump between screens; every page links on from there. No build.", f"""
+    </div>""") + sec("04", "live", "Live console", "Share the live hub for the clickable prototype. Same password as this slide; every page is gated.", f"""
     <div class="live-meta"><span>Showing <b id="live-label">Login</b></span><span>Open full hub → <a href="./assets/live/index.html" target="_blank" rel="noopener">assets/live/</a></span></div>
     <div class="seeds" role="toolbar" aria-label="Screen seeds">{seeds}</div>
     <div class="live-frame-wrap"><iframe id="live-frame" title="Mermaid API console live" src="./assets/live/login.html"></iframe></div>""") + sec("05", "flows", "Storyboards", "Three journeys. Thumbs jump to full frames below.", f"""

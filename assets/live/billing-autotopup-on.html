@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+(function(){try{if(localStorage.getItem('mc-delivery-gate-v1')==='ok')return;}catch(e){}document.documentElement.classList.add('dg-locked');})();
+</script>
+<style>html.dg-locked body > *:not(#delivery-gate){visibility:hidden}</style>
+
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mermaid API — Billing</title>
@@ -9,6 +14,15 @@
 <link rel="stylesheet" href="console.css?v=8" />
 </head>
 <body data-mode="customer">
+<script>
+window.DELIVERY_GATE = {
+  hash: "756027fb4eb79a876aa00ee052d2876f8c10eb834930cf93e6810af1cb8d3432",
+  storageKey: "mc-delivery-gate-v1",
+  title: "MERMAID · API CONSOLE"
+};
+</script>
+<script src="../gate.js"></script>
+
 <div class="app">
 <aside class="sidebar">
   <div class="brand"><img src="assets/mermaid-logo.svg" alt="" /><span>API console</span></div>

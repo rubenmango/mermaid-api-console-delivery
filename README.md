@@ -10,7 +10,7 @@ Password-gated designer → developer package for the API console: customer and 
 | HTML delivery | `index.html` (slide) · [Pages](https://rubenmango.github.io/mermaid-api-console-delivery/) |
 | Styles | `styles.html` (tokens, type, motion, components, live specimen) |
 | Decisions & rules | `decisions.html` · `docs/DECISIONS.md` |
-| Live | `assets/live/` (42 pages) · seeds in `assets/api-console-live.js` |
+| Live | [`assets/live/`](https://rubenmango.github.io/mermaid-api-console-delivery/assets/live/) (password-gated) · seeds in `assets/api-console-live.js` |
 | Screenshots | `assets/screenshots/` (27 frames + style guide) |
 | Integration | `docs/INTEGRATION.md` |
 | Product source | [`Mermaid-Chart/app-team` · `handoffs/mermaid-api-console/`](https://github.com/Mermaid-Chart/app-team/tree/main/handoffs/mermaid-api-console) |
@@ -22,3 +22,5 @@ Open `index.html` with any static server. Unlock with the shared Mermaid deliver
 ## Rebuild
 
 `python3 tools/build.py` regenerates `index.html`, `styles.html` and `decisions.html` from the shot list and decision data in that script.
+
+After copying HTML into `assets/live/`, run `python3 tools/protect_live.py` so every console page asks for the same password.
