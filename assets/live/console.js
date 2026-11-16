@@ -221,10 +221,11 @@
   );
   $$("[data-row-remove]").forEach((b) =>
     b.addEventListener("click", () => {
-      const tr = b.closest("tr");
-      tr.classList.add("leaving");
-      tr.addEventListener("animationend", () => tr.remove(), { once: true });
-      toast("success", "Override removed");
+      const row = b.closest("tr, .ov-row");
+      if (!row) return;
+      row.classList.add("leaving");
+      row.addEventListener("animationend", () => row.remove(), { once: true });
+      toast("success", b.dataset.removeToast || "Override removed");
     })
   );
 

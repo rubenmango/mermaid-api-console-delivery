@@ -41,6 +41,16 @@ SHOTS = [
     ("22-admin-consumption", "Admin · consumption", "By member and endpoint"),
     ("23-admin-pool", "Admin · credit pool", "Split by member, live totals"),
     ("24-admin-burst", "Admin · burst limits", "Org default + overrides"),
+    ("26-keys-empty", "Keys · empty", "No keys yet · shown once"),
+    ("27-super-keys", "Super · keys lookup", "Search first, not a dump"),
+    ("28-super-keys-found", "Super · keys found", "Two-line rows, masked secrets"),
+    ("29-super-owner", "Super · owner file", "Override allowance + ledger"),
+    ("30-super-overrides", "Super · overrides", "Allowances vs burst"),
+    ("31-super-classes", "Super · call classes", "Cost as the hero"),
+    ("32-super-classes-cost", "Super · cost of ai", "Credits per call"),
+    ("33-super-tiers", "Super · tiers", "Personal / org / burst"),
+    ("34-super-aicosts", "Super · AI costs", "Percentiles vs empty repair"),
+    ("35-super-admins", "Super · super admins", "Root vs Granted"),
 ]
 SHOT = {s: (i, t, c) for i, (s, t, c) in enumerate(SHOTS, 1)}
 
@@ -156,6 +166,9 @@ LIVE_SEEDS = [
     ("settings", "settings.html", "Settings"),
     ("admin", "admin-overview.html", "Admin"),
     ("admin-pool", "admin-pool.html", "Credit pool"),
+    ("super", "super-keys.html", "Super"),
+    ("super-classes", "super-classes.html", "Call classes"),
+    ("super-admins", "super-admins.html", "Super admins"),
     ("styleguide", "styleguide.html", "Style guide"),
 ]
 seeds = "".join(
@@ -172,14 +185,15 @@ index = head("Mermaid API console — Developer delivery") + topbar("index") + f
     <span class="tag feature">API console</span>
     <span class="tag holds">Customer · v3</span>
     <span class="tag holds">Admin · v3</span>
+    <span class="tag holds">Super admin</span>
     <span class="tag tweak">Motion + feedback</span>
   </div>
   <h1>Mermaid API console</h1>
-  <p class="sub">Keys, usage and billing for the Mermaid API, inside the Mermaid Chart account. Entry from Developer mode in the Chart account menu, and from search. Customer and org-admin views share one dark Coral shell, switched from the top bar.</p>
+  <p class="sub">Keys, usage and billing for the Mermaid API, inside the Mermaid Chart account. Entry from Developer mode in the Chart account menu, and from search. Customer, org-admin and Mermaid Super admin share one dark Coral shell, switched from the top bar.</p>
   <div class="meta">
-    <div><b>Figma</b>Platform · <code>141:3891</code> · <code>206:12847</code></div>
+    <div><b>Figma</b>Platform · <code>141:3891</code> · <code>206:12847</code> · Super from live</div>
     <div><b>Status</b>Clickable HTML prototype</div>
-    <div><b>Screens</b>42 live pages</div>
+    <div><b>Screens</b>52 live pages</div>
     <div><b>Product src</b><a href="{APP_TEAM}">app-team / handoffs</a></div>
   </div>
 
@@ -196,13 +210,13 @@ index = head("Mermaid API console — Developer delivery") + topbar("index") + f
     <div class="stage-rail">
       <div class="stage-card"><span class="n">01</span><h3>Chart entry</h3><p class="where">Developer mode · banner · search</p></div>
       <div class="stage-card"><span class="n">02</span><h3>Login</h3><p class="where">Chart SSO · loading</p></div>
-      <div class="stage-card you"><span class="n">03 · THIS PAGE</span><h3>Customer + admin console</h3><p class="where">Keys · usage · billing · org</p></div>
+      <div class="stage-card you"><span class="n">03 · THIS PAGE</span><h3>Customer + admin + super</h3><p class="where">Keys · usage · billing · org · Mermaid-internal</p></div>
       <div class="stage-card"><span class="n">04</span><h3>Wire APIs</h3><p class="where">Keys · balance · Stripe</p></div>
-      <div class="stage-card"><span class="n">05</span><h3>Super admin</h3><p class="where">Not designed · out of scope</p></div>
+      <div class="stage-card"><span class="n">05</span><h3>Super admin</h3><p class="where">Prototyped · lookup, classes, tiers</p></div>
     </div>
     <div class="metric-grid">
-      <div class="metric"><div class="num">42</div><div class="label">Live pages, customer and admin</div></div>
-      <div class="metric"><div class="num">2</div><div class="label">Entry points from Mermaid Chart: Developer mode, search</div></div>
+      <div class="metric"><div class="num">52</div><div class="label">Live pages, customer, admin and super</div></div>
+      <div class="metric"><div class="num">3</div><div class="label">Roles in one shell: User, org admin, Super</div></div>
       <div class="metric"><div class="num">1×</div><div class="label">Key secret shown: the create dialog only</div></div>
     </div>""") + sec("02", "entry", "Entry from Mermaid Chart", "Figma Entry 0 → 0.1 → 0.2: Developer mode in the account menu turns on a banner on the dashboard; Create opens the console.", f"""
     <div class="dir-grid three">
@@ -210,10 +224,11 @@ index = head("Mermaid API console — Developer delivery") + topbar("index") + f
       {dir_card("00b-chart-dev-banner", "push", "2 · Banner", "“Create API keys and manage usage and credits.” with Create, on top of the dashboard while developer mode is on. Slides in.", "Pick")}
       {dir_card("00c-chart-search", "pull", "3 · Global search", "Typing “API” shows API keys, docs, and usage and credits. Works with or without developer mode.", "Also")}
     </div>
-    <figure class="motion-clip"><video src="./assets/motion/entry.webm" autoplay muted loop playsinline preload="metadata"></video><figcaption><b>Entry in motion</b> Account menu → Developer mode → banner slides in → ⌘K “API”.</figcaption></figure>""") + sec("03", "roles", "Two roles, one shell", "The User / Admin toggle in the top bar switches roles on every page. The account menu on Acme pages switches workspace.", f"""
-    <div class="dir-grid">
+    <figure class="motion-clip"><video src="./assets/motion/entry.webm" autoplay muted loop playsinline preload="metadata"></video><figcaption><b>Entry in motion</b> Account menu → Developer mode → banner slides in → ⌘K “API”.</figcaption></figure>""") + sec("03", "roles", "Three roles, one shell", "The User / Admin / Super toggle in the top bar switches roles on every page. The account menu also switches workspace, including Super.", f"""
+    <div class="dir-grid three">
       {dir_card("08-overview", "pull", "User", "Own keys, allowance, purchased credits, recent calls. Billing holds packs, auto top-up and limits.", "Customer · v3")}
       {dir_card("18-admin-overview", "push", "Org admin", "Org pool, members near their limits, all keys, overrides, consumption, credit pool split, burst limits.", "Admin · v3")}
+      {dir_card("27-super-keys", "pull", "Super admin", "Mermaid-internal. Lookup any key, set class costs and tiers, grant super admins. Not the org admin console.", "Super")}
     </div>""") + sec("04", "live", "Live console", "Share the live hub for the clickable prototype. Same password as this slide; every page is gated.", f"""
     <div class="live-meta"><span>Showing <b id="live-label">Login</b></span><span>Open full hub → <a href="./assets/live/index.html" target="_blank" rel="noopener">assets/live/</a></span></div>
     <div class="seeds" role="toolbar" aria-label="Screen seeds">{seeds}</div>
@@ -224,7 +239,9 @@ index = head("Mermaid API console — Developer delivery") + topbar("index") + f
     {storyboard(["08-overview", "09-usage", "11-billing", "12-billing-custom", "13-billing-checkout", "14-billing-success"])}
     <h3 class="flow-h">Org admin</h3>
     {storyboard(["18-admin-overview", "19-admin-switcher", "20-admin-keys", "21-admin-revoke", "23-admin-pool", "24-admin-burst"])}
-    {film(["07-key-detail-revoked", "10-usage-org", "15-billing-autotopup", "16-billing-purchases", "17-settings", "22-admin-consumption"])}""") + sec("06", "motion", "Motion and feedback", "Every action answers. Full tokens and live specimens are on the Styles page.", """
+    <h3 class="flow-h">Super admin</h3>
+    {storyboard(["27-super-keys", "28-super-keys-found", "29-super-owner", "30-super-overrides", "31-super-classes", "33-super-tiers"])}
+    {film(["07-key-detail-revoked", "10-usage-org", "26-keys-empty", "32-super-classes-cost", "34-super-aicosts", "35-super-admins"])}""") + sec("06", "motion", "Motion and feedback", "Every action answers. Full tokens and live specimens are on the Styles page.", """
     <div class="metric-grid four">
       <div class="metric"><div class="num">280<small>ms</small></div><div class="label">Page cross-fade; sidebar and top bar stay put, nav pill and tabs slide</div></div>
       <div class="metric"><div class="num">520<small>ms</small></div><div class="label">Busy spinner before a toast or navigation</div></div>
@@ -370,7 +387,7 @@ REVIEW = [
 ]
 PROTO = [
     ("D1", "Admin · v3 built", "All admin frames are clickable: overview, all keys, overrides, revoke, consumption, credit pool, burst limits, plus a composed Billing.", "holds", "Shipped"),
-    ("D2", "User / Admin toggle in the top bar", "Every page can switch role. The Acme account menu also switches workspace (Personal, Admin view, Member view).", "tweak", "Confirm with design"),
+    ("D2", "User / Admin / Super toggle in the top bar", "Every page can switch role. The account menu also switches workspace (Personal, Admin view, Member view, Super admin).", "tweak", "Confirm with design"),
     ("D3", "Toasts for action feedback", "Copy, save, rename and revoke answer with a toast. Balance, expiry and payment states stay as inline alerts. The handoff says “Never Toasts”, so this needs a yes or no.", "blocked", "Needs decision"),
     ("D4", "Motion system", "View transitions between pages, staggered content, growing data, spring menus, reduced-motion safe.", "holds", "Shipped"),
     ("D5", "Header button uses a key icon", "Superseded by D10: the header button is gone.", "tweak", "Superseded"),
@@ -379,6 +396,7 @@ PROTO = [
     ("D8", "Admin Org pool is one line", "“10,640 credits available” with a pool / purchased bar, per Figma. The pack-expiry warning moved off the overview (still on admin Billing).", "tweak", "Confirm expiry hint"),
     ("D9", "Quieter alert surfaces", "Darker fills, low-contrast borders for warning, success and info, sampled from Figma.", "holds", "Shipped"),
     ("D10", "Entry is Developer mode → banner", "Figma Entry 0 / 0.1 / 0.2: account menu Developer mode turns on a dashboard banner with Create; search keeps API results. Replaces the header API keys button.", "holds", "Shipped"),
+    ("D11", "Super admin is prototyped", "Mermaid-internal area from the live console, restyled: lookup keys, owner file, override cards, class/tier cost cards, AI cost percentiles, Root vs Granted. Org admin is unchanged.", "holds", "Shipped"),
 ]
 proto_cards = "".join(
     f'<div class="stage-card"><span class="n">{n}</span><h3>{t}</h3><p class="where">{b}</p><span class="tag {k}">{tag}</span></div>'
@@ -398,8 +416,8 @@ PRODUCT_RULES = [
     ("Auto top-up", ["Off by default. On: buy when the balance falls under 500.", "Active: summary line + Edit.", "No saved card: Stripe saves one first."]),
     ("Limits", ["Spend limit caps purchased credits per month.", "Low-balance email default 25 credits (a tenth of the allowance).",
                 "Off collapses the card to its header."]),
-    ("Members vs admins", ["Members: own keys, their share, org usage; no admin actions.", "Admins: all keys, overrides, revoke, consumption, pool split, burst.",
-                           "Admins see names and last 4 characters, never the secret."]),
+    ("Members vs admins vs super", ["Members: own keys, their share, org usage; no admin actions.", "Org admins: all keys, overrides, revoke, consumption, pool split, burst. Names and last 4, never the secret.",
+                           "Super admins (Mermaid): lookup any Chart key or owner, set call-class costs and tiers, grant other super admins. Not the org Credit pool."]),
     ("Recent calls", ["Filters: Status, Endpoint, Key (dashboard only).", "Empty filter: “No refused calls in the last 30 days.”",
                       "Refused or failed calls cost 0 credits."]),
     ("Purchases", ["Only API credit purchases. Columns: Date, Credits, Amount, Taken back, Buyer, Invoice.", "Empty: “No API credit purchases yet.”"]),
@@ -410,7 +428,7 @@ DESIGN_RULES = [
     ("Surfaces", ["App, sidebar, top bar storm-975. Cards storm-950 + 1px storm-800, radius 8.", "Hover storm-800 · selected pill storm-700."]),
     ("Card header", ["Inline by default, ~48 tall. With actions: subtitle 16 px after the title.", "Alone: subtitle pinned right.",
                      "Stacked only when the subtitle can't fit at 1024 wide.", "Bottom divider only when the card has a body."]),
-    ("Shell", ["Sidebar 240: Dashboard · Access · Spend · Resources.", "Top bar 60: breadcrumb · search 360 × 32 · mode toggle · credits · Documentation.",
+    ("Shell", ["Sidebar 240: Dashboard · Access · Spend · Resources (customer/admin). Super: Keys, Overrides, Call classes, Tiers, AI costs, Super admins.", "Top bar 60: breadcrumb · search 360 × 32 · mode toggle · credits (hidden on Super) · Documentation.",
                "No avatar in the top bar; account row lives in the sidebar."]),
     ("Tables", ["Fixed column widths that match headers; numbers right-aligned.", "Equal row heights, 1px dividers.", "Actions and badges in fixed right columns."]),
     ("Controls", ["Buttons 36 and 32. Labels short; the main CTA keeps its amount.", "Billing tabs: outlined segmented pill, not underline.",
@@ -428,6 +446,7 @@ ROADS = [
     ("Admin switch only in the account menu", "Hard to find on personal pages; added the top-bar toggle (D2)."),
     ("Plus icon on the header button", "Key icon reads as “API keys” at a glance (D5)."),
     ("Header API keys button", "Figma Entry moved the way in to Developer mode + dashboard banner (D10)."),
+    ("Copy live Super admin as one table per page", "Same job, different surfaces: lookup, cards, percentiles, Root vs Granted."),
 ]
 roads_cards = "".join(f'<div class="road"><h3>{a}</h3><p>{b}</p></div>' for a, b in ROADS)
 OPEN = [

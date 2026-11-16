@@ -1,6 +1,6 @@
 # Mermaid API console — delivery
 
-Password-gated designer → developer package for the API console: customer and org admin, v3.
+Password-gated designer → developer package for the API console: customer, org admin and Super admin, v3.
 
 | | |
 |---|---|
@@ -11,7 +11,7 @@ Password-gated designer → developer package for the API console: customer and 
 | Styles | `styles.html` (tokens, type, motion, components, live specimen) |
 | Decisions & rules | `decisions.html` · `docs/DECISIONS.md` |
 | Live | [`assets/live/`](https://rubenmango.github.io/mermaid-api-console-delivery/assets/live/) (password-gated) · seeds in `assets/api-console-live.js` |
-| Screenshots | `assets/screenshots/` (27 frames + style guide) |
+| Screenshots | `assets/screenshots/` (38 frames + style guide) |
 | Integration | `docs/INTEGRATION.md` |
 | Product source | [`Mermaid-Chart/app-team` · `handoffs/mermaid-api-console/`](https://github.com/Mermaid-Chart/app-team/tree/main/handoffs/mermaid-api-console) |
 

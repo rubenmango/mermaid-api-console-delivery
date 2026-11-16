@@ -10,7 +10,7 @@ Public Pages package keeps only a stub at `src/README.md`.
 
 ## What this is
 
-Static HTML prototype of the API console, customer and org admin (Coral / Storm dark shell), matching Figma customer `141:3891` and admin `206:12847`. Not wired to real Mermaid Chart auth or billing APIs yet. Every page is generated from one script and shares `console.css` + `console.js`.
+Static HTML prototype of the API console: customer, org admin, and Mermaid Super admin (Coral / Storm dark shell). Customer and admin match Figma `141:3891` and `206:12847`. Super admin is restyled from the live console (not one table per page). Not wired to real Mermaid Chart auth or billing APIs yet. Every page is generated from one script and shares `console.css` + `console.js`.
 
 ## Suggested host wiring
 
@@ -18,7 +18,7 @@ Static HTML prototype of the API console, customer and org admin (Coral / Storm 
 |---|---|---|
 | Entry | Account menu **Developer mode** (toggle, remembered per user) → dashboard banner “Create API keys and manage usage and credits.” + **Create**; ⌘K results for API keys / docs / usage | Persist developer mode on the user profile; Create deep-links to console login |
 | Auth | Fake “Log in with Mermaid Chart” → loading → Get started | Chart session / SSO |
-| Role | User / Admin toggle in the top bar; workspace switcher in the Acme account menu | Role from the org membership; hide the toggle for non-admins |
+| Role | User / Admin / Super toggle in the top bar; workspace switcher includes Super admin | Role from org membership or Mermaid staff; hide Super from customers |
 | Keys | Once-shown dialog; row rename / revoke in the page | Create key API; show the secret once; never re-fetch |
 | Agent prompt | Clipboard string in the page | Template with `MERMAID_API_KEY`, never the key |
 | Usage / billing | Static numbers + Stripe dialog stub | Real balance, packs, Stripe Checkout return URL |
@@ -42,6 +42,10 @@ Static HTML prototype of the API console, customer and org admin (Coral / Storm 
 | Admin keys · overrides · revoke | `admin-keys.html` · `admin-overrides.html` · `admin-revoke.html` | `206:12847` |
 | Admin consumption · pool · burst · billing | `admin-consumption.html` · `admin-pool.html` · `admin-burst.html` · `admin-billing.html` | `206:12847` |
 | Style guide | `styleguide.html` | Coral Foundations |
+| Keys · empty | `keys-empty.html` | live console |
+| Super keys · found · owner | `super-keys.html` · `super-keys-found.html` · `super-owner.html` | live Super admin, restyled |
+| Super overrides · classes · cost | `super-overrides.html` · `super-classes.html` · `super-classes-cost.html` | live Super admin, restyled |
+| Super tiers · AI costs · admins | `super-tiers.html` · `super-aicosts.html` · `super-admins.html` | live Super admin, restyled |
 
 ## Local preview (design repo)
 

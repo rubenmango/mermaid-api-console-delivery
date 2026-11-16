@@ -11,7 +11,7 @@
 <title>Mermaid API — Get started · keys</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="console.css?v=8" />
+<link rel="stylesheet" href="console.css?v=12" />
 </head>
 <body data-mode="customer">
 <script>
@@ -60,7 +60,7 @@ window.DELIVERY_GATE = {
   <div class="search-wrap"><label class="search"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M9 14.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Zm4-1.5 3.5 3.5"/></svg><input type="search" placeholder="Search console…" aria-label="Search console" autocomplete="off" /></label></div>
   <div class="top-actions">
     <nav class="mode-toggle" aria-label="View as">
-      <a href="overview.html" aria-current="page" class="on">User</a><a href="admin-overview.html">Admin</a>
+      <a href="overview.html" aria-current="page" class="on">User</a><a href="admin-overview.html">Admin</a><a href="super-keys.html">Super</a>
     </nav>
     <span class="credits-pill">250 credits</span>
     <a class="btn secondary" href="docs.html" target="_blank" rel="noopener">Documentation <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M11.5 4.5h4v4m0-4-6 6M14 11.5v4H4.5V6h4"/></svg></a>
@@ -82,22 +82,18 @@ window.DELIVERY_GATE = {
       <thead><tr><th>Name</th><th>Key</th><th>State</th><th>Credits this month</th><th>Last used</th><th></th></tr></thead>
       <tbody><tr class="key-row" data-href="key-detail.html">
           <td data-name>Agent key</td><td class="mono">mmd_4f7c••••••3b4c</td><td data-state><span class="pill ok"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14Zm-3-7 2 2 4-4"/></svg>Active</span></td><td class="num">0</td><td>Not yet</td>
-          <td class="rel" data-no-row-nav style="width:48px">
-            <button class="btn icon bare" type="button" data-kebab="gk0" aria-label="More" aria-haspopup="menu" aria-expanded="false"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 5.8a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm0 5.4a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm0 5.4a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Z"/></svg></button>
-            <div class="popover kebab-menu open" id="gk0" role="menu"><button type="button" data-row-rename>Rename</button><button type="button" data-toast="success|Key ID copied">Copy key ID</button><hr /><button type="button" class="danger" data-row-revoke>Revoke key</button></div>
-          </td>
+          <td class="rel" data-no-row-nav style="width:48px"><button class="btn icon bare" type="button" data-kebab="gk0" aria-label="More" aria-haspopup="menu" aria-expanded="false"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 5.8a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm0 5.4a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm0 5.4a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Z"/></svg></button>
+            <div class="popover kebab-menu open" id="gk0" role="menu"><button type="button" data-row-rename>Rename</button><button type="button" data-toast="success|Key ID copied">Copy key ID</button><hr /><button type="button" class="danger" data-row-revoke>Revoke key</button></div></td>
         </tr><tr class="key-row" data-href="key-detail.html">
           <td data-name>CI render bot</td><td class="mono">mmd_0889••••••b574</td><td data-state><span class="pill ok"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14Zm-3-7 2 2 4-4"/></svg>Active</span></td><td class="num">149</td><td>14 min ago</td>
-          <td class="rel" data-no-row-nav style="width:48px">
-            <button class="btn icon bare" type="button" data-kebab="gk1" aria-label="More" aria-haspopup="menu" aria-expanded="false"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 5.8a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm0 5.4a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm0 5.4a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Z"/></svg></button>
-            <div class="popover kebab-menu" id="gk1" role="menu"><button type="button" data-row-rename>Rename</button><button type="button" data-toast="success|Key ID copied">Copy key ID</button><hr /><button type="button" class="danger" data-row-revoke>Revoke key</button></div>
-          </td>
+          <td class="rel" data-no-row-nav style="width:48px"><button class="btn icon bare" type="button" data-kebab="gk1" aria-label="More" aria-haspopup="menu" aria-expanded="false"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 5.8a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm0 5.4a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm0 5.4a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Z"/></svg></button>
+            <div class="popover kebab-menu" id="gk1" role="menu"><button type="button" data-row-rename>Rename</button><button type="button" data-toast="success|Key ID copied">Copy key ID</button><hr /><button type="button" class="danger" data-row-revoke>Revoke key</button></div></td>
         </tr></tbody>
     </table>
   </section>
 
 </main></div></div>
 
-<script src="console.js?v=8"></script>
+<script src="console.js?v=12"></script>
 </body>
 </html>

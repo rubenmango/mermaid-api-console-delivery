@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+(function(){try{if(localStorage.getItem('mc-delivery-gate-v1')==='ok')return;}catch(e){}document.documentElement.classList.add('dg-locked');})();
+</script>
+<style>html.dg-locked body > *:not(#delivery-gate){visibility:hidden}</style>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mermaid API — Super admin · AI costs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="console.css?v=12" />
+</head>
+<body data-mode="super">
+<script>
+window.DELIVERY_GATE = {
+  hash: "756027fb4eb79a876aa00ee052d2876f8c10eb834930cf93e6810af1cb8d3432",
+  storageKey: "mc-delivery-gate-v1",
+  title: "MERMAID · API CONSOLE"
+};
+</script>
+<script src="../gate.js"></script>
+
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><img src="assets/mermaid-logo.svg" alt="" /><span>API console</span></div>
+  <p class="nav-label">Super admin</p>
+  <div class="nav-group">
+    <a class="nav" href="super-keys.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M7 13a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm3-3h7.5M15 10v2.5M17.5 10v2"/></svg>Keys<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+    <a class="nav" href="super-overrides.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M10 3.2 15.5 5v4.6c0 3.4-2.3 6-5.5 7.2-3.2-1.2-5.5-3.8-5.5-7.2V5L10 3.2Z"/></svg>Overrides<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+    <a class="nav" href="super-classes.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4.5 5.5c0-1.1 2.5-2 5.5-2s5.5.9 5.5 2-2.5 2-5.5 2-5.5-.9-5.5-2Zm0 0v9c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2v-9M4.5 10c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2"/></svg>Call classes<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+    <a class="nav" href="super-tiers.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M3.5 5.5h13v9h-13v-9Zm0 3h13"/></svg>Tiers<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+    <a class="nav active" href="super-aicosts.html" aria-current="page"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4.5 6c0-1.1 2.5-2 5.5-2s5.5.9 5.5 2-2.5 2-5.5 2-5.5-.9-5.5-2Zm0 0v8c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2V6m-11 4c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2"/></svg>AI costs<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+    <a class="nav" href="super-admins.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M7.5 9.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Zm-4 6c0-2.2 1.8-3.5 4-3.5s4 1.3 4 3.5m2-6.2a2 2 0 1 0 0-4m1.5 10.2c0-1.6-.8-2.7-2-3.2"/></svg>Super admins<span class="chev"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m8 5.5 4.5 4.5L8 14.5"/></svg></span></a>
+  </div>
+  <p class="nav-label">Resources</p>
+  <div class="nav-group"><a class="nav" href="docs.html" target="_blank" rel="noopener"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M10 5.5C8.5 4.5 6 4 3.5 4.5v10c2.5-.5 5 0 6.5 1m0-10c1.5-1 4-1.5 6.5-1v10c-2.5-.5-5 0-6.5 1m0-10v10"/></svg>Docs<span class="ext"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M11.5 4.5h4v4m0-4-6 6M14 11.5v4H4.5V6h4"/></svg></span></a></div>
+  <div class="spacer"></div>
+  <div class="sidebar-divider"></div>
+  <div class="account-wrap">
+    <div class="popover account-menu switcher" id="account-menu" role="menu">
+      <a href="overview.html"><span class="ws"><strong>Personal</strong><em>ruben@mermaidchart.com</em></span></a>
+      <a href="admin-overview.html"><span class="ws"><strong>Acme Inc · Admin view</strong><em>All keys, consumption, overrides</em></span></a>
+      <a href="usage-org.html"><span class="ws"><strong>Acme Inc · Member view</strong><em>Only your keys and share</em></span></a>
+      <a href="super-keys.html" class="active" aria-current="true"><span class="ws"><strong>Super admin</strong><em>Mermaid internal · costs, tiers, any key</em></span></a>
+    </div>
+    <button class="account-row" type="button" id="account" aria-haspopup="menu" aria-expanded="false">
+      <img class="avatar" src="assets/avatar.png" alt="" />
+      <span class="meta"><strong>Ruben</strong><em>Super admin</em></span>
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M5.5 8 10 12.5 14.5 8"/></svg>
+    </button>
+  </div>
+</aside>
+<div class="main">
+<header class="topbar">
+  <div class="breadcrumb">Super admin / AI costs</div>
+  <div class="search-wrap"><label class="search"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M9 14.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Zm4-1.5 3.5 3.5"/></svg><input type="search" placeholder="Search console…" aria-label="Search console" autocomplete="off" /></label></div>
+  <div class="top-actions">
+    <nav class="mode-toggle" aria-label="View as">
+      <a href="overview.html">User</a><a href="admin-overview.html">Admin</a><a href="super-keys.html" aria-current="page" class="on">Super</a>
+    </nav>
+    
+    <a class="btn secondary" href="docs.html" target="_blank" rel="noopener">Documentation <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M11.5 4.5h4v4m0-4-6 6M14 11.5v4H4.5V6h4"/></svg></a>
+  </div>
+</header>
+<main class="content">
+
+  <div class="title-row">
+    <div class="grow"><h1>AI costs</h1><p class="sub">What Mermaid AI reported each call of the ai class cost in tokens. A call of the class costs 25 API credits now; keep it above the p99.</p></div>
+    <button class="chip" type="button">November 2026 <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M5.5 8 10 12.5 14.5 8"/></svg></button>
+  </div>
+  <div class="alert ok" role="status"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 2.5a7.5 7.5 0 1 1 0 15 7.5 7.5 0 0 1 0-15Zm3.3 4.7-4.2 4.2-2-2-1.1 1.1 3.1 3.1 5.3-5.3-1.1-1.1Z"/></svg><div class="grow">POST /v1/generate p99 is $0.0178 — still under 25 credits at the current token price.</div></div>
+  <div class="split-2">
+    <section class="card">
+      <div class="card-head"><h2 class="mono">POST /v1/generate</h2><span class="pill muted">3 calls</span></div>
+      <div class="card-body">
+        <div class="pctl">
+          <div><span class="k">p50</span><span class="n">$0.0171</span></div>
+          <div><span class="k">p95</span><span class="n">$0.0178</span></div>
+          <div class="watch"><span class="k">p99</span><span class="n">$0.0178</span></div>
+        </div>
+      </div>
+    </section>
+    <section class="card">
+      <div class="card-head"><h2 class="mono">POST /v1/repair</h2><span class="pill muted">0 calls</span></div>
+      <div class="empty" style="padding:24px">
+        <strong>None reported</strong>
+        <p>No repair calls in November 2026.</p>
+      </div>
+    </section>
+  </div>
+  <p class="fine">Every change made here is logged with your account.</p>
+
+</main></div></div>
+
+<script src="console.js?v=12"></script>
+</body>
+</html>

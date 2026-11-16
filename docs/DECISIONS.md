@@ -28,7 +28,7 @@ Handoff: `mermaid-api-console-handoff.md` (v3)
 | # | Call | Status |
 |---|---|---|
 | D1 | Admin · v3 built: overview, all keys, overrides, revoke, consumption, credit pool, burst limits, composed Billing | Shipped |
-| D2 | User / Admin toggle in the top bar on every page; Acme account menu switches workspace | Confirm with design |
+| D2 | User / Admin / Super toggle in the top bar on every page; account menu switches workspace including Super | Confirm with design |
 | D3 | Toasts for action feedback (copy, save, rename, revoke); balance and payment states stay inline alerts. The handoff says “Never Toasts”. | **Needs decision** |
 | D4 | Motion system: view transitions, stagger, growing data, spring menus, reduced-motion safe | Shipped |
 | D5 | Header button uses a key icon | Superseded by D10 |
@@ -37,6 +37,7 @@ Handoff: `mermaid-api-console-handoff.md` (v3)
 | D8 | Admin Org pool is one line (“10,640 credits available”, pool / purchased bar); pack-expiry warning moved off the overview, still on admin Billing | Confirm expiry hint |
 | D9 | Quieter alert surfaces: darker fills, low-contrast borders (warning, success, info) from Figma | Shipped |
 | D10 | Entry is Developer mode (account menu) → dashboard banner with Create; ⌘K keeps API results. Replaces the header button (Figma Entry 0 / 0.1 / 0.2) | Shipped |
+| D11 | Super admin prototyped from the live console, restyled (lookup, class/tier cards, percentiles, Root vs Granted). Org admin unchanged | Shipped |
 
 ## Rules
 
@@ -53,6 +54,7 @@ Product and design rules are listed in `decisions.html` (sections 04 and 05) and
 | Admin switch only in the account menu | Hard to find from personal pages (D2) |
 | Plus icon on the header button | Key icon reads as “API keys” (D5) |
 | Header API keys button | Figma Entry moved to Developer mode + banner (D10) |
+| Copy live Super admin as one table per page | Same jobs, different surfaces (D11) |
 
 ## Open questions
 
